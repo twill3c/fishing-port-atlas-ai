@@ -1,0 +1,30 @@
+# 生データ(PDF・Shapefile)は Git 管理しない(実装仕様書 §12)。
+# 取得スクリプトと manifest から再現する。
+data/raw/
+# ディレクトリごと無視すると git は中へ降りないので、否定が効かない。
+# ファイル単位で無視してから、追跡したいものを戻す。
+data/normalized/*
+data/canonical/*.parquet
+data/quarantine/
+
+# ただしオラクルと中間表は追跡する。これらを外すと、生データを取り直さないかぎり
+# 二文書突合のテストが**丸ごと skip になり、緑のまま何も検査しなくなる**。
+!data/normalized/jfa_official_counts.json
+!data/normalized/jfa_ports.json
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+node_modules/
+.next/
+out/
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+.env
+.env.local
+.vercel
+
+shots/

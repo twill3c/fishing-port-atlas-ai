@@ -1,0 +1,38 @@
+[
+ {
+  "id": "DS-001",
+  "title": "漁港一覧(総括表・都道府県別・都道府県別明細)",
+  "provider": "水産庁",
+  "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_zyoho_bako/gyoko_itiran/sub81.html",
+  "retrieved": "2026-09-08",
+  "coverage": "令和8年4月1日現在",
+  "processed": true,
+  "processing": "PDF の罫線座標から表を再構成し、漁港 1 件 1 行へ正規化",
+  "license": "出典の明示を条件に利用可(政府標準利用規約準拠)",
+  "attribution": "出典: 水産庁「漁港一覧」"
+ },
+ {
+  "id": "DS-002",
+  "title": "国土数値情報 漁港データ(C09-06)",
+  "provider": "国土交通省 国土政策局",
+  "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-C09.html",
+  "retrieved": "2026-09-08",
+  "coverage": "平成18年度",
+  "processed": true,
+  "processing": "漁港番号で水産庁マスタへ突合し、段階(geometry_method)を記録",
+  "license": "国土数値情報 利用約款",
+  "attribution": "出典: 国土交通省「国土数値情報(漁港データ)」"
+ },
+ {
+  "id": "DS-004",
+  "title": "地理院タイル(淡色地図)",
+  "provider": "国土地理院",
+  "url": "https://maps.gsi.go.jp/development/ichiran.html",
+  "retrieved": "2026-09-08",
+  "coverage": "—",
+  "processed": false,
+  "processing": "背景地図として配信元から直接読み込む(再配布しない)",
+  "license": "地理院タイル利用規約",
+  "attribution": "地理院タイル"
+ }
+]

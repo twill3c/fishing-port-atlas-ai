@@ -1,0 +1,27 @@
+{
+ "build": "2026-09-08T21:01:54+00:00",
+ "schemaVersion": "1.0",
+ "statusVocabulary": [
+  "observed",
+  "estimated",
+  "suppressed",
+  "not_available",
+  "not_applicable",
+  "missing_source"
+ ],
+ "datasets": {
+  "ports": {
+   "url": "/data/ports.min.json",
+   "count": 2768
+  },
+  "stats": {
+   "url": "/data/stats.json"
+  },
+  "sources": {
+   "url": "/data/sources.json"
+  },
+  "portDetail": {
+   "urlTemplate": "/data/ports/{port_no}.json"
+  }
+ }
+}
