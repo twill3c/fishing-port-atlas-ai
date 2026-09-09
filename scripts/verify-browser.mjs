@@ -396,8 +396,25 @@ async function main() {
           !labels.some((l) => l.includes("坂田哲朗")),
       );
       check(`${path} 下部固定である`, footer.position === "fixed" && footer.bottom === "0px");
-      const mit = footer.links.find((l) => l.label === "MIT License");
-      check(`${path} MIT License が LICENSE を指す`, /\/blob\/[^/]+\/LICENSE$/.test(mit.href), mit.href);
+      // 文言が規約で固定された項目は、**その項目の行き先**を見る(HC-098)。
+      // 「どれかのリンクが github.com を向いている」では足りない —— MIT License の
+      // 行き先も github.com なので、GitHub 項目が化けても通ってしまう。
+      const dest = {
+        "MIT License": /^https:\/\/github\.com\/[^/]+\/[^/]+\/blob\/[^/]+\/LICENSE$/,
+        GitHub: /^https:\/\/github\.com\/[^/]+\/fishing-port-atlas-ai\/?$/,
+        // app-menu.vercel.app は別人の無関係なアプリである。指してはならない。
+        "App Menu": /^https:\/\/app-menu-amber\.vercel\.app\/?$/,
+        漁港アトラスの歩き方: /^https:\/\/claude\.ai\/code\/artifact\//,
+        "漁港アトラス 設計図": /^https:\/\/claude\.ai\/code\/artifact\//,
+      };
+      for (const [label, pattern] of Object.entries(dest)) {
+        const link = footer.links.find((l) => l.label === label);
+        check(
+          `${path} 「${label}」の行き先`,
+          Boolean(link) && pattern.test(link.href),
+          link?.href ?? "リンクが無い",
+        );
+      }
     }
 
     console.log("\n[7] 幅ごとの横溢れと逃げ");

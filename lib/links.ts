@@ -19,5 +19,7 @@ export const FLEET_LINKS = {
     href: "https://claude.ai/code/artifact/a8b9ed76-079e-40eb-9898-3a4a1e717976",
     label: "漁港アトラス 設計図",
   },
-  appMenu: "https://app-menu.vercel.app/",
+  // フリートの玄関口。`app-menu.vercel.app` は**別人の無関係なアプリ**なので使わない
+  // (2026-09-10 にそちらを指したまま出荷して踏んだ)。本番の別名は amber である。
+  appMenu: "https://app-menu-amber.vercel.app/",
 } as const;
