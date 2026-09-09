@@ -75,14 +75,25 @@ function serve(dir) {
 }
 
 async function main() {
-  if (!existsSync(OUT)) {
-    console.error("out/ が無い。先に `npm run build` を実行すること。");
-    process.exit(2);
+  // 本番に対する検品を別に持つ。手元でビルドが通ることと、配られている木が
+  // 正しいことは別である(--url で本番の実 URL に当てる)。
+  const urlArg = process.argv.indexOf("--url");
+  const remote = urlArg >= 0 ? process.argv[urlArg + 1]?.replace(/\/$/, "") : null;
+
+  let server = null;
+  let base = remote;
+  if (!remote) {
+    if (!existsSync(OUT)) {
+      console.error("out/ が無い。先に `npm run build` を実行すること。");
+      process.exit(2);
+    }
+    const started = await serve(OUT);
+    server = started.server;
+    base = `http://127.0.0.1:${started.port}`;
   }
+  console.log(`対象: ${base}${remote ? "(本番)" : "(手元の out/)"}`);
   await mkdir(SHOTS, { recursive: true });
 
-  const { server, port } = await serve(OUT);
-  const base = `http://127.0.0.1:${port}`;
   const browser = await chromium.launch();
   const consoleErrors = [];
 
@@ -351,12 +362,25 @@ async function main() {
     await page.screenshot({ path: join(SHOTS, "atlas-data.png") });
     console.log(`  shots/ に保存した`);
 
+    if (remote) {
+      console.log("\n[10] 本番だけの検査");
+      const res = await page.request.get(`${base}/data/manifest.json`);
+      check("manifest.json が配られている", res.ok(), `${res.status()}`);
+      const manifest = res.ok() ? await res.json() : null;
+      check(
+        "配られている manifest の港数が 2,768 である",
+        manifest?.datasets?.ports?.count === 2768,
+        String(manifest?.datasets?.ports?.count),
+      );
+      console.log(`       (build: ${manifest?.build})`);
+    }
+
     console.log("\n[9] コンソールエラー");
     const relevant = consoleErrors.filter((text) => !/favicon|ERR_/i.test(text));
     check("ページのエラーが出ていない", relevant.length === 0, relevant.slice(0, 3).join(" | "));
   } finally {
     await browser.close();
-    server.close();
+    server?.close();
   }
 
   console.log("");

@@ -28,3 +28,5 @@ tsconfig.tsbuildinfo
 .vercel
 
 shots/
+
+.vercel

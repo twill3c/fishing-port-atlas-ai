@@ -19,9 +19,13 @@ export function SiteFooter() {
         GitHub
       </a>
       <span className="fsep">・</span>
-      <a href={FLEET_LINKS.guide.href}>{FLEET_LINKS.guide.label}</a>
+      <a href={FLEET_LINKS.guide.href} target="_blank" rel="noreferrer">
+        {FLEET_LINKS.guide.label}
+      </a>
       <span className="fsep">・</span>
-      <a href={FLEET_LINKS.design.href}>{FLEET_LINKS.design.label}</a>
+      <a href={FLEET_LINKS.design.href} target="_blank" rel="noreferrer">
+        {FLEET_LINKS.design.label}
+      </a>
       <span className="fsep">・</span>
       <a href={FLEET_LINKS.appMenu} target="_blank" rel="noreferrer">
         App Menu
