@@ -84,5 +84,15 @@
    "鳥取県": 18,
    "鹿児島県": 139
   }
+ },
+ "ocean": {
+  "areas": 107,
+  "long_series_areas": 102,
+  "short_series_areas": 5,
+  "rising": 100,
+  "rising_significant": 92,
+  "median_slope_per_decade": 0.2639,
+  "last_observation": "2026-09-08",
+  "port_area_assignment": "not_available"
  }
 }

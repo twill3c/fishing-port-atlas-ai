@@ -110,6 +110,7 @@ export function AtlasApp() {
           {ports ? `${filtered.length.toLocaleString()} / ${ports.length.toLocaleString()} 港` : "読み込み中…"}
         </p>
         <nav className="masthead__nav">
+          <a href="/ocean/">海の温度</a>
           <a href="/data/">出典</a>
           <a href="/methodology/">方法</a>
           <a href="/about/">解説</a>

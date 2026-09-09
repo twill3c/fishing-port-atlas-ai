@@ -269,8 +269,91 @@ async function main() {
     });
     check("陽性対照: 港名の照合が誤った名前を通さない", wrongName === false);
 
+    console.log("\n[5b] 海の温度: 図の切れと絞り込み");
+    await page.goto(`${base}/ocean/`, { waitUntil: "networkidle" });
+
+    // 図の内側の切れは、ページの横溢れ検査では見えない(HC-159)。
+    //
+    // ここで `getBBox()` を使ってはならない —— あれは**要素自身の transform を含まない**
+    // 座標を返すので、回転した軸ラベル(text-anchor=middle + rotate)が
+    // 回転前の位置で負の x を持ち、切れていないのに切れたと言う(2026-09-10 に踏んだ)。
+    // 実際に描かれた位置で測るため、client rect どうしを比べる。
+    const svgFit = await page.evaluate(() => {
+      const svg = document.querySelector(".scatter svg");
+      if (!svg) return { found: false };
+      const box = svg.getBoundingClientRect();
+      const out = [];
+      for (const el of svg.querySelectorAll("text, path, circle, line")) {
+        const b = el.getBoundingClientRect();
+        if (b.width === 0 && b.height === 0) continue;
+        if (
+          b.left < box.left - 0.5 ||
+          b.top < box.top - 0.5 ||
+          b.right > box.right + 0.5 ||
+          b.bottom > box.bottom + 0.5
+        ) {
+          out.push(`${el.tagName}:${(el.textContent || "").slice(0, 12)}`);
+        }
+      }
+      return { found: true, overflow: out, elements: svg.querySelectorAll("*").length };
+    });
+    check("散布図がある", svgFit.found === true);
+    if (svgFit.found) {
+      check(
+        "散布図の要素が viewBox に収まっている",
+        svgFit.overflow.length === 0,
+        svgFit.overflow.slice(0, 4).join(", "),
+      );
+      check("散布図が空でない", svgFit.elements > 50, `${svgFit.elements} 要素`);
+
+      // 陽性対照: 同じ測り方を、わざと狭めた枠に当てると溢れを検出すること。
+      // これが無いと、測り方が壊れたときも「溢れ 0」で緑になる(HC-041)。
+      const shrunk = await page.evaluate(() => {
+        const svg = document.querySelector(".scatter svg");
+        const box = svg.getBoundingClientRect();
+        const inner = {
+          left: box.left + box.width * 0.25,
+          right: box.right - box.width * 0.25,
+          top: box.top + box.height * 0.25,
+          bottom: box.bottom - box.height * 0.25,
+        };
+        let n = 0;
+        for (const el of svg.querySelectorAll("text, path, circle, line")) {
+          const b = el.getBoundingClientRect();
+          if (b.width === 0 && b.height === 0) continue;
+          if (
+            b.left < inner.left ||
+            b.top < inner.top ||
+            b.right > inner.right ||
+            b.bottom > inner.bottom
+          ) {
+            n += 1;
+          }
+        }
+        return n;
+      });
+      check("陽性対照: 狭めた枠なら溢れを検出する", shrunk > 0, `${shrunk} 件`);
+    }
+
+    const rowsBefore = await page.locator("table.ocean tbody tr").count();
+    check("海域の表に行がある", rowsBefore > 50, `${rowsBefore} 行`);
+    const countBefore = await page.getByTestId("ocean-count").innerText();
+    await page.locator(".controls .check input").uncheck();
+    await page.waitForFunction(
+      (before) =>
+        document.querySelector('[data-testid="ocean-count"]').textContent.trim() !== before,
+      countBefore.trim(),
+      { timeout: 5000 },
+    );
+    const rowsAfter = await page.locator("table.ocean tbody tr").count();
+    check(
+      "短期系列を出すと行が増える(絞り込みが効いている)",
+      rowsAfter === rowsBefore + 5,
+      `${rowsBefore} → ${rowsAfter}`,
+    );
+
     console.log("\n[6] フッタ規約と幅ごとの見え方");
-    for (const path of ["/", "/about/", "/data/", "/methodology/"]) {
+    for (const path of ["/", "/about/", "/data/", "/methodology/", "/ocean/"]) {
       await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
       const footer = await page.evaluate(() => {
         const anchors = [...document.querySelectorAll("a")];
@@ -320,7 +403,7 @@ async function main() {
     console.log("\n[7] 幅ごとの横溢れと逃げ");
     for (const width of WIDTHS) {
       await page.setViewportSize({ width, height: 900 });
-      for (const path of ["/", "/about/", "/data/"]) {
+      for (const path of ["/", "/about/", "/data/", "/ocean/"]) {
         await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
         const measured = await page.evaluate(() => {
           const menu = [...document.querySelectorAll("a")].find(
@@ -360,6 +443,8 @@ async function main() {
     await page.screenshot({ path: join(SHOTS, "atlas-map.png") });
     await page.goto(`${base}/data/`, { waitUntil: "networkidle" });
     await page.screenshot({ path: join(SHOTS, "atlas-data.png") });
+    await page.goto(`${base}/ocean/`, { waitUntil: "networkidle" });
+    await page.screenshot({ path: join(SHOTS, "atlas-ocean.png") });
     console.log(`  shots/ に保存した`);
 
     if (remote) {

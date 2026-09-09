@@ -490,6 +490,125 @@ button.chip:hover {
   overflow-x: auto;
 }
 
+.article--wide {
+  max-width: 60rem;
+}
+
+.article .lede {
+  font-size: 1.02rem;
+  color: var(--ink);
+}
+
+/* ---- 海の温度 ---- */
+
+.scatter {
+  margin: 1.4rem 0 1.6rem;
+  color: var(--ink);
+}
+
+.scatter svg {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.scatter figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin: 1.2rem 0 0.7rem;
+  font-size: 0.82rem;
+}
+
+.controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ink-muted);
+}
+
+.controls select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.18rem 0.35rem;
+}
+
+.controls .check {
+  gap: 0.3rem;
+}
+
+.controls .check input {
+  accent-color: var(--accent);
+}
+
+.controls .count {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+}
+
+table.ocean {
+  min-width: 44rem;
+}
+
+table.ocean .areaname {
+  display: block;
+}
+
+table.ocean .areano {
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+table.ocean .region {
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+table.ocean .sparkcell {
+  white-space: nowrap;
+  color: var(--accent);
+}
+
+table.ocean .sparkcell .ends {
+  display: block;
+  font-size: 0.66rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+table.ocean .slope {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+table.ocean .slope.up {
+  color: var(--warn);
+}
+
+table.ocean .slope.down {
+  color: var(--accent);
+}
+
+table.ocean .p {
+  font-size: 0.76rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
 .num {
   text-align: right;
   font-variant-numeric: tabular-nums;

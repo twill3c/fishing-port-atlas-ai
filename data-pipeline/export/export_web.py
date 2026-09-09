@@ -97,7 +97,13 @@ def build() -> dict:
             },
             "landing": {"status": "missing_source", "note": "e-Stat の認証が必要なため V1.0 では未取得"},
             "species": {"status": "missing_source", "note": "e-Stat の認証が必要なため V1.0 では未取得"},
-            "ocean": {"status": "not_available", "note": "loop_003 で気象庁 沿岸海面水温を統合予定"},
+            "ocean": {
+                "status": "not_available",
+                "note": (
+                    "気象庁は沿岸海域のポリゴンを配布しておらず、港と海域の対応を"
+                    "裏づけをもって付けられない。海域ごとの水温は「海の温度」の画面で読める"
+                ),
+            },
             "ai": {"status": "not_available", "note": "loop_004 で実装予定"},
             "sources": [
                 {"source_id": "DS-001", "role": "港名・種別・管理者・所在地", "artifact": p["source_pdf"]},
@@ -116,6 +122,15 @@ def build() -> dict:
         json.dumps(min_rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
     )
 
+    # --- 海域(DS-003)---
+    ocean_path = CANON / "ocean_areas.json"
+    ocean = json.loads(ocean_path.read_text(encoding="utf-8")) if ocean_path.exists() else []
+    if ocean:
+        (PUBLIC / "ocean").mkdir(parents=True, exist_ok=True)
+        (PUBLIC / "ocean" / "areas.json").write_text(
+            json.dumps(ocean, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+        )
+
     official = counts["overall"]["by_class"]
     stats = {
         "official": {
@@ -132,6 +147,34 @@ def build() -> dict:
             "by_prefecture": _counter([p["prefecture"] for p in ports]),
         },
     }
+    if ocean:
+        long_series = [a for a in ocean if a["trend"]["n_years"] >= 40]
+        slopes = sorted(a["trend"]["slope_per_decade"] for a in long_series)
+        stats["ocean"] = {
+            "areas": len(ocean),
+            "long_series_areas": len(long_series),
+            "short_series_areas": len(ocean) - len(long_series),
+            "rising": sum(1 for a in long_series if a["trend"]["slope_per_decade"] > 0),
+            "rising_significant": sum(
+                1
+                for a in long_series
+                if a["trend"]["slope_per_decade"] > 0 and a["trend"]["p"] < 0.05
+            ),
+            # 中央値は偶数件のとき中央 2 つの平均。lib/ocean.ts の median() と同じ定義。
+            "median_slope_per_decade": (
+                round(
+                    (slopes[len(slopes) // 2 - 1] + slopes[len(slopes) // 2]) / 2
+                    if len(slopes) % 2 == 0
+                    else slopes[len(slopes) // 2],
+                    4,
+                )
+                if slopes
+                else None
+            ),
+            "last_observation": max(a["last_observation"] for a in ocean),
+            # 港と海域の対応は付けていない(理由は /methodology/ と SPEC §7)
+            "port_area_assignment": "not_available",
+        }
     (PUBLIC / "stats.json").write_text(
         json.dumps(stats, ensure_ascii=False, indent=1), encoding="utf-8"
     )
@@ -162,6 +205,18 @@ def build() -> dict:
             "attribution": "出典: 国土交通省「国土数値情報(漁港データ)」",
         },
         {
+            "id": "DS-003",
+            "title": "日本沿岸域の海面水温情報(沿岸海域 107)",
+            "provider": "気象庁",
+            "url": "https://www.data.jma.go.jp/kaiyou/data/db/kaikyo/series/engan/engan.html",
+            "retrieved": datetime.now(timezone.utc).date().isoformat(),
+            "coverage": "1982-01-01 以降(瀬戸内海の 5 海域は 2016-01-01 以降)",
+            "processed": True,
+            "processing": "日別値を年平均へ集計し、有効日数 330 日以上の年で最小二乗回帰",
+            "license": "気象庁ホームページ利用規約(政府標準利用規約準拠)",
+            "attribution": "気象庁「日本沿岸域の海面水温」をもとに Fishing Port Atlas AI が加工",
+        },
+        {
             "id": "DS-004",
             "title": "地理院タイル(淡色地図)",
             "provider": "国土地理院",
@@ -187,6 +242,11 @@ def build() -> dict:
             "stats": {"url": "/data/stats.json"},
             "sources": {"url": "/data/sources.json"},
             "portDetail": {"urlTemplate": "/data/ports/{port_no}.json"},
+            **(
+                {"oceanAreas": {"url": "/data/ocean/areas.json", "count": len(ocean)}}
+                if ocean
+                else {}
+            ),
         },
     }
     (PUBLIC / "manifest.json").write_text(

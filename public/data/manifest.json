@@ -1,5 +1,5 @@
 {
- "build": "2026-09-08T21:01:54+00:00",
+ "build": "2026-09-09T16:17:22+00:00",
  "schemaVersion": "1.0",
  "statusVocabulary": [
   "observed",
@@ -22,6 +22,10 @@
   },
   "portDetail": {
    "urlTemplate": "/data/ports/{port_no}.json"
+  },
+  "oceanAreas": {
+   "url": "/data/ocean/areas.json",
+   "count": 107
   }
  }
 }
