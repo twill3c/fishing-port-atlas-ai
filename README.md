@@ -12,6 +12,9 @@
 - 種別で絞る(特定第3種の 13 港だけ、離島の第4種だけ、など)
 - 港をクリックして基本情報と**出典**を読む
 - 座標が無い港も一覧から辿れる(0,0 に置いたりしない)
+- 沿岸海域 107 の海面水温の長期変化を読む(`/ocean/`)
+- 「公式の種別は、施設の規模で読めるのか」を測った AI の結果を読む(`/ai/`)。
+  港ごとの詳細の AI タブにも、その港を学習に使っていないモデルの答えを出す
 
 ## スクリーンショット
 
@@ -23,7 +26,11 @@
 |---|---|---|---|
 | DS-001 | 漁港一覧(総括表・都道府県別集計・都道府県別明細 40 県) | 水産庁 | 令和8年4月1日現在 |
 | DS-002 | 国土数値情報 漁港データ C09-06(点 2,931 / 区域線 3,292) | 国土交通省 | 平成18年度 |
+| DS-003 | 日本沿岸域の海面水温情報(沿岸海域 107) | 気象庁 | 1982 年以降(瀬戸内海の 5 海域は 2016 年以降) |
 | DS-004 | 地理院タイル(淡色・標準) | 国土地理院 | 背景地図 |
+
+AI の特徴には DS-002 の**外郭施設延長・係留施設延長**(平成18年度)を使う。
+港別の水揚げは、水産庁「漁港港勢」が漁港種類別の全国集計しか公開していないので使っていない。
 
 出典: 水産庁「漁港一覧」／ 国土交通省「国土数値情報(漁港データ)」／ 地理院タイル
 
@@ -55,6 +62,10 @@ python data-pipeline/download/fetch_jfa_ports.py
 python data-pipeline/normalize/parse_jfa_ports.py
 python data-pipeline/normalize/parse_jfa_summary.py
 python data-pipeline/integrate/build_port_master.py
+python data-pipeline/download/fetch_jma_sst.py      # 気象庁 沿岸海域 107(TXT 214 本)
+python data-pipeline/normalize/parse_jma_sst.py
+python data-pipeline/integrate/build_ocean.py
+python data-pipeline/ml/train_class.py              # AI(乱数替えの頑健性込みで数分かかる)
 python data-pipeline/export/export_web.py
 
 # 検査
@@ -85,7 +96,14 @@ npm run verify:browser    # 実ブラウザ検品(要 npx playwright install chr
 照合の途中で、実装仕様書に無い事実がひとつ出た ——
 **都道府県別表の「第3種」は特定第3種を含む 114 である**。
 
-方法と、測って分かったことは `/methodology/` と `SPEC.md` に書いてある。
+海面水温は、気象庁の説明ページが「平年値が無い」と名指しした 5 海域と、
+データファイルから独立に求めた「平年値を持たない 5 海域」が一致することを確かめている。
+傾きは Python と TypeScript で別々に計算し、中間量まで一致させている。
+
+AI は、合格ラインと予想を**実測の前に** `SPEC.md` へ書き、測った後に動かしていない。
+報告に書かれた判定は、テストが報告の数から再計算して確かめる。
+
+方法と、測って分かったことは `/methodology/`・`/ai/` と `SPEC.md` に書いてある。
 
 ## ライセンス
 

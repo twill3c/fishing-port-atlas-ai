@@ -99,6 +99,36 @@ def normalize_text(s: str) -> str:
     return re.sub(r"\s+", "", s)
 
 
+MARK_COLUMNS = ("coast_conservation", "port_regulation_law", "visitor_berth")
+WHITE_CIRCLE = "○"  # ○
+BULLSEYE = "◎"  # ◎
+_MARK_FOLD = {
+    "〇": WHITE_CIRCLE,  # 漢数字のゼロ(字形が ○ と同じ)
+    WHITE_CIRCLE: WHITE_CIRCLE,
+    BULLSEYE: BULLSEYE,
+}
+
+
+def fold_mark(value: str) -> str:
+    """記号欄の同形異字を畳む(SPEC G-18)。
+
+    実測(2026-09-14): 記号欄に現れた字は U+25CB / U+25CE / U+3007 の三種だけで、
+    U+3007(漢数字のゼロ)は水産庁 PDF 側の揺れだった(和歌山・塩屋 / 山口・野波瀬 /
+    長崎・中野の海岸保全区域)。NFKC はこれを畳まない。
+
+    - ◎ は ○ と別の意味なので畳まない
+    - 未知の字は黙って通さず例外にする(HC-075)
+    - **記号欄以外には使わない** —— 〇 は地名に正当に現れうる
+    """
+    if value == "":
+        return ""
+    try:
+        return _MARK_FOLD[value]
+    except KeyError:
+        codes = [f"U+{ord(ch):04X}" for ch in value]
+        raise ValueError(f"記号欄に想定外の値 {value!r} {codes}") from None
+
+
 def _column_edges(page: pdfplumber.page.Page) -> list[float]:
     edges = sorted(
         (r["x0"] + r["x1"]) / 2
@@ -227,6 +257,9 @@ def parse_page(page: pdfplumber.page.Page, prefecture: str, pdf_name: str) -> li
             raise ParseError(
                 f"バンド {idx} の漁港番号が不正 {port_no!r}: {pdf_name} p.{page.page_number}"
             )
+        # 記号欄の同形異字を畳む(G-18)。港名など他の欄には当てない
+        for mark_column in MARK_COLUMNS:
+            cells[mark_column] = fold_mark(cells.get(mark_column, ""))
         rows.append(
             PortRow(
                 **{c: cells.get(c, "") for c in COLUMNS},

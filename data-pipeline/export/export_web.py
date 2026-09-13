@@ -35,6 +35,49 @@ STATUS_VOCAB = (
 )
 
 
+def _load_ai() -> tuple[dict | None, dict]:
+    """AI(種別と規模)の報告と、港ごとの分割外予測。未生成なら (None, {})。"""
+    report_path = CANON / "ai_class_report.json"
+    oof_path = CANON / "ai_class_oof.json"
+    if not report_path.exists() or not oof_path.exists():
+        return None, {}
+    return (
+        json.loads(report_path.read_text(encoding="utf-8")),
+        json.loads(oof_path.read_text(encoding="utf-8")),
+    )
+
+
+def _ai_section(report: dict | None, oof: dict, port_no: str) -> dict:
+    """港の詳細に載せる AI 欄(SPEC G-10: モデル・学習の手順・ベースライン・年次を併記)。
+
+    予測は**分割外予測**(その港を学習に使っていないモデルの答え)の 5 反復多数決である。
+    学習に使った港をそのモデルで当てた値を出すと、当たって見えるだけになる。
+    """
+    if report is None:
+        return {"status": "not_available", "note": "AI の報告が未生成"}
+    pred = oof.get(port_no)
+    if pred is None:
+        return {
+            "status": "not_available",
+            "note": "施設延長(国土数値情報 C09)が無い港は学習に入れていない(0 で埋めない)",
+        }
+    shipped = next(m for m in report["models"] if m["name"] == report["shipped_model"])
+    majority = next(m for m in report["models"] if m["name"] == "majority")
+    return {
+        "status": "estimated",
+        "question": report["question"],
+        "official_class": pred["official"],
+        "predicted_class": pred["predicted"],
+        "vote_share": pred["vote_share"],
+        "agrees": pred["agrees"],
+        "model": report["shipped_model"],
+        "model_macro_f1": round(shipped["macro_f1_mean"], 4),
+        "baseline_macro_f1": round(majority["macro_f1_mean"], 4),
+        "cv": f"層化 {report['cv']['folds']} 分割 × {report['cv']['repeats']} 反復の分割外予測",
+        "data_vintage": report["data_vintage"],
+    }
+
+
 def _mark(value, status_when_missing: str = "not_available") -> dict:
     """値と、その値が無い理由をひと組で返す(SPEC G-08)。"""
     if value in (None, ""):
@@ -50,6 +93,8 @@ def build() -> dict:
     if PUBLIC.exists():
         shutil.rmtree(PUBLIC)
     (PUBLIC / "ports").mkdir(parents=True, exist_ok=True)
+
+    ai_report, ai_oof = _load_ai()
 
     min_rows = []
     for p in ports:
@@ -104,7 +149,7 @@ def build() -> dict:
                     "裏づけをもって付けられない。海域ごとの水温は「海の温度」の画面で読める"
                 ),
             },
-            "ai": {"status": "not_available", "note": "loop_004 で実装予定"},
+            "ai": _ai_section(ai_report, ai_oof, p["port_no"]),
             "sources": [
                 {"source_id": "DS-001", "role": "港名・種別・管理者・所在地", "artifact": p["source_pdf"]},
                 *(
@@ -121,6 +166,13 @@ def build() -> dict:
     (PUBLIC / "ports.min.json").write_text(
         json.dumps(min_rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
     )
+
+    # --- AI: 公式の種別は、施設の規模で読めるのか(SPEC §7.3)---
+    if ai_report is not None:
+        (PUBLIC / "ai").mkdir(parents=True, exist_ok=True)
+        (PUBLIC / "ai" / "class-report.json").write_text(
+            json.dumps(ai_report, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+        )
 
     # --- 海域(DS-003)---
     ocean_path = CANON / "ocean_areas.json"
@@ -245,6 +297,16 @@ def build() -> dict:
             **(
                 {"oceanAreas": {"url": "/data/ocean/areas.json", "count": len(ocean)}}
                 if ocean
+                else {}
+            ),
+            **(
+                {
+                    "aiClass": {
+                        "url": "/data/ai/class-report.json",
+                        "shippedModel": ai_report["shipped_model"],
+                    }
+                }
+                if ai_report is not None
                 else {}
             ),
         },

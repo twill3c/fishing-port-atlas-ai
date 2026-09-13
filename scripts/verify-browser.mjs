@@ -227,6 +227,32 @@ async function main() {
       );
       const url = page.url();
       check("URL に選択した港が反映される", url.includes(`port=${target.portNo}`), url);
+
+      // AI タブ: 推定値か「無い理由」のどちらかが必ず出る(空のタブにしない)
+      await page.getByTestId("drawer-tab-AI").click();
+      const aiShown = await page
+        .waitForFunction(
+          () =>
+            document.querySelector(
+              '[data-testid="drawer-ai"], [data-testid="drawer-ai-unavailable"]',
+            ),
+          null,
+          { timeout: 5000 },
+        )
+        .then(() => true)
+        .catch(() => false);
+      check("AI タブに推定値か、無い理由が出る", aiShown);
+      const predicted = await page
+        .getByTestId("drawer-ai-predicted")
+        .innerText({ timeout: 1000 })
+        .catch(() => "");
+      if (predicted) {
+        check(
+          "AI の推定種別が 5 種別のどれかである",
+          /第1種|第2種|第3種|特定第3種|第4種/.test(predicted),
+          predicted,
+        );
+      }
     }
 
     console.log("\n[4] 検索と絞り込み");
@@ -255,6 +281,30 @@ async function main() {
     const specialCount = await page.getByTestId("result-count").innerText();
     check("特定第3種で絞ると 13 港になる", specialCount.trim().startsWith("13"), specialCount);
     await page.getByTestId("class-special_3").uncheck();
+
+    console.log("\n[4b] 施設延長の無い港の AI タブ(陽性対照)");
+    // 座標の無い港は C09 の点の行を持たない = 施設延長も無い = 学習表に入っていない
+    const noInfra = await page.evaluate(async () => {
+      const rows = await (await fetch("/data/ports.min.json")).json();
+      const row = rows.find((r) => r.g === null);
+      return row ? row.id : null;
+    });
+    if (check("施設延長の無い港が在る(対照が成り立つ)", noInfra !== null)) {
+      await page.goto(`${base}/?port=${noInfra}`, { waitUntil: "networkidle" });
+      await page.getByTestId("port-drawer").waitFor({ state: "visible", timeout: 10_000 });
+      await page.getByTestId("drawer-tab-AI").click();
+      const note = await page
+        .getByTestId("drawer-ai-unavailable")
+        .innerText({ timeout: 5000 })
+        .catch(() => "");
+      check(
+        "陽性対照: 施設延長の無い港は推定値を出さず理由を出す",
+        note.includes("0 で埋めない"),
+        note.slice(0, 60),
+      );
+      const leaked = await page.getByTestId("drawer-ai-predicted").count();
+      check("陽性対照: 施設延長の無い港に推定種別が出ていない", leaked === 0, `${leaked} 件`);
+    }
 
     console.log("\n[5] 検品器の陽性対照");
     // 「異常なし」を返したとき、この検品器が実際に異常を捕まえられるか確かめる。
@@ -352,8 +402,31 @@ async function main() {
       `${rowsBefore} → ${rowsAfter}`,
     );
 
+    console.log("\n[5c] AI のページ");
+    await page.goto(`${base}/ai/`, { waitUntil: "networkidle" });
+    const aiPage = await page.evaluate(() => {
+      const q = (id) => document.querySelector(`[data-testid="${id}"]`);
+      return {
+        answer: q("ai-answer")?.textContent?.trim() ?? "",
+        models: q("ai-models")?.querySelectorAll("tbody tr").length ?? 0,
+        expectations: q("ai-expectations")?.querySelectorAll("tbody tr").length ?? 0,
+        confusionRows: q("ai-confusion")?.querySelectorAll("tbody tr").length ?? 0,
+        confusionCells: q("ai-confusion")?.querySelectorAll("tbody td").length ?? 0,
+        findings: q("ai-findings")?.querySelectorAll("li").length ?? 0,
+      };
+    });
+    check("AI ページに答えの文がある", aiPage.answer.length > 20, aiPage.answer.slice(0, 40));
+    check("比べたモデルが 6 行ある", aiPage.models === 6, `${aiPage.models} 行`);
+    check("予想 E1〜E5 が 5 行ある", aiPage.expectations === 5, `${aiPage.expectations} 行`);
+    check(
+      "取り違え表が 5×5 である",
+      aiPage.confusionRows === 5 && aiPage.confusionCells === 25,
+      `${aiPage.confusionRows} 行 / ${aiPage.confusionCells} マス`,
+    );
+    check("測って分かったことが 3 項目ある", aiPage.findings === 3, `${aiPage.findings} 項目`);
+
     console.log("\n[6] フッタ規約と幅ごとの見え方");
-    for (const path of ["/", "/about/", "/data/", "/methodology/", "/ocean/"]) {
+    for (const path of ["/", "/about/", "/data/", "/methodology/", "/ocean/", "/ai/"]) {
       await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
       const footer = await page.evaluate(() => {
         const anchors = [...document.querySelectorAll("a")];
@@ -420,7 +493,7 @@ async function main() {
     console.log("\n[7] 幅ごとの横溢れと逃げ");
     for (const width of WIDTHS) {
       await page.setViewportSize({ width, height: 900 });
-      for (const path of ["/", "/about/", "/data/", "/ocean/"]) {
+      for (const path of ["/", "/about/", "/data/", "/ocean/", "/ai/"]) {
         await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
         const measured = await page.evaluate(() => {
           const menu = [...document.querySelectorAll("a")].find(

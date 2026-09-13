@@ -14,6 +14,32 @@ interface Marked {
   status: string;
 }
 
+/** 分割外予測(その港を学習に使っていないモデルの答え)。export_web.py の _ai_section と対応 */
+interface AiEstimated {
+  status: "estimated";
+  question: string;
+  official_class: PortClass;
+  predicted_class: PortClass;
+  vote_share: number;
+  agrees: boolean;
+  model: string;
+  model_macro_f1: number;
+  baseline_macro_f1: number;
+  cv: string;
+  data_vintage: { master: string; infrastructure: string };
+}
+
+interface AiUnavailable {
+  status: string;
+  note: string;
+}
+
+type AiSection = AiEstimated | AiUnavailable;
+
+function isEstimated(ai: AiSection): ai is AiEstimated {
+  return ai.status === "estimated";
+}
+
 interface PortDetail {
   port: {
     port_no: string;
@@ -31,7 +57,7 @@ interface PortDetail {
   landing: { status: string; note: string };
   species: { status: string; note: string };
   ocean: { status: string; note: string };
-  ai: { status: string; note: string };
+  ai: AiSection;
   sources: { source_id: string; role: string; artifact?: string }[];
 }
 
@@ -68,6 +94,15 @@ const STATUS_LABEL: Record<string, string> = {
   missing_source: "未取得",
   suppressed: "非公表",
   estimated: "推定値",
+};
+
+/** 学習器の名前を、読み手に通じる言葉へ(train_class.py のモデル名と対応) */
+const MODEL_LABEL: Record<string, string> = {
+  majority: "多数派(常に第1種と答える)",
+  logistic_scale: "ロジスティック回帰(規模だけ)",
+  logistic_full: "ロジスティック回帰(規模+属性)",
+  hist_gradient_boosting_full: "勾配ブースティング(規模+属性)",
+  mlp_full: "ニューラルネット MLP(規模+属性)",
 };
 
 function MarkedValue({ mark }: { mark: Marked }) {
@@ -136,6 +171,7 @@ export function PortDrawer({
                 role="tab"
                 aria-selected={tab === name}
                 onClick={() => setTab(name)}
+                data-testid={`drawer-tab-${name}`}
               >
                 {name}
               </button>
@@ -203,7 +239,16 @@ export function PortDrawer({
           ) : null}
 
           {tab === "海洋" ? <p className="status-note">{detail.ocean.note}</p> : null}
-          {tab === "AI" ? <p className="status-note">{detail.ai.note}</p> : null}
+
+          {tab === "AI" ? (
+            isEstimated(detail.ai) ? (
+              <AiTab ai={detail.ai} />
+            ) : (
+              <p className="status-note" data-testid="drawer-ai-unavailable">
+                {detail.ai.note}
+              </p>
+            )
+          ) : null}
 
           {tab === "出典" ? (
             <ul>
@@ -221,6 +266,67 @@ export function PortDrawer({
         </>
       ) : null}
     </aside>
+  );
+}
+
+/**
+ * AI タブ。実装仕様書 §64(断定しない)・§85(モデル・期間・精度・注意事項を併記)に従う。
+ * 公式の値(OFFICIAL)と推定値(AI)を同じ行に並べず、印で区別する(§91)。
+ */
+function AiTab({ ai }: { ai: AiEstimated }) {
+  const votes = Math.round(ai.vote_share * 5);
+  return (
+    <div data-testid="drawer-ai">
+      <p className="hint" style={{ marginTop: 0 }}>
+        問い: {ai.question}
+      </p>
+      <dl className="kv">
+        <dt>公式の種別</dt>
+        <dd>
+          {PORT_CLASS_LABEL[ai.official_class]}{" "}
+          <span className="badge badge--official">OFFICIAL</span>
+        </dd>
+        <dt>規模・属性から見た種別</dt>
+        <dd data-testid="drawer-ai-predicted">
+          {PORT_CLASS_LABEL[ai.predicted_class]} <span className="badge">AI</span>
+          <br />
+          <span className="layer-row__note">
+            交差検証 5 回のうち {votes} 回がこの答え
+          </span>
+        </dd>
+        <dt>公式との関係</dt>
+        <dd>
+          {ai.agrees
+            ? "公式の種別と一致する"
+            : `施設の規模と属性だけを見ると、${PORT_CLASS_LABEL[ai.predicted_class]}の港に近い`}
+        </dd>
+        <dt>モデル</dt>
+        <dd>
+          {MODEL_LABEL[ai.model] ?? ai.model}
+          <br />
+          <span className="layer-row__note">
+            macro-F1 {ai.model_macro_f1.toFixed(3)}(多数派ベースライン{" "}
+            {ai.baseline_macro_f1.toFixed(3)})/ {ai.cv}
+          </span>
+        </dd>
+        <dt>データの年次</dt>
+        <dd>
+          <span className="layer-row__note">
+            種別: {ai.data_vintage.master}
+            <br />
+            施設延長: {ai.data_vintage.infrastructure}
+          </span>
+        </dd>
+      </dl>
+      <p className="status-note">
+        種別は法令上「利用範囲」で決まり、施設の大きさでは決まらない。
+        公式と違う答えが出ても、指定が誤っているという意味ではない。
+        この推定は統計モデルの答えであり、行政上の区分ではない。
+      </p>
+      <p className="hint">
+        <a href="/ai/">この AI が何を測り、何が言えなかったか</a>
+      </p>
+    </div>
   );
 }
 

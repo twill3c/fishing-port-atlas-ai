@@ -111,6 +111,7 @@ export function AtlasApp() {
         </p>
         <nav className="masthead__nav">
           <a href="/ocean/">海の温度</a>
+          <a href="/ai/">AI</a>
           <a href="/data/">出典</a>
           <a href="/methodology/">方法</a>
           <a href="/about/">解説</a>

@@ -1,5 +1,5 @@
 {
- "build": "2026-09-09T16:17:22+00:00",
+ "build": "2026-09-13T20:40:38+00:00",
  "schemaVersion": "1.0",
  "statusVocabulary": [
   "observed",
@@ -26,6 +26,10 @@
   "oceanAreas": {
    "url": "/data/ocean/areas.json",
    "count": 107
+  },
+  "aiClass": {
+   "url": "/data/ai/class-report.json",
+   "shippedModel": "mlp_full"
   }
  }
 }
