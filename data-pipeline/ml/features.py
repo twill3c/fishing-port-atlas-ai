@@ -11,9 +11,18 @@
 - **座標・都道府県・市町村**: 地域を覚えて当ててしまう
 - **漁港番号・港名**: 識別子
 
-## 欠損の扱い(G-08)
+## 施設延長が何の数か(G-24、loop_006)
+
+C09 のメタデータは、外郭施設延長・係留施設延長を「普通交付税算定基準に基づく数値であり、
+実際の施設延長数値とは異なる」と書いている。**施設の規模そのものではなく、交付税の算定に使う数**。
+規模と相関はするはずだが、同じものとして呼ばない。
+
+## 欠損の扱い(G-08 / G-23)
 
 - 施設延長(C09)が無い港は**学習表に入れない**。0 で埋めない
+- **C09 の施設延長 0 は欠測の符号**(実測 2026-09-15: 八戸・釜石・舞鶴・油津が係留も外郭も 0、
+  0 は青森 46.2%・岩手 37.2% に固まり、正の値は最小 3 m の整数で 0 と連続しない)。
+  係留・外郭のどちらかが 0 の港は学習表に入れない。0 と 3 m のあいだの値が現れたら仮定が崩れたので止める
 - 記号欄の空欄は「指定なし」であり欠測ではないので 0 にする(水産庁の一覧の書式)
 - 仮定が崩れたら黙って通さず例外にする(HC-075): 未知の記号・未知の離島半島区分・
   読めない指定年月日
@@ -34,6 +43,9 @@ CANON = ROOT / "data" / "canonical"
 C09_POINT = ROOT / "data" / "raw" / "ksj" / "C09-06" / "C09-06_FishingPort"
 
 CLASSES = ("1", "2", "3", "special_3", "4")
+
+# C09 の施設延長の正の値の最小(実測 2026-09-15、scripts/probe_c09_zeros.py)。0 はこれと連続しない
+MIN_POSITIVE_LENGTH_M = 3.0
 
 WHITE_CIRCLE = "○"  # ○
 BULLSEYE = "◎"  # ◎
@@ -137,6 +149,10 @@ def _c09_attributes(ports: list[dict]) -> dict[str, tuple[float, float]]:
             continue
         if hit["moor"] < 0 or hit["outer"] < 0:
             raise FeatureError(f"{port['port_no']}: 施設延長が負 {hit}")
+        if hit["moor"] == 0 or hit["outer"] == 0:
+            continue  # 0 は欠測の符号(G-23)。値として入れない
+        if hit["moor"] < MIN_POSITIVE_LENGTH_M or hit["outer"] < MIN_POSITIVE_LENGTH_M:
+            raise FeatureError(f"{port['port_no']}: 0 と最小の正の値のあいだの値 {hit}(欠測の符号の仮定が崩れた)")
         out[port["port_no"]] = (hit["moor"], hit["outer"])
     return out
 

@@ -13,9 +13,9 @@
  },
  "1110080": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "1110090": {
   "official": "1",
@@ -38,7 +38,7 @@
  "1110120": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1110130": {
@@ -50,14 +50,14 @@
  "1110135": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1110140": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "1110150": {
   "official": "1",
@@ -92,13 +92,13 @@
  "1110190": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1110200": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "1110210": {
@@ -152,13 +152,13 @@
  "1111070": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1111075": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1111090": {
@@ -188,13 +188,13 @@
  "1111515": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1111520": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1111530": {
@@ -223,8 +223,8 @@
  },
  "1112040": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 0.8,
   "agrees": false
  },
  "1112090": {
@@ -242,7 +242,7 @@
  "1112110": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1112120": {
@@ -260,7 +260,7 @@
  "1112170": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1112190": {
@@ -331,9 +331,9 @@
  },
  "1112320": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "1113040": {
   "official": "1",
@@ -343,9 +343,9 @@
  },
  "1113060": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": false
+  "agrees": true
  },
  "1113070": {
   "official": "1",
@@ -365,12 +365,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1113100": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1113110": {
   "official": "1",
   "predicted": "1",
@@ -385,9 +379,9 @@
  },
  "1113130": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1113150": {
   "official": "1",
@@ -403,15 +397,15 @@
  },
  "1113200": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "1113230": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1114010": {
   "official": "1",
@@ -421,9 +415,9 @@
  },
  "1114020": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1114030": {
   "official": "1",
@@ -434,7 +428,7 @@
  "1114040": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1114050": {
@@ -464,20 +458,20 @@
  "1114100": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1114105": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1114110": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.4,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1114160": {
   "official": "1",
@@ -489,12 +483,6 @@
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
-  "agrees": true
- },
- "1114175": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
   "agrees": true
  },
  "1114180": {
@@ -518,7 +506,7 @@
  "1114210": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "1114215": {
@@ -560,14 +548,14 @@
  "1114270": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1114280": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1114293": {
   "official": "1",
@@ -589,15 +577,15 @@
  },
  "1114300": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
- },
- "1114305": {
-  "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
+ },
+ "1114305": {
+  "official": "1",
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1114311": {
   "official": "1",
@@ -620,14 +608,14 @@
  "1114315": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1114320": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1114325": {
   "official": "1",
@@ -637,9 +625,9 @@
  },
  "1115010": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1115015": {
   "official": "1",
@@ -655,9 +643,9 @@
  },
  "1115040": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.4,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "1115045": {
   "official": "1",
@@ -679,9 +667,9 @@
  },
  "1115065": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "1116010": {
   "official": "1",
@@ -734,7 +722,7 @@
  "1116090": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1116100": {
@@ -794,7 +782,7 @@
  "1116510": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1116530": {
@@ -812,7 +800,7 @@
  "1117010": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1117030": {
@@ -836,7 +824,7 @@
  "1117070": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1117075": {
@@ -866,14 +854,14 @@
  "1118042": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1118045": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "1118047": {
   "official": "1",
@@ -884,7 +872,7 @@
  "1118050": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "1118060": {
@@ -895,9 +883,9 @@
  },
  "1118080": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "1118085": {
   "official": "1",
@@ -932,13 +920,13 @@
  "1119020": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1119025": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1119030": {
@@ -955,26 +943,26 @@
  },
  "1119050": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "1119060": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "1119065": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1119070": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1119090": {
@@ -1028,7 +1016,7 @@
  "1120040": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1121010": {
@@ -1039,21 +1027,21 @@
  },
  "1121020": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1122020": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1122030": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1123015": {
   "official": "2",
@@ -1064,25 +1052,25 @@
  "1123020": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1124020": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1124030": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1124045": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1124050": {
@@ -1105,26 +1093,26 @@
  },
  "1124073": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": false
- },
- "1124076": {
-  "official": "2",
   "predicted": "2",
   "vote_share": 1.0,
   "agrees": true
  },
+ "1124076": {
+  "official": "2",
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": true
+ },
  "1124080": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.4,
+  "agrees": true
  },
  "1125010": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1125015": {
@@ -1153,14 +1141,14 @@
  },
  "1128010": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.4,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "1128015": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1128020": {
@@ -1172,7 +1160,7 @@
  "1128030": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1129010": {
@@ -1202,13 +1190,13 @@
  "1129040": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1131010": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1132010": {
@@ -1231,15 +1219,15 @@
  },
  "1133010": {
   "official": "3",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1133013": {
   "official": "3",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1133020": {
   "official": "3",
@@ -1250,26 +1238,26 @@
  "1134010": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1134013": {
   "official": "3",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "1134020": {
   "official": "3",
-  "predicted": "3",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1134040": {
   "official": "3",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1134050": {
   "official": "3",
@@ -1292,7 +1280,7 @@
  "1136010": {
   "official": "3",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "1136020": {
@@ -1304,7 +1292,7 @@
  "1137010": {
   "official": "3",
   "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "1138010": {
@@ -1316,7 +1304,7 @@
  "1140010": {
   "official": "4",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1140015": {
@@ -1339,7 +1327,7 @@
  },
  "1141005": {
   "official": "4",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 0.6,
   "agrees": false
  },
@@ -1358,7 +1346,7 @@
  "1143010": {
   "official": "4",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1143020": {
@@ -1366,12 +1354,6 @@
   "predicted": "4",
   "vote_share": 1.0,
   "agrees": true
- },
- "1144005": {
-  "official": "4",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": false
  },
  "1144010": {
   "official": "4",
@@ -1382,7 +1364,7 @@
  "1144020": {
   "official": "4",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1146510": {
@@ -1394,7 +1376,7 @@
  "1148010": {
   "official": "4",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1148030": {
@@ -1405,14 +1387,14 @@
  },
  "1149010": {
   "official": "4",
-  "predicted": "3",
-  "vote_share": 0.4,
+  "predicted": "2",
+  "vote_share": 0.8,
   "agrees": false
  },
  "1149020": {
   "official": "4",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1149025": {
@@ -1430,7 +1412,7 @@
  "3110003": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3110005": {
@@ -1447,14 +1429,14 @@
  },
  "3110020": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "3110030": {
   "official": "1",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3110040": {
@@ -1484,7 +1466,7 @@
  "3110080": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3120030": {
@@ -1499,79 +1481,7 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "1210010": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210015": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210020": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210030": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210040": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210050": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210060": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210070": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210080": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210085": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210095": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1210100": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210120": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -1579,14 +1489,14 @@
  },
  "1210130": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 1.0,
+  "predicted": "2",
+  "vote_share": 0.8,
   "agrees": false
  },
  "1210140": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1210160": {
@@ -1598,42 +1508,6 @@
  "1210200": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
- "1210205": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
- "1210235": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210255": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210265": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210268": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210275": {
-  "official": "1",
-  "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
  },
@@ -1643,23 +1517,11 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1210290": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210295": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1210320": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "1210330": {
   "official": "1",
@@ -1679,25 +1541,7 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1210360": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1210370": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
- "1210380": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210390": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -1715,31 +1559,7 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1210420": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210430": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210460": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1210470": {
-  "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
- },
- "1210480": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -1757,67 +1577,7 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1210520": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210523": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210530": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210550": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210555": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210560": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1210570": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210580": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210630": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210640": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1210650": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -1826,37 +1586,37 @@
  "1220010": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1220015": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1220020": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1220030": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1220040": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "1220056": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1220060": {
@@ -1874,14 +1634,14 @@
  "1220080": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1220090": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "1220100": {
   "official": "2",
@@ -1916,19 +1676,19 @@
  "1220150": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1220160": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1220170": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1220180": {
@@ -1940,7 +1700,7 @@
  "1220190": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1220200": {
@@ -1958,25 +1718,19 @@
  "1220220": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1220230": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
- },
- "1230010": {
-  "official": "special_3",
-  "predicted": "2",
-  "vote_share": 0.4,
+  "predicted": "1",
+  "vote_share": 1.0,
   "agrees": false
  },
  "1230020": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1230040": {
@@ -1988,7 +1742,7 @@
  "1230050": {
   "official": "3",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1240010": {
@@ -1999,9 +1753,9 @@
  },
  "1240020": {
   "official": "4",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3210010": {
   "official": "1",
@@ -2035,20 +1789,20 @@
  },
  "3210060": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3210070": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3210080": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3210090": {
@@ -2070,12 +1824,6 @@
   "agrees": true
  },
  "3210120": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "3210130": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -2144,7 +1892,7 @@
  "3210230": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3210240": {
@@ -2222,7 +1970,7 @@
  "3220020": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "3220025": {
@@ -2240,14 +1988,14 @@
  "3220040": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3220050": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "3220070": {
   "official": "2",
@@ -2264,7 +2012,7 @@
  "3220100": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3220105": {
@@ -2276,7 +2024,7 @@
  "3220110": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3220120": {
@@ -2300,13 +2048,13 @@
  "3220140": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3230015": {
   "official": "3",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "3230020": {
@@ -2321,192 +2069,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1310020": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310040": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310050": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310060": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310070": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310080": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310090": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310100": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310160": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
- },
- "1310170": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310190": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310210": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310220": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310240": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310250": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310290": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310305": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310310": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310330": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310335": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310340": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310350": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310370": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310380": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310390": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310400": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310410": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310420": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310430": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310440": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310450": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1310460": {
   "official": "1",
   "predicted": "1",
@@ -2514,12 +2076,6 @@
   "agrees": true
  },
  "1310480": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1310490": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -2567,21 +2123,15 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1310620": {
-  "official": "1",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": false
- },
  "1310630": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 1.0,
+  "predicted": "2",
+  "vote_share": 0.8,
   "agrees": false
  },
  "1310640": {
   "official": "1",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 1.0,
   "agrees": false
  },
@@ -2665,20 +2215,20 @@
  },
  "1310800": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "1310805": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1310810": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
+  "predicted": "3",
+  "vote_share": 1.0,
   "agrees": false
  },
  "1310815": {
@@ -2694,12 +2244,6 @@
   "agrees": true
  },
  "1310840": {
-  "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
- },
- "1310850": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -2732,26 +2276,26 @@
  "1310910": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1320005": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "1320007": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "1320010": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 0.6,
-  "agrees": true
+  "agrees": false
  },
  "1320015": {
   "official": "2",
@@ -2762,20 +2306,20 @@
  "1320020": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1320030": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1320035": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1320040": {
   "official": "2",
@@ -2785,15 +2329,15 @@
  },
  "1320050": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1320060": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1320070": {
   "official": "2",
@@ -2803,9 +2347,9 @@
  },
  "1320080": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1320090": {
   "official": "2",
@@ -2822,24 +2366,24 @@
  "1320105": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1320110": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1320120": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1320130": {
   "official": "2",
-  "predicted": "4",
+  "predicted": "3",
   "vote_share": 0.6,
   "agrees": false
  },
@@ -2851,27 +2395,27 @@
  },
  "1320150": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1320155": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1320160": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1320170": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1330010": {
   "official": "3",
@@ -2885,17 +2429,11 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1330030": {
-  "official": "3",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": false
- },
  "1330040": {
   "official": "3",
-  "predicted": "3",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "special_3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1340010": {
   "official": "4",
@@ -2905,21 +2443,21 @@
  },
  "3310020": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 0.8,
   "agrees": false
  },
  "3310030": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3310040": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3310050": {
   "official": "1",
@@ -2963,12 +2501,6 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "3310130": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "3310140": {
   "official": "1",
   "predicted": "1",
@@ -2978,7 +2510,7 @@
  "3310150": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.4,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3310160": {
@@ -2990,13 +2522,13 @@
  "3310170": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3310180": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.4,
+  "predicted": "2",
+  "vote_share": 0.8,
   "agrees": false
  },
  "3310190": {
@@ -3008,7 +2540,7 @@
  "3310200": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3310210": {
@@ -3026,14 +2558,8 @@
  "3310230": {
   "official": "1",
   "predicted": "3",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "3310240": {
-  "official": "1",
-  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "3310270": {
   "official": "1",
@@ -3044,7 +2570,7 @@
  "3310290": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3310300": {
@@ -3055,9 +2581,9 @@
  },
  "3310310": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "3310320": {
   "official": "1",
@@ -3115,20 +2641,20 @@
  },
  "3310405": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "3310420": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 0.6,
   "agrees": false
  },
  "3310430": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3310440": {
@@ -3161,12 +2687,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "3310490": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "3310500": {
   "official": "1",
   "predicted": "1",
@@ -3176,16 +2696,10 @@
  "3310510": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
- "3310520": {
-  "official": "1",
-  "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
  },
- "3310530": {
+ "3310520": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -3197,16 +2711,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "3310550": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "3310560": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
+  "predicted": "2",
+  "vote_share": 0.6,
   "agrees": false
  },
  "3310570": {
@@ -3266,7 +2774,7 @@
  "3310665": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3310670": {
@@ -3284,7 +2792,7 @@
  "3310690": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3310700": {
@@ -3314,7 +2822,7 @@
  "3310750": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3310760": {
@@ -3356,20 +2864,20 @@
  "3310840": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3310850": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3320005": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  },
  "3320010": {
   "official": "2",
@@ -3380,62 +2888,62 @@
  "3320020": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3320025": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3320030": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3320040": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3320050": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3320070": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "3320075": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  },
  "3320080": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3320090": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3330010": {
   "official": "3",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3330020": {
   "official": "3",
@@ -3451,20 +2959,20 @@
  },
  "3330040": {
   "official": "3",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.8,
   "agrees": false
  },
  "3340010": {
   "official": "4",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3340020": {
   "official": "4",
-  "predicted": "1",
-  "vote_share": 1.0,
+  "predicted": "2",
+  "vote_share": 0.6,
   "agrees": false
  },
  "1410010": {
@@ -3545,17 +3053,11 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1410140": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1410160": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1410180": {
   "official": "1",
@@ -3566,7 +3068,7 @@
  "1410200": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1410250": {
@@ -3689,12 +3191,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1410500": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1410510": {
   "official": "1",
   "predicted": "1",
@@ -3763,9 +3259,9 @@
  },
  "1410630": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  },
  "1410635": {
   "official": "1",
@@ -3776,14 +3272,14 @@
  "1410640": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1410650": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "1410660": {
   "official": "1",
@@ -3829,9 +3325,9 @@
  },
  "1410730": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1410740": {
   "official": "1",
@@ -3902,7 +3398,7 @@
  "1410850": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1410860": {
@@ -3913,9 +3409,9 @@
  },
  "1410870": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "1410890": {
   "official": "1",
@@ -3937,9 +3433,9 @@
  },
  "1410920": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "1410930": {
   "official": "1",
@@ -3985,8 +3481,8 @@
  },
  "1411000": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 0.4,
   "agrees": false
  },
  "1411030": {
@@ -4034,7 +3530,7 @@
  "1411100": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1411120": {
@@ -4043,16 +3539,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1411130": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1411140": {
   "official": "1",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "1411150": {
@@ -4097,24 +3587,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1411230": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1411240": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1411250": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1411260": {
   "official": "1",
   "predicted": "1",
@@ -4123,23 +3595,11 @@
  },
  "1411270": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1411290": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1411300": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1411310": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -4148,7 +3608,7 @@
  "1411320": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1420005": {
@@ -4172,7 +3632,7 @@
  "1420020": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1420030": {
@@ -4184,7 +3644,7 @@
  "1420035": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1420040": {
@@ -4196,7 +3656,7 @@
  "1420043": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1420050": {
@@ -4207,9 +3667,9 @@
  },
  "1420055": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1420060": {
   "official": "2",
@@ -4220,19 +3680,13 @@
  "1420068": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
- },
- "1420070": {
-  "official": "2",
-  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "1420075": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1420077": {
@@ -4250,7 +3704,7 @@
  "1420090": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1420093": {
@@ -4259,17 +3713,11 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1420095": {
-  "official": "2",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": false
- },
  "1420100": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "1420110": {
   "official": "2",
@@ -4280,14 +3728,14 @@
  "1430010": {
   "official": "special_3",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1430020": {
   "official": "special_3",
-  "predicted": "3",
+  "predicted": "special_3",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "1430030": {
   "official": "3",
@@ -4304,7 +3752,7 @@
  "1430050": {
   "official": "special_3",
   "predicted": "special_3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1440010": {
@@ -4316,7 +3764,7 @@
  "3410010": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3410030": {
@@ -4338,12 +3786,6 @@
   "agrees": false
  },
  "3410060": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "3410070": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -4406,7 +3848,7 @@
  "3430110": {
   "official": "special_3",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.4,
   "agrees": false
  },
  "1510025": {
@@ -4451,12 +3893,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1510070": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
- },
  "1510075": {
   "official": "1",
   "predicted": "1",
@@ -4464,12 +3900,6 @@
   "agrees": true
  },
  "1510080": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "1510090": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -4508,13 +3938,13 @@
  "1520030": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1520040": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "1520050": {
@@ -4526,14 +3956,14 @@
  "1520060": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1530010": {
   "official": "3",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "1540010": {
   "official": "4",
@@ -4549,14 +3979,14 @@
  },
  "3510020": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3510030": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 0.4,
   "agrees": false
  },
  "3510040": {
@@ -4640,7 +4070,7 @@
  "3510205": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3510210": {
@@ -4685,19 +4115,7 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "3510280": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "3510290": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "3510300": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -4710,12 +4128,6 @@
   "agrees": true
  },
  "3510330": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "3510340": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -4772,13 +4184,13 @@
  "3510430": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3510440": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3510450": {
@@ -4789,9 +4201,9 @@
  },
  "3510460": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "3510470": {
   "official": "1",
@@ -4807,9 +4219,9 @@
  },
  "3510490": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3510500": {
   "official": "1",
@@ -4826,7 +4238,7 @@
  "3510520": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3510530": {
@@ -4838,14 +4250,14 @@
  "3510540": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": true
  },
  "3510550": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "3510560": {
   "official": "1",
@@ -4855,15 +4267,15 @@
  },
  "3520010": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "3520020": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3520030": {
   "official": "2",
@@ -4879,9 +4291,9 @@
  },
  "3520050": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "3520060": {
   "official": "2",
@@ -4891,20 +4303,20 @@
  },
  "3520070": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3520080": {
   "official": "2",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "3520100": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3520110": {
@@ -4952,14 +4364,14 @@
  "3520190": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3520200": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3520210": {
   "official": "2",
@@ -4970,7 +4382,7 @@
  "3520230": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3530010": {
@@ -4981,20 +4393,20 @@
  },
  "3530020": {
   "official": "3",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3530030": {
   "official": "3",
   "predicted": "2",
-  "vote_share": 0.4,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3530040": {
   "official": "3",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3540010": {
@@ -5060,7 +4472,7 @@
  "1610080": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1610090": {
@@ -5077,9 +4489,9 @@
  },
  "1610110": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": false
+  "agrees": true
  },
  "1610120": {
   "official": "1",
@@ -5089,9 +4501,9 @@
  },
  "1620010": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "1620020": {
   "official": "2",
@@ -5159,12 +4571,6 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "3610140": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "3610150": {
   "official": "1",
   "predicted": "1",
@@ -5174,14 +4580,14 @@
  "3610160": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3610170": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3610190": {
   "official": "1",
@@ -5192,7 +4598,7 @@
  "3610200": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "3610210": {
@@ -5215,9 +4621,9 @@
  },
  "3620015": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "3620017": {
   "official": "2",
@@ -5227,9 +4633,9 @@
  },
  "3620020": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "3620030": {
   "official": "2",
@@ -5252,7 +4658,7 @@
  "3620070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3620080": {
@@ -5276,7 +4682,7 @@
  "1720005": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "1720007": {
@@ -5294,7 +4700,7 @@
  "1720015": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "1720020": {
@@ -5342,7 +4748,7 @@
  "3710035": {
   "official": "1",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3710040": {
@@ -5366,7 +4772,7 @@
  "3710070": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.4,
   "agrees": true
  },
  "3710080": {
@@ -5389,9 +4795,9 @@
  },
  "3710105": {
   "official": "1",
-  "predicted": "3",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "3710120": {
   "official": "1",
@@ -5450,7 +4856,7 @@
  "3710210": {
   "official": "1",
   "predicted": "special_3",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3710220": {
@@ -5462,13 +4868,13 @@
  "3710230": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3710250": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 1.0,
+  "predicted": "special_3",
+  "vote_share": 0.6,
   "agrees": false
  },
  "3720010": {
@@ -5504,20 +4910,20 @@
  "3720070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3720080": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3720090": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3720100": {
   "official": "2",
@@ -5539,26 +4945,26 @@
  },
  "3720140": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3720150": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.4,
+  "predicted": "3",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3720160": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3720170": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "1",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3720180": {
@@ -5576,14 +4982,14 @@
  "3720200": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3730010": {
   "official": "3",
-  "predicted": "special_3",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "1810010": {
   "official": "1",
@@ -5594,7 +5000,7 @@
  "1810020": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1810030": {
@@ -5683,9 +5089,9 @@
  },
  "1810140": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1810150": {
   "official": "1",
@@ -5702,20 +5108,20 @@
  "1830005": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1830010": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "1830020": {
   "official": "3",
-  "predicted": "special_3",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "1830030": {
   "official": "3",
@@ -5726,7 +5132,7 @@
  "1830040": {
   "official": "3",
   "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3810010": {
@@ -5756,13 +5162,13 @@
  "3810040": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "3810050": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3810060": {
@@ -5804,7 +5210,7 @@
  "3810120": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3810130": {
@@ -5815,8 +5221,8 @@
  },
  "3810140": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3810160": {
@@ -5827,8 +5233,8 @@
  },
  "3810170": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "3810180": {
@@ -5839,20 +5245,20 @@
  },
  "3810220": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3810230": {
   "official": "1",
   "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3810240": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3810250": {
@@ -5864,7 +5270,7 @@
  "3810260": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3810270": {
@@ -5905,9 +5311,9 @@
  },
  "3810320": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3810330": {
   "official": "1",
@@ -5935,9 +5341,9 @@
  },
  "3810370": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "3810380": {
   "official": "1",
@@ -5947,8 +5353,8 @@
  },
  "3810390": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.8,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3810400": {
@@ -5959,8 +5365,8 @@
  },
  "3810410": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "3810420": {
@@ -5978,7 +5384,7 @@
  "3810440": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3810450": {
@@ -6001,9 +5407,9 @@
  },
  "3810470": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "3810480": {
   "official": "1",
@@ -6026,7 +5432,7 @@
  "3810511": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "3810520": {
@@ -6037,9 +5443,9 @@
  },
  "3810530": {
   "official": "1",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": false
+  "agrees": true
  },
  "3810540": {
   "official": "1",
@@ -6050,44 +5456,44 @@
  "3820010": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3820020": {
   "official": "2",
-  "predicted": "3",
+  "predicted": "special_3",
   "vote_share": 0.8,
   "agrees": false
  },
  "3820035": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3820040": {
+  "official": "2",
+  "predicted": "special_3",
+  "vote_share": 0.6,
+  "agrees": false
+ },
+ "3820050": {
+  "official": "2",
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": true
+ },
+ "3820060": {
   "official": "2",
   "predicted": "2",
   "vote_share": 1.0,
   "agrees": true
  },
- "3820050": {
-  "official": "2",
-  "predicted": "3",
-  "vote_share": 0.4,
-  "agrees": false
- },
- "3820060": {
-  "official": "2",
-  "predicted": "3",
-  "vote_share": 0.4,
-  "agrees": false
- },
  "3820070": {
   "official": "2",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "3820080": {
   "official": "2",
@@ -6104,13 +5510,13 @@
  "3820100": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.4,
+  "vote_share": 0.8,
   "agrees": false
  },
  "3820110": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3820120": {
@@ -6122,20 +5528,20 @@
  "3820130": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3820150": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.4,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "3820160": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "3820170": {
   "official": "2",
@@ -6145,9 +5551,9 @@
  },
  "3820180": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "3820190": {
   "official": "2",
@@ -6158,7 +5564,7 @@
  "3820200": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "3820210": {
@@ -6170,7 +5576,7 @@
  "3820230": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3820240": {
@@ -6187,14 +5593,14 @@
  },
  "3820260": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3820270": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3820280": {
@@ -6212,7 +5618,7 @@
  "3820300": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3820320": {
@@ -6230,7 +5636,7 @@
  "3820340": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3820350": {
@@ -6242,13 +5648,13 @@
  "3820360": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3830010": {
   "official": "special_3",
   "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3830020": {
@@ -6266,7 +5672,7 @@
  "3840010": {
   "official": "4",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3840020": {
@@ -6277,9 +5683,9 @@
  },
  "3840030": {
   "official": "4",
-  "predicted": "2",
-  "vote_share": 0.4,
-  "agrees": false
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1910020": {
   "official": "1",
@@ -6289,9 +5695,9 @@
  },
  "1910030": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1910040": {
   "official": "1",
@@ -6314,7 +5720,7 @@
  "1910080": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1910090": {
@@ -6332,7 +5738,7 @@
  "1910110": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "1910120": {
@@ -6343,14 +5749,14 @@
  },
  "1910130": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1910140": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1910150": {
@@ -6397,9 +5803,9 @@
  },
  "1910210": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "1910230": {
   "official": "1",
@@ -6470,7 +5876,7 @@
  "1910360": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "1910370": {
@@ -6499,9 +5905,9 @@
  },
  "1910410": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "1910420": {
   "official": "1",
@@ -6515,12 +5921,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "1910440": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "1910450": {
   "official": "1",
   "predicted": "2",
@@ -6529,44 +5929,38 @@
  },
  "1910455": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 0.6,
-  "agrees": true
+  "agrees": false
  },
  "1910470": {
   "official": "1",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1910475": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "1910495": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
- },
- "1910500": {
-  "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1920010": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1920020": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1920030": {
@@ -6577,15 +5971,15 @@
  },
  "1920040": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "1920050": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.4,
+  "agrees": true
  },
  "1920060": {
   "official": "2",
@@ -6596,31 +5990,31 @@
  "1920070": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "1920100": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "1920080": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1920110": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "1920120": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1920130": {
@@ -6631,9 +6025,9 @@
  },
  "1930010": {
   "official": "special_3",
-  "predicted": "3",
+  "predicted": "special_3",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "1930020": {
   "official": "3",
@@ -6656,7 +6050,7 @@
  "1930050": {
   "official": "3",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "1930060": {
@@ -6668,7 +6062,7 @@
  "1930070": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "1930080": {
@@ -6685,9 +6079,9 @@
  },
  "1940020": {
   "official": "4",
-  "predicted": "4",
-  "vote_share": 0.4,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3910010": {
   "official": "1",
@@ -6695,16 +6089,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "3910020": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "3910030": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "3910040": {
@@ -6715,9 +6103,9 @@
  },
  "3910050": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "3910060": {
   "official": "1",
@@ -6734,7 +6122,7 @@
  "3910080": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3910100": {
@@ -6749,16 +6137,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "3910120": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "3910130": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3910150": {
@@ -6770,7 +6152,7 @@
  "3910160": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "3910170": {
@@ -6781,17 +6163,11 @@
  },
  "3910180": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "3920010": {
-  "official": "2",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 1.0,
   "agrees": false
  },
- "3920020": {
+ "3920010": {
   "official": "2",
   "predicted": "1",
   "vote_share": 1.0,
@@ -6800,7 +6176,7 @@
  "3920025": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": true
  },
  "3920030": {
@@ -6811,9 +6187,9 @@
  },
  "3920040": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "3920050": {
   "official": "2",
@@ -6890,7 +6266,7 @@
  "2010050": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2010060": {
@@ -6908,32 +6284,32 @@
  "2010080": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2010090": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2010100": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "2010110": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2010120": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "2010130": {
   "official": "1",
@@ -6944,7 +6320,7 @@
  "2010140": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2010150": {
@@ -6986,7 +6362,7 @@
  "2040040": {
   "official": "4",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2040050": {
@@ -6998,7 +6374,7 @@
  "2040060": {
   "official": "4",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4010010": {
@@ -7021,9 +6397,9 @@
  },
  "4010040": {
   "official": "1",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "4010050": {
   "official": "1",
@@ -7040,7 +6416,7 @@
  "4010070": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4010080": {
@@ -7097,12 +6473,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4010170": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4010180": {
   "official": "1",
   "predicted": "1",
@@ -7147,9 +6517,9 @@
  },
  "4010250": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010260": {
   "official": "1",
@@ -7160,20 +6530,20 @@
  "4010270": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4010280": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "4010290": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010300": {
   "official": "1",
@@ -7189,20 +6559,20 @@
  },
  "4010320": {
   "official": "1",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "4010330": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4010340": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4010350": {
@@ -7213,9 +6583,9 @@
  },
  "4010360": {
   "official": "1",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": false
+  "agrees": true
  },
  "4010370": {
   "official": "1",
@@ -7267,20 +6637,20 @@
  },
  "4010450": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010460": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4010470": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4010480": {
@@ -7297,15 +6667,15 @@
  },
  "4010500": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010510": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010520": {
   "official": "1",
@@ -7319,17 +6689,11 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4010540": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4010550": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4010560": {
   "official": "1",
@@ -7339,9 +6703,9 @@
  },
  "4010570": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010580": {
   "official": "1",
@@ -7358,25 +6722,25 @@
  "4010600": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4010610": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4010620": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "4010630": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4010650": {
@@ -7388,7 +6752,7 @@
  "4010660": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4010670": {
@@ -7400,20 +6764,20 @@
  "4010680": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4010690": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010700": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010710": {
   "official": "1",
@@ -7423,14 +6787,14 @@
  },
  "4010720": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4010730": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4010740": {
@@ -7502,7 +6866,7 @@
  "4010840": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4010850": {
@@ -7525,43 +6889,31 @@
  },
  "4020020": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.4,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4020030": {
   "official": "2",
   "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4020040": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4020050": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4020070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "2110020": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "2110030": {
-  "official": "1",
-  "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
  },
@@ -7585,9 +6937,9 @@
  },
  "2110070": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "2110073": {
   "official": "1",
@@ -7676,25 +7028,25 @@
  "2120030": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2120040": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2120050": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.4,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2130010": {
   "official": "special_3",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2130020": {
@@ -7735,14 +7087,14 @@
  },
  "4110060": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.6,
-  "agrees": true
+  "agrees": false
  },
  "4110070": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4110080": {
@@ -7808,7 +7160,7 @@
  "4110230": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4110240": {
@@ -7843,9 +7195,9 @@
  },
  "4110290": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": true
  },
  "4110300": {
   "official": "1",
@@ -7919,16 +7271,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4110420": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4110430": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4110440": {
@@ -7999,9 +7345,9 @@
  },
  "4110540": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.6,
-  "agrees": true
+  "agrees": false
  },
  "4110550": {
   "official": "1",
@@ -8011,9 +7357,9 @@
  },
  "4110560": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "4110570": {
   "official": "1",
@@ -8030,13 +7376,13 @@
  "4110590": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4110600": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4110610": {
@@ -8054,7 +7400,7 @@
  "4110630": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4110640": {
@@ -8063,17 +7409,11 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4110650": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4110660": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "4110670": {
   "official": "1",
@@ -8084,7 +7424,7 @@
  "4110675": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4110680": {
@@ -8210,7 +7550,7 @@
  "4110910": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4110920": {
@@ -8270,7 +7610,7 @@
  "4111040": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4111050": {
@@ -8293,9 +7633,9 @@
  },
  "4111080": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4111090": {
   "official": "1",
@@ -8396,7 +7736,7 @@
  "4111270": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.4,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4111280": {
@@ -8477,12 +7817,6 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "4111420": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4111430": {
   "official": "1",
   "predicted": "2",
@@ -8509,8 +7843,8 @@
  },
  "4111470": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
+  "predicted": "3",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4111480": {
@@ -8555,12 +7889,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4111550": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4111560": {
   "official": "1",
   "predicted": "1",
@@ -8599,8 +7927,8 @@
  },
  "4111620": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4111630": {
@@ -8648,7 +7976,7 @@
  "4120020": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4120030": {
@@ -8690,14 +8018,14 @@
  "4120100": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4120110": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  },
  "4120120": {
   "official": "2",
@@ -8720,7 +8048,7 @@
  "4120150": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4120160": {
@@ -8731,8 +8059,8 @@
  },
  "4120170": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "3",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4120175": {
@@ -8767,9 +8095,9 @@
  },
  "4120220": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4120230": {
   "official": "2",
@@ -8779,9 +8107,9 @@
  },
  "4130010": {
   "official": "3",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4130020": {
   "official": "3",
@@ -8792,7 +8120,7 @@
  "4130030": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4140010": {
@@ -8831,12 +8159,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "2210060": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "2210070": {
   "official": "1",
   "predicted": "1",
@@ -8867,12 +8189,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "2210110": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "2210120": {
   "official": "1",
   "predicted": "1",
@@ -8887,9 +8203,9 @@
  },
  "2210135": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "2210140": {
   "official": "1",
@@ -8910,12 +8226,6 @@
   "agrees": true
  },
  "2210145": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "2210150": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -8948,7 +8258,7 @@
  "2210240": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2210260": {
@@ -8966,7 +8276,7 @@
  "2210280": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2210290": {
@@ -8983,9 +8293,9 @@
  },
  "2210316": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2210323": {
   "official": "1",
@@ -8996,7 +8306,7 @@
  "2210325": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2210330": {
@@ -9031,9 +8341,9 @@
  },
  "2210375": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "2210377": {
   "official": "1",
@@ -9062,20 +8372,20 @@
  "2210400": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2220010": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2220020": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "2220030": {
   "official": "2",
@@ -9115,8 +8425,8 @@
  },
  "2220090": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "2220100": {
@@ -9151,15 +8461,9 @@
  },
  "4210020": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.8,
   "agrees": false
- },
- "4210030": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
  },
  "4210040": {
   "official": "1",
@@ -9175,9 +8479,9 @@
  },
  "4210060": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4210070": {
   "official": "1",
@@ -9200,7 +8504,7 @@
  "4210100": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4210110": {
@@ -9239,12 +8543,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4210180": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4210190": {
   "official": "1",
   "predicted": "1",
@@ -9266,7 +8564,7 @@
  "4210220": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4210240": {
@@ -9277,9 +8575,9 @@
  },
  "4210250": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "4210260": {
   "official": "1",
@@ -9314,7 +8612,7 @@
  "4210310": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4210320": {
@@ -9331,9 +8629,9 @@
  },
  "4210340": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "4210350": {
   "official": "1",
@@ -9353,16 +8651,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4210380": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4210390": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4210400": {
@@ -9378,12 +8670,6 @@
   "agrees": true
  },
  "4210420": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4210430": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -9499,9 +8785,9 @@
  },
  "4210620": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4210630": {
   "official": "1",
@@ -9512,19 +8798,19 @@
  "4210640": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4210650": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": false
+  "agrees": true
  },
  "4210660": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4210670": {
@@ -9536,7 +8822,7 @@
  "4210680": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4210690": {
@@ -9547,7 +8833,7 @@
  },
  "4210700": {
   "official": "1",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 0.8,
   "agrees": false
  },
@@ -9565,8 +8851,8 @@
  },
  "4210730": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.4,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4210750": {
@@ -9601,14 +8887,14 @@
  },
  "4220030": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4220040": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4220050": {
@@ -9620,13 +8906,13 @@
  "4220070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4220080": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.4,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4220090": {
@@ -9656,7 +8942,7 @@
  "4230020": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4230040": {
@@ -9733,9 +9019,9 @@
  },
  "2320020": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "2320030": {
   "official": "2",
@@ -9746,14 +9032,14 @@
  "2320040": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "2330010": {
   "official": "3",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "special_3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2330020": {
   "official": "3",
@@ -9797,12 +9083,6 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "4310090": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4310100": {
   "official": "1",
   "predicted": "2",
@@ -9811,8 +9091,8 @@
  },
  "4310110": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "3",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4310120": {
@@ -9829,9 +9109,9 @@
  },
  "4310150": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4310160": {
   "official": "1",
@@ -9859,14 +9139,8 @@
  },
  "4310200": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "4310210": {
-  "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4310220": {
@@ -9883,14 +9157,14 @@
  },
  "4310240": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": false
+  "agrees": true
  },
  "4310250": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4310255": {
@@ -9917,35 +9191,11 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "4310300": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
  "4310305": {
   "official": "1",
   "predicted": "2",
   "vote_share": 1.0,
   "agrees": false
- },
- "4310310": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4310320": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4310330": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
  },
  "4310340": {
   "official": "1",
@@ -9953,29 +9203,17 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4310350": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.4,
-  "agrees": true
- },
  "4310360": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4310370": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.8,
-  "agrees": true
- },
- "4310380": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4310390": {
   "official": "1",
@@ -9983,29 +9221,17 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4310400": {
-  "official": "1",
-  "predicted": "special_3",
-  "vote_share": 0.4,
-  "agrees": false
- },
  "4310410": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4310420": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "4310430": {
-  "official": "1",
-  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4320010": {
   "official": "2",
@@ -10027,9 +9253,9 @@
  },
  "4320030": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4320050": {
   "official": "2",
@@ -10039,9 +9265,9 @@
  },
  "4320060": {
   "official": "2",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "4320065": {
   "official": "2",
@@ -10057,9 +9283,9 @@
  },
  "4320080": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4320090": {
   "official": "2",
@@ -10106,7 +9332,7 @@
  "4320160": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4320170": {
@@ -10118,19 +9344,13 @@
  "4320190": {
   "official": "2",
   "predicted": "special_3",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "4320200": {
-  "official": "2",
-  "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4330010": {
   "official": "special_3",
   "predicted": "special_3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4340010": {
@@ -10171,9 +9391,9 @@
  },
  "2410060": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2410070": {
   "official": "1",
@@ -10189,9 +9409,9 @@
  },
  "2410090": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2410100": {
   "official": "1",
@@ -10268,7 +9488,7 @@
  "2410215": {
   "official": "1",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "2410220": {
@@ -10304,7 +9524,7 @@
  "2410270": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "2410290": {
@@ -10316,12 +9536,12 @@
  "2410300": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2410310": {
   "official": "1",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 0.8,
   "agrees": false
  },
@@ -10363,8 +9583,8 @@
  },
  "2410380": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.8,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "2410390": {
@@ -10387,9 +9607,9 @@
  },
  "2410420": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "2410430": {
   "official": "1",
@@ -10418,7 +9638,7 @@
  "2410476": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.4,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2410480": {
@@ -10433,12 +9653,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "2410500": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "2410505": {
   "official": "1",
   "predicted": "1",
@@ -10447,9 +9661,9 @@
  },
  "2410510": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.6,
-  "agrees": true
+  "agrees": false
  },
  "2420010": {
   "official": "2",
@@ -10459,14 +9673,14 @@
  },
  "2420015": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "2420020": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.8,
+  "predicted": "3",
+  "vote_share": 1.0,
   "agrees": false
  },
  "2420045": {
@@ -10478,7 +9692,7 @@
  "2420050": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2420060": {
@@ -10489,20 +9703,20 @@
  },
  "2420070": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "2420075": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "2430010": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2430020": {
@@ -10525,9 +9739,9 @@
  },
  "4410010": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4410020": {
   "official": "1",
@@ -10543,15 +9757,15 @@
  },
  "4410040": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4410045": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4410050": {
   "official": "1",
@@ -10561,15 +9775,15 @@
  },
  "4410060": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "4410070": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4410080": {
   "official": "1",
@@ -10610,7 +9824,7 @@
  "4410140": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4410160": {
@@ -10633,8 +9847,8 @@
  },
  "4410190": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4410230": {
@@ -10643,41 +9857,17 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4410280": {
-  "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
- },
  "4410300": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4410305": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.8,
-  "agrees": true
- },
- "4410310": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4410325": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
- "4410330": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4410350": {
   "official": "1",
@@ -10711,15 +9901,15 @@
  },
  "4410400": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4420010": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4420020": {
   "official": "2",
@@ -10729,9 +9919,9 @@
  },
  "4420030": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4420050": {
   "official": "2",
@@ -10753,26 +9943,20 @@
  },
  "4420080": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "4420090": {
-  "official": "2",
-  "predicted": "1",
+  "predicted": "special_3",
   "vote_share": 1.0,
   "agrees": false
  },
  "4420100": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4420110": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4430010": {
@@ -10784,7 +9968,7 @@
  "4430020": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2510010": {
@@ -10813,14 +9997,14 @@
  },
  "2510050": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "2510070": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "2510080": {
@@ -10885,9 +10069,9 @@
  },
  "2510180": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2510190": {
   "official": "1",
@@ -10921,9 +10105,9 @@
  },
  "2510240": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "2510250": {
   "official": "1",
@@ -10952,7 +10136,7 @@
  "2510290": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2510300": {
@@ -10987,9 +10171,9 @@
  },
  "2510360": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "2520010": {
   "official": "2",
@@ -11012,7 +10196,7 @@
  "2520065": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2520070": {
@@ -11029,9 +10213,9 @@
  },
  "2520087": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.4,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "2520090": {
   "official": "2",
@@ -11041,9 +10225,9 @@
  },
  "2530010": {
   "official": "3",
-  "predicted": "special_3",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "2540010": {
   "official": "4",
@@ -11071,9 +10255,9 @@
  },
  "4510040": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4510050": {
   "official": "1",
@@ -11107,9 +10291,9 @@
  },
  "4510090": {
   "official": "1",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "4510095": {
   "official": "1",
@@ -11119,9 +10303,9 @@
  },
  "4510100": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4510110": {
   "official": "1",
@@ -11144,16 +10328,10 @@
  "4510150": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4510160": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4510170": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -11197,9 +10375,9 @@
  },
  "4510240": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4510250": {
   "official": "1",
@@ -11209,21 +10387,15 @@
  },
  "4510260": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4510270": {
   "official": "1",
   "predicted": "4",
   "vote_share": 1.0,
   "agrees": false
- },
- "4510280": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
  },
  "4510300": {
   "official": "1",
@@ -11245,9 +10417,9 @@
  },
  "4510330": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4510350": {
   "official": "1",
@@ -11294,7 +10466,7 @@
  "4510420": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4510430": {
@@ -11305,15 +10477,15 @@
  },
  "4511010": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 1.0,
   "agrees": false
  },
  "4511030": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4511040": {
   "official": "1",
@@ -11323,8 +10495,8 @@
  },
  "4511070": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4511090": {
@@ -11335,27 +10507,27 @@
  },
  "4511100": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
- },
- "4511140": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
- },
- "4512050": {
-  "official": "1",
   "predicted": "1",
   "vote_share": 0.8,
   "agrees": true
  },
- "4512060": {
+ "4511140": {
+  "official": "1",
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
+ },
+ "4512050": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
+ },
+ "4512060": {
+  "official": "1",
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4512080": {
   "official": "1",
@@ -11365,15 +10537,15 @@
  },
  "4512090": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "4512100": {
-  "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
+ },
+ "4512100": {
+  "official": "1",
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4512120": {
   "official": "1",
@@ -11389,33 +10561,33 @@
  },
  "4512140": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4512160": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  },
  "4512170": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4513010": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4513020": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4513030": {
   "official": "1",
@@ -11437,9 +10609,9 @@
  },
  "4513055": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4513060": {
   "official": "1",
@@ -11455,14 +10627,14 @@
  },
  "4513080": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4514010": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4514070": {
@@ -11474,7 +10646,7 @@
  "4514097": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4514110": {
@@ -11485,38 +10657,38 @@
  },
  "4514120": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 1.0,
   "agrees": false
  },
  "4514170": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4514180": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4514190": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 1.0,
   "agrees": false
  },
  "4514200": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4514240": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4514280": {
@@ -11540,7 +10712,7 @@
  "4515020": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4515030": {
@@ -11551,9 +10723,9 @@
  },
  "4515040": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4515050": {
   "official": "1",
@@ -11575,23 +10747,17 @@
  },
  "4515080": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4515085": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4515090": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4515100": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -11606,7 +10772,7 @@
  "4516010": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4516020": {
@@ -11666,7 +10832,7 @@
  "4516130": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4516140": {
@@ -11696,14 +10862,14 @@
  "4516255": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4517010": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "4517020": {
   "official": "1",
@@ -11719,8 +10885,8 @@
  },
  "4517040": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4517050": {
@@ -11734,12 +10900,6 @@
   "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
- },
- "4517065": {
-  "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
  },
  "4517080": {
   "official": "1",
@@ -11779,14 +10939,14 @@
  },
  "4517140": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4517150": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4517160": {
@@ -11804,7 +10964,7 @@
  "4517180": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4517190": {
@@ -11828,7 +10988,7 @@
  "4518020": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4518070": {
@@ -11839,15 +10999,15 @@
  },
  "4518090": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4518100": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4518110": {
   "official": "1",
@@ -12014,7 +11174,7 @@
  "4518390": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4518400": {
@@ -12025,12 +11185,6 @@
  },
  "4518410": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
- },
- "4518420": {
-  "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
@@ -12040,12 +11194,6 @@
   "predicted": "2",
   "vote_share": 1.0,
   "agrees": false
- },
- "4518430": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
  },
  "4518450": {
   "official": "1",
@@ -12062,13 +11210,13 @@
  "4518480": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4518520": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4518530": {
@@ -12080,7 +11228,7 @@
  "4518550": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4520010": {
@@ -12109,14 +11257,14 @@
  },
  "4520035": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4520040": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.8,
   "agrees": false
  },
  "4522010": {
@@ -12133,8 +11281,8 @@
  },
  "4522030": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.6,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4523010": {
@@ -12161,12 +11309,6 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "4523050": {
-  "official": "2",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": false
- },
  "4524020": {
   "official": "2",
   "predicted": "4",
@@ -12188,7 +11330,7 @@
  "4526010": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4526020": {
@@ -12224,25 +11366,25 @@
  "4526060": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4527010": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4527020": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "3",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4528020": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4528023": {
@@ -12253,9 +11395,9 @@
  },
  "4528025": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4528030": {
   "official": "2",
@@ -12265,8 +11407,8 @@
  },
  "4528040": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.8,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4531010": {
@@ -12311,17 +11453,11 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4540035": {
-  "official": "4",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": true
- },
  "4540040": {
   "official": "4",
-  "predicted": "3",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "4541010": {
   "official": "4",
@@ -12350,13 +11486,13 @@
  "4545010": {
   "official": "4",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2610010": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2610020": {
@@ -12392,7 +11528,7 @@
  "2610070": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2610080": {
@@ -12409,7 +11545,7 @@
  },
  "2610100": {
   "official": "1",
-  "predicted": "3",
+  "predicted": "4",
   "vote_share": 0.8,
   "agrees": false
  },
@@ -12518,7 +11654,7 @@
  "2610280": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.4,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2610300": {
@@ -12535,9 +11671,9 @@
  },
  "2610320": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2610330": {
   "official": "1",
@@ -12548,19 +11684,19 @@
  "2610335": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2620010": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "2620015": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2620025": {
@@ -12571,26 +11707,26 @@
  },
  "2620030": {
   "official": "2",
-  "predicted": "4",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "2620040": {
   "official": "2",
-  "predicted": "4",
+  "predicted": "3",
   "vote_share": 1.0,
   "agrees": false
  },
  "2620050": {
   "official": "2",
-  "predicted": "3",
+  "predicted": "4",
   "vote_share": 1.0,
   "agrees": false
  },
  "2620060": {
   "official": "2",
   "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2620070": {
@@ -12614,20 +11750,20 @@
  "2630020": {
   "official": "3",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2630040": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2630050": {
   "official": "3",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 0.6,
-  "agrees": false
+  "agrees": true
  },
  "2640010": {
   "official": "4",
@@ -12650,26 +11786,26 @@
  "4610030": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4610040": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4610050": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4610060": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.4,
+  "agrees": false
  },
  "4610065": {
   "official": "1",
@@ -12727,23 +11863,11 @@
  },
  "4610150": {
   "official": "1",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 1.0,
   "agrees": false
  },
  "4610160": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4610170": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4610180": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -12781,9 +11905,9 @@
  },
  "4610240": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4610245": {
   "official": "1",
@@ -12809,16 +11933,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4610280": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4610290": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4610300": {
@@ -12841,8 +11959,8 @@
  },
  "4610350": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4610360": {
@@ -12931,9 +12049,9 @@
  },
  "4610500": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "4610510": {
   "official": "1",
@@ -12974,7 +12092,7 @@
  "4610590": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4610600": {
@@ -13052,7 +12170,7 @@
  "4610720": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4610730": {
@@ -13063,15 +12181,15 @@
  },
  "4610740": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4610750": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4610760": {
   "official": "1",
@@ -13082,7 +12200,7 @@
  "4610770": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4610790": {
@@ -13106,7 +12224,7 @@
  "4620010": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4620020": {
@@ -13118,37 +12236,37 @@
  "4620040": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4620050": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4620070": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "4620080": {
-  "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
- "4620100": {
+ "4620080": {
   "official": "2",
   "predicted": "2",
   "vote_share": 1.0,
   "agrees": true
  },
+ "4620100": {
+  "official": "2",
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
+ },
  "4620110": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4620115": {
@@ -13178,7 +12296,7 @@
  "4620140": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4620150": {
@@ -13190,7 +12308,7 @@
  "4620160": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4620170": {
@@ -13201,9 +12319,9 @@
  },
  "4620180": {
   "official": "2",
-  "predicted": "4",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4620190": {
   "official": "2",
@@ -13231,15 +12349,15 @@
  },
  "4620240": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4630010": {
   "official": "3",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "special_3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2710010": {
   "official": "1",
@@ -13261,8 +12379,8 @@
  },
  "2710050": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "3",
+  "vote_share": 0.6,
   "agrees": false
  },
  "2710060": {
@@ -13274,7 +12392,7 @@
  "2710068": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2710080": {
@@ -13292,25 +12410,25 @@
  "2710095": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "2710100": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "3",
+  "vote_share": 0.8,
   "agrees": false
  },
  "2710110": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "2710120": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2710130": {
@@ -13321,9 +12439,9 @@
  },
  "2710135": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "2710140": {
   "official": "1",
@@ -13352,7 +12470,7 @@
  "2720030": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2720040": {
@@ -13364,7 +12482,7 @@
  "2720050": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": true
  },
  "2720060": {
@@ -13381,9 +12499,9 @@
  },
  "2720080": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2720090": {
   "official": "2",
@@ -13393,15 +12511,15 @@
  },
  "2720100": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.4,
+  "agrees": false
  },
  "2720110": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "2720120": {
   "official": "2",
@@ -13418,7 +12536,7 @@
  "2720140": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2730010": {
@@ -13436,7 +12554,7 @@
  "2730030": {
   "official": "3",
   "predicted": "special_3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2740010": {
@@ -13447,8 +12565,8 @@
  },
  "4710010": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4710020": {
@@ -13465,15 +12583,9 @@
  },
  "4710030": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4710040": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4710050": {
   "official": "1",
@@ -13502,14 +12614,14 @@
  "4710090": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4710100": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4710110": {
   "official": "1",
@@ -13532,7 +12644,7 @@
  "4710140": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4710150": {
@@ -13561,9 +12673,9 @@
  },
  "4710190": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4710200": {
   "official": "1",
@@ -13585,15 +12697,15 @@
  },
  "4710230": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4710245": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4710280": {
   "official": "1",
@@ -13602,12 +12714,6 @@
   "agrees": true
  },
  "4710290": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4710300": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -13622,7 +12728,7 @@
  "4710320": {
   "official": "1",
   "predicted": "3",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4710330": {
@@ -13688,7 +12794,7 @@
  "4710450": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4710460": {
@@ -13699,9 +12805,9 @@
  },
  "4710470": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4710480": {
   "official": "1",
@@ -13723,9 +12829,9 @@
  },
  "4710510": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4710520": {
   "official": "1",
@@ -13748,13 +12854,13 @@
  "4710550": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4710555": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4710580": {
@@ -13826,19 +12932,19 @@
  "4710690": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4710700": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4710710": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4710720": {
@@ -13855,20 +12961,20 @@
  },
  "4710740": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 0.6,
-  "agrees": true
+  "agrees": false
  },
  "4710750": {
   "official": "1",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 0.8,
   "agrees": false
  },
  "4710760": {
   "official": "1",
-  "predicted": "3",
-  "vote_share": 0.6,
+  "predicted": "2",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4710770": {
@@ -13882,12 +12988,6 @@
   "predicted": "2",
   "vote_share": 1.0,
   "agrees": false
- },
- "4710790": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
  },
  "4710800": {
   "official": "1",
@@ -13909,9 +13009,9 @@
  },
  "4710830": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4710840": {
   "official": "1",
@@ -13975,9 +13075,9 @@
  },
  "4720010": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4720020": {
   "official": "2",
@@ -13994,20 +13094,20 @@
  "4720040": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "4720043": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4720044": {
   "official": "2",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "4720045": {
   "official": "2",
@@ -14017,15 +13117,15 @@
  },
  "4720047": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.6,
   "agrees": false
  },
  "4720050": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.4,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4720055": {
   "official": "2",
@@ -14042,25 +13142,25 @@
  "4720070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4720090": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4720100": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4720105": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.4,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4720107": {
@@ -14071,26 +13171,26 @@
  },
  "4720110": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 0.6,
+  "predicted": "4",
+  "vote_share": 1.0,
   "agrees": false
  },
  "4730005": {
   "official": "3",
-  "predicted": "4",
-  "vote_share": 0.4,
-  "agrees": false
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4730010": {
   "official": "3",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4740010": {
   "official": "4",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4740020": {
@@ -14132,13 +13232,13 @@
  "2810090": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2810095": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2810097": {
@@ -14168,7 +13268,7 @@
  "2810130": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2810140": {
@@ -14185,9 +13285,9 @@
  },
  "2810160": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "2810170": {
   "official": "1",
@@ -14204,7 +13304,7 @@
  "2810190": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "2810195": {
@@ -14216,7 +13316,7 @@
  "2810200": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2810205": {
@@ -14263,13 +13363,13 @@
  },
  "2810260": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.8,
   "agrees": false
  },
  "2810270": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
   "agrees": false
  },
@@ -14299,33 +13399,33 @@
  },
  "2810320": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "2810330": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "2810340": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2810350": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2810360": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "2810380": {
   "official": "1",
@@ -14336,14 +13436,14 @@
  "2810390": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2810400": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "2810410": {
   "official": "1",
@@ -14353,14 +13453,14 @@
  },
  "2810430": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "2820010": {
   "official": "2",
   "predicted": "3",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "2820020": {
@@ -14383,9 +13483,9 @@
  },
  "2820040": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "2820060": {
   "official": "2",
@@ -14396,19 +13496,19 @@
  "2820070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2820080": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2820090": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "2820100": {
@@ -14420,7 +13520,7 @@
  "2820120": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "2820130": {
@@ -14437,9 +13537,9 @@
  },
  "2820150": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "2820180": {
   "official": "2",
@@ -14449,9 +13549,9 @@
  },
  "2820185": {
   "official": "2",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "2820190": {
   "official": "2",
@@ -14473,9 +13573,9 @@
  },
  "2820220": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "2820225": {
   "official": "2",
@@ -14492,36 +13592,30 @@
  "2830005": {
   "official": "3",
   "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
- },
- "2830010": {
-  "official": "3",
-  "predicted": "4",
   "vote_share": 0.8,
   "agrees": false
  },
- "2830020": {
+ "2830010": {
   "official": "3",
   "predicted": "3",
   "vote_share": 1.0,
   "agrees": true
  },
+ "2830020": {
+  "official": "3",
+  "predicted": "3",
+  "vote_share": 0.8,
+  "agrees": true
+ },
  "2840010": {
   "official": "4",
   "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "2840015": {
-  "official": "4",
-  "predicted": "1",
   "vote_share": 1.0,
   "agrees": false
  },
  "2840020": {
   "official": "4",
-  "predicted": "3",
+  "predicted": "2",
   "vote_share": 1.0,
   "agrees": false
  },
@@ -14533,8 +13627,8 @@
  },
  "4810020": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
+  "predicted": "4",
+  "vote_share": 0.8,
   "agrees": false
  },
  "4810030": {
@@ -14575,15 +13669,15 @@
  },
  "4810090": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4810110": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "4810120": {
   "official": "1",
@@ -14618,13 +13712,13 @@
  "4820060": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4830010": {
   "official": "3",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4830020": {
@@ -14635,19 +13729,13 @@
  },
  "4830030": {
   "official": "3",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": false
- },
- "4830040": {
-  "official": "3",
   "predicted": "3",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4830045": {
   "official": "3",
-  "predicted": "4",
+  "predicted": "2",
   "vote_share": 0.6,
   "agrees": false
  },
@@ -14663,22 +13751,16 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "4910010": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4910020": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "2",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4910025": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4910026": {
@@ -14695,15 +13777,15 @@
  },
  "4910028": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 0.8,
-  "agrees": false
- },
- "4910040": {
-  "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
+ },
+ "4910040": {
+  "official": "1",
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4910050": {
   "official": "1",
@@ -14714,7 +13796,7 @@
  "4910060": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4910070": {
@@ -14735,12 +13817,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4910100": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4910110": {
   "official": "1",
   "predicted": "1",
@@ -14749,9 +13825,9 @@
  },
  "4910120": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 0.6,
-  "agrees": true
+  "agrees": false
  },
  "4910125": {
   "official": "1",
@@ -14813,19 +13889,7 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4910215": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4910220": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4910230": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
@@ -14834,7 +13898,7 @@
  "4910235": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4910240": {
@@ -14899,9 +13963,9 @@
  },
  "4910295": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4910300": {
   "official": "1",
@@ -14911,9 +13975,9 @@
  },
  "4910310": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4910320": {
   "official": "1",
@@ -14924,13 +13988,13 @@
  "4910330": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "4910335": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4910340": {
@@ -14961,12 +14025,6 @@
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
-  "agrees": true
- },
- "4910390": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
   "agrees": true
  },
  "4910400": {
@@ -15017,12 +14075,6 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "4910475": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "4910480": {
   "official": "1",
   "predicted": "4",
@@ -15044,14 +14096,14 @@
  "4910523": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4910525": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4910530": {
   "official": "1",
@@ -15061,20 +14113,20 @@
  },
  "4910540": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4910543": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "4910545": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4910560": {
@@ -15097,9 +14149,9 @@
  },
  "4910580": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  },
  "4910590": {
   "official": "1",
@@ -15110,7 +14162,7 @@
  "4910595": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4910600": {
@@ -15157,33 +14209,33 @@
  },
  "4910670": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4910690": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "4910700": {
   "official": "1",
   "predicted": "4",
   "vote_share": 0.8,
   "agrees": false
  },
+ "4910700": {
+  "official": "1",
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
+ },
  "4910703": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4910708": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "4910710": {
   "official": "1",
@@ -15199,21 +14251,21 @@
  },
  "4910725": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4910740": {
   "official": "1",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4910750": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4920010": {
   "official": "2",
@@ -15235,9 +14287,9 @@
  },
  "4920040": {
   "official": "2",
-  "predicted": "1",
+  "predicted": "2",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "4920050": {
   "official": "2",
@@ -15247,14 +14299,14 @@
  },
  "4920060": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4920070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "4920075": {
@@ -15265,27 +14317,27 @@
  },
  "4920080": {
   "official": "2",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": false
- },
- "4920090": {
-  "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
- "4920100": {
+ "4920090": {
   "official": "2",
   "predicted": "2",
   "vote_share": 0.8,
   "agrees": true
  },
- "4920110": {
+ "4920100": {
   "official": "2",
   "predicted": "2",
   "vote_share": 1.0,
   "agrees": true
+ },
+ "4920110": {
+  "official": "2",
+  "predicted": "3",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "4920115": {
   "official": "2",
@@ -15308,7 +14360,7 @@
  "4920150": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "4920160": {
@@ -15319,9 +14371,9 @@
  },
  "4920170": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "1",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "4920180": {
   "official": "2",
@@ -15349,9 +14401,9 @@
  },
  "4930010": {
   "official": "special_3",
-  "predicted": "special_3",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "4930015": {
   "official": "3",
@@ -15409,9 +14461,9 @@
  },
  "4940060": {
   "official": "4",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "4940070": {
   "official": "4",
@@ -15428,7 +14480,7 @@
  "4940090": {
   "official": "4",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "4940095": {
@@ -15439,9 +14491,9 @@
  },
  "4940100": {
   "official": "4",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "4940103": {
   "official": "4",
@@ -15493,9 +14545,9 @@
  },
  "3010070": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.6,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "3010080": {
   "official": "1",
@@ -15521,16 +14573,10 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "3010120": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
  "3010180": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3010200": {
@@ -15614,14 +14660,14 @@
  "3020030": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "3020035": {
   "official": "2",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "2",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "3020040": {
   "official": "2",
@@ -15643,25 +14689,19 @@
  },
  "3020050": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "3020060": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "3020070": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "3030010": {
-  "official": "3",
-  "predicted": "3",
   "vote_share": 1.0,
   "agrees": true
  },
@@ -15686,13 +14726,13 @@
  "5010038": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "5010040": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010045": {
@@ -15703,9 +14743,9 @@
  },
  "5010050": {
   "official": "1",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": false
+  "agrees": true
  },
  "5010060": {
   "official": "1",
@@ -15715,38 +14755,38 @@
  },
  "5010070": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "5010080": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.8,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "5010100": {
   "official": "1",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
   "agrees": false
  },
  "5010110": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010120": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010130": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010140": {
@@ -15755,34 +14795,28 @@
   "vote_share": 1.0,
   "agrees": false
  },
- "5010150": {
-  "official": "1",
-  "predicted": "3",
-  "vote_share": 1.0,
-  "agrees": false
- },
  "5010160": {
   "official": "1",
-  "predicted": "2",
-  "vote_share": 0.6,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 1.0,
+  "agrees": true
  },
  "5010180": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5010190": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010200": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5010210": {
@@ -15799,56 +14833,50 @@
  },
  "5010230": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
- },
- "5010240": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 1.0,
+  "agrees": false
  },
  "5010250": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.8,
+  "agrees": false
  },
  "5010255": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "5010260": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5010270": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010280": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5010285": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "5010290": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5010295": {
@@ -15860,7 +14888,7 @@
  "5010300": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010320": {
@@ -15878,7 +14906,7 @@
  "5010340": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "5010345": {
@@ -15890,13 +14918,13 @@
  "5010350": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": true
  },
  "5010360": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5010370": {
@@ -15925,9 +14953,9 @@
  },
  "5010410": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 0.8,
-  "agrees": true
+  "predicted": "4",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "5010425": {
   "official": "1",
@@ -15938,7 +14966,7 @@
  "5010427": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "5010430": {
@@ -15962,19 +14990,19 @@
  "5010460": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5010465": {
   "official": "1",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "5010470": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5010480": {
@@ -15986,19 +15014,19 @@
  "5011020": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "5011035": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "5011040": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "5011045": {
@@ -16009,32 +15037,26 @@
  },
  "5011047": {
   "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
- "5011050": {
-  "official": "1",
   "predicted": "4",
   "vote_share": 1.0,
   "agrees": false
  },
- "5011053": {
+ "5011050": {
   "official": "1",
   "predicted": "1",
   "vote_share": 1.0,
   "agrees": true
  },
- "5011055": {
+ "5011053": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": true
  },
  "5011057": {
   "official": "1",
   "predicted": "4",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": false
  },
  "5011060": {
@@ -16049,22 +15071,16 @@
   "vote_share": 1.0,
   "agrees": true
  },
- "5011090": {
-  "official": "1",
-  "predicted": "1",
-  "vote_share": 1.0,
-  "agrees": true
- },
  "5011095": {
   "official": "1",
-  "predicted": "4",
-  "vote_share": 1.0,
-  "agrees": false
+  "predicted": "1",
+  "vote_share": 0.6,
+  "agrees": true
  },
  "5011100": {
   "official": "1",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.6,
   "agrees": false
  },
  "5011105": {
@@ -16082,19 +15098,19 @@
  "5011110": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5011120": {
   "official": "1",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5020020": {
   "official": "2",
   "predicted": "1",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5020030": {
@@ -16106,20 +15122,20 @@
  "5021005": {
   "official": "2",
   "predicted": "2",
-  "vote_share": 1.0,
+  "vote_share": 0.8,
   "agrees": true
  },
  "5021010": {
   "official": "2",
-  "predicted": "2",
+  "predicted": "3",
   "vote_share": 1.0,
-  "agrees": true
+  "agrees": false
  },
  "5020090": {
   "official": "2",
-  "predicted": "2",
-  "vote_share": 1.0,
-  "agrees": true
+  "predicted": "3",
+  "vote_share": 0.6,
+  "agrees": false
  },
  "5020170": {
   "official": "2",
@@ -16130,25 +15146,25 @@
  "5021080": {
   "official": "2",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 1.0,
   "agrees": false
  },
  "5030010": {
   "official": "3",
   "predicted": "4",
-  "vote_share": 0.8,
+  "vote_share": 0.6,
   "agrees": false
  },
  "5040010": {
   "official": "4",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  },
  "5040020": {
   "official": "4",
   "predicted": "4",
-  "vote_share": 0.6,
+  "vote_share": 1.0,
   "agrees": true
  },
  "5040030": {
@@ -16165,9 +15181,9 @@
  },
  "5041020": {
   "official": "4",
-  "predicted": "1",
+  "predicted": "4",
   "vote_share": 1.0,
-  "agrees": false
+  "agrees": true
  },
  "5041030": {
   "official": "4",
@@ -16177,8 +15193,8 @@
  },
  "5041040": {
   "official": "4",
-  "predicted": "4",
+  "predicted": "1",
   "vote_share": 0.8,
-  "agrees": true
+  "agrees": false
  }
 }

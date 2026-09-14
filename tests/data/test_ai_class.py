@@ -97,6 +97,42 @@ def test_t037_ports_without_infrastructure_are_excluded_not_zero_filled(ports):
     assert len(table) > 2000
 
 
+# ---------------------------------------------------------------- G-23 / G-24(loop_006)
+
+HACHINOHE = "1230010"  # 八戸。特定第3種で、C09 の係留・外郭施設延長がどちらも 0
+META_FIXTURE = ROOT / "tests" / "fixtures" / "c09_meta_note.txt"
+
+
+def test_t050_zero_lengths_are_missing_not_values(ports):
+    """T-050 / G-23: C09 の施設延長 0 は欠測の符号。学習表に 0 を値として入れない。
+
+    期待値の出所: 実測(scripts/probe_c09_zeros.py、2026-09-15)。正の値は最小 3 m の整数で 0 と連続せず、
+    0 は青森 46.2%・岩手 37.2% に固まる。0 のどちらかを持つ港 164 を外すと 2,533 港。
+    **陽性対照(外部の事実)**: 八戸は特定第3種(総括表の脚注に列挙)で、係留施設が 0 m ではありえない。
+    """
+    from ml.features import build_feature_table  # noqa: PLC0415
+
+    table = build_feature_table()
+    by_no = {p["port_no"]: p for p in ports}
+    assert by_no[HACHINOHE]["port_class"] == "special_3", "対照の前提(八戸は特定第3種)が崩れた"
+    assert HACHINOHE not in {row["port_no"] for row in table}
+    zero_rows = [row["port_no"] for row in table if row["log_mooring_m"] == 0 or row["log_outer_m"] == 0]
+    assert zero_rows == []
+    assert len(table) == 2533
+
+
+def test_t051_report_carries_the_metadata_caveat(report):
+    """T-051 / G-24: 施設延長は交付税の算定上の値で、実際の施設延長ではない —— と報告が述べる。
+
+    照合相手は C09 のメタデータから機械で抜いた一文(scripts/extract_c09_meta_note.py)。
+    報告の但し書きは手で書くので、写し間違い・言い換えはここで落ちる。
+    """
+    note = META_FIXTURE.read_text(encoding="utf-8").strip()
+    assert "普通交付税算定基準" in note and "実際の施設延長数値とは異なる" in note
+    assert report["infrastructure_caveat"] == note
+    assert "規模" not in report["question"], "問いが「規模」のまま(交付税の算定上の値を規模と呼んでいる)"
+
+
 # ---------------------------------------------------------------- G-10 / G-16 / G-11
 
 

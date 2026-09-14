@@ -37,6 +37,29 @@ interface AiUnavailable {
 
 type AiSection = AiEstimated | AiUnavailable;
 
+/** 類似漁港(F-08)。export_web.py の _similar_section と対応 */
+interface SimilarNeighbor {
+  port_no: string;
+  name_ja: string;
+  prefecture: string;
+  port_class: PortClass;
+  distance: number;
+}
+
+interface SimilarEstimated {
+  status: "estimated";
+  neighbors: SimilarNeighbor[];
+  features: string[];
+  sensitivity_notice: string | null;
+  note: string;
+}
+
+type SimilarSection = SimilarEstimated | { status: string; note: string };
+
+function isSimilarEstimated(s: SimilarSection): s is SimilarEstimated {
+  return s.status === "estimated";
+}
+
 function isEstimated(ai: AiSection): ai is AiEstimated {
   return ai.status === "estimated";
 }
@@ -60,6 +83,7 @@ interface PortDetail {
   ocean: { status: string; note: string };
   ai: AiSection;
   tsunami: TsunamiSection;
+  similar: SimilarSection;
   sources: { source_id: string; role: string; artifact?: string }[];
 }
 
@@ -101,10 +125,10 @@ const STATUS_LABEL: Record<string, string> = {
 /** 学習器の名前を、読み手に通じる言葉へ(train_class.py のモデル名と対応) */
 const MODEL_LABEL: Record<string, string> = {
   majority: "多数派(常に第1種と答える)",
-  logistic_scale: "ロジスティック回帰(規模だけ)",
-  logistic_full: "ロジスティック回帰(規模+属性)",
-  hist_gradient_boosting_full: "勾配ブースティング(規模+属性)",
-  mlp_full: "ニューラルネット MLP(規模+属性)",
+  logistic_scale: "ロジスティック回帰(施設延長だけ)",
+  logistic_full: "ロジスティック回帰(施設延長+属性)",
+  hist_gradient_boosting_full: "勾配ブースティング(施設延長+属性)",
+  mlp_full: "ニューラルネット MLP(施設延長+属性)",
 };
 
 function MarkedValue({ mark }: { mark: Marked }) {
@@ -245,13 +269,16 @@ export function PortDrawer({
           {tab === "防災" ? <TsunamiTab tsunami={detail.tsunami} /> : null}
 
           {tab === "AI" ? (
-            isEstimated(detail.ai) ? (
-              <AiTab ai={detail.ai} />
-            ) : (
-              <p className="status-note" data-testid="drawer-ai-unavailable">
-                {detail.ai.note}
-              </p>
-            )
+            <>
+              {isEstimated(detail.ai) ? (
+                <AiTab ai={detail.ai} />
+              ) : (
+                <p className="status-note" data-testid="drawer-ai-unavailable">
+                  {detail.ai.note}
+                </p>
+              )}
+              <SimilarBlock similar={detail.similar} />
+            </>
           ) : null}
 
           {tab === "出典" ? (
@@ -290,7 +317,7 @@ function AiTab({ ai }: { ai: AiEstimated }) {
           {PORT_CLASS_LABEL[ai.official_class]}{" "}
           <span className="badge badge--official">OFFICIAL</span>
         </dd>
-        <dt>規模・属性から見た種別</dt>
+        <dt>施設延長・属性から見た種別</dt>
         <dd data-testid="drawer-ai-predicted">
           {PORT_CLASS_LABEL[ai.predicted_class]} <span className="badge">AI</span>
           <br />
@@ -302,7 +329,7 @@ function AiTab({ ai }: { ai: AiEstimated }) {
         <dd>
           {ai.agrees
             ? "公式の種別と一致する"
-            : `施設の規模と属性だけを見ると、${PORT_CLASS_LABEL[ai.predicted_class]}の港に近い`}
+            : `施設延長と属性だけを見ると、${PORT_CLASS_LABEL[ai.predicted_class]}の港に近い`}
         </dd>
         <dt>モデル</dt>
         <dd>
@@ -327,10 +354,68 @@ function AiTab({ ai }: { ai: AiEstimated }) {
         公式と違う答えが出ても、指定が誤っているという意味ではない。
         この推定は統計モデルの答えであり、行政上の区分ではない。
       </p>
+      <p className="status-note" data-testid="drawer-ai-caveat">
+        施設延長は国土数値情報のメタデータのとおり、普通交付税の算定基準に基づく数値で、
+        実際の施設延長とは異なる。施設延長が 0 の港は、0 を欠測の印とみなして学習に入れていない。
+      </p>
       <p className="hint">
         <a href="/ai/">この AI が何を測り、何が言えなかったか</a>
       </p>
     </div>
+  );
+}
+
+/** 学習の特徴名を、読み手に通じる言葉へ(ml/features.py の FEATURES_FULL と対応) */
+const FEATURE_LABEL: Record<string, string> = {
+  log_mooring_m: "係留施設延長",
+  log_outer_m: "外郭施設延長",
+  is_island: "離島",
+  is_peninsula: "半島",
+  is_border_island: "有人国境離島",
+  port_regulation_circle: "港則法適用(○)",
+  port_regulation_double: "港則法適用(◎)",
+  visitor_berth: "ビジター受入",
+  subdistrict_count: "分区数",
+  coast_conservation_circle: "海岸保全区域(○)",
+  coast_conservation_double: "海岸保全区域(◎)",
+  designation_year: "指定年",
+};
+
+/**
+ * 類似漁港(F-08)。似ているの定義は一つの選び方にすぎないので、
+ * 使った特徴と、選び方への感度の注意書き(G-26)を一覧と同じ場所に出す。
+ */
+function SimilarBlock({ similar }: { similar: SimilarSection }) {
+  if (!isSimilarEstimated(similar)) {
+    return (
+      <p className="status-note" data-testid="drawer-similar-unavailable">
+        {similar.note}
+      </p>
+    );
+  }
+  return (
+    <section data-testid="drawer-similar">
+      <h3>施設延長と属性が近い港</h3>
+      <p className="hint">{similar.note}</p>
+      {similar.sensitivity_notice ? (
+        <p className="status-note" data-testid="drawer-similar-notice">
+          {similar.sensitivity_notice}
+        </p>
+      ) : null}
+      <ol className="similar-list">
+        {similar.neighbors.map((n) => (
+          <li key={n.port_no}>
+            <a href={`/?port=${n.port_no}`}>{n.name_ja}</a>{" "}
+            <span className="layer-row__note">
+              {n.prefecture}・{PORT_CLASS_LABEL[n.port_class]}・距離 {n.distance.toFixed(2)}
+            </span>
+          </li>
+        ))}
+      </ol>
+      <p className="layer-row__note">
+        使った特徴: {similar.features.map((f) => FEATURE_LABEL[f] ?? f).join("・")}
+      </p>
+    </section>
   );
 }
 

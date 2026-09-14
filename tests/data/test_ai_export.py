@@ -53,7 +53,8 @@ def test_t041_every_port_detail_has_an_ai_section(ports, oof):
             estimated += 1
         else:
             assert ai["status"] == "not_available", port["port_no"]
-            assert "0 で埋めない" in ai["note"], port["port_no"]
+            # G-08 / G-23: 施設延長が無い港と 0(欠測の印)の港は、学習に入れていないと理由を書く
+            assert "学習に入れていない" in ai["note"] and "0" in ai["note"], port["port_no"]
             unavailable += 1
     # 両方の枝が実際に通っていること(片方が 0 件なら、その枝は何も検査していない)
     assert estimated > 2000

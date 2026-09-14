@@ -252,6 +252,16 @@ async function main() {
           /第1種|第2種|第3種|特定第3種|第4種/.test(predicted),
           predicted,
         );
+        // G-24: 推定値を出す港の AI タブに、施設延長が交付税の算定上の数だという但し書きが出る
+        const caveat = await page
+          .getByTestId("drawer-ai-caveat")
+          .innerText({ timeout: 1000 })
+          .catch(() => "");
+        check(
+          "AI タブに施設延長の但し書き(交付税の算定・実際の延長ではない)が出る",
+          caveat.includes("普通交付税") && caveat.includes("実際の施設延長とは異なる"),
+          caveat.slice(0, 60),
+        );
       }
     }
 
@@ -349,11 +359,74 @@ async function main() {
         .catch(() => "");
       check(
         "陽性対照: 施設延長の無い港は推定値を出さず理由を出す",
-        note.includes("0 で埋めない"),
+        note.includes("学習に入れていない"),
         note.slice(0, 60),
       );
       const leaked = await page.getByTestId("drawer-ai-predicted").count();
       check("陽性対照: 施設延長の無い港に推定種別が出ていない", leaked === 0, `${leaked} 件`);
+    }
+
+    // G-23: 施設延長 0 は欠測の印。八戸(特定第3種・係留も外郭も 0)は座標があるのに学習表に入らない。
+    // 座標の無い港(上)とは別の枝 —— 座標が在っても 0 の港に推定値が出ないことを見る
+    const HACHINOHE = "1230010";
+    await page.goto(`${base}/?port=${HACHINOHE}`, { waitUntil: "networkidle" });
+    await page.getByTestId("port-drawer").waitFor({ state: "visible", timeout: 10_000 });
+    const hachinoheName = await page.getByTestId("port-drawer").innerText({ timeout: 5000 }).catch(() => "");
+    if (check("八戸の Drawer が開く(対照が成り立つ)", hachinoheName.includes("八戸"), hachinoheName.slice(0, 30))) {
+      await page.getByTestId("drawer-tab-AI").click();
+      const hNote = await page
+        .getByTestId("drawer-ai-unavailable")
+        .innerText({ timeout: 5000 })
+        .catch(() => "");
+      check("陽性対照: 施設延長 0 の八戸は推定値を出さず理由を出す", hNote.includes("0"), hNote.slice(0, 60));
+      const hLeaked = await page.getByTestId("drawer-ai-predicted").count();
+      check("陽性対照: 施設延長 0 の八戸に推定種別が出ていない", hLeaked === 0, `${hLeaked} 件`);
+      // F-08: 八戸は学習表に無いので似た港も出さず、理由を出す
+      const hSimilar = await page.getByTestId("drawer-similar").count();
+      const hSimilarNote = await page
+        .getByTestId("drawer-similar-unavailable")
+        .innerText({ timeout: 5000 })
+        .catch(() => "");
+      check(
+        "陽性対照: 施設延長 0 の八戸に似た港を出さず理由を出す",
+        hSimilar === 0 && hSimilarNote.length > 10,
+        hSimilarNote.slice(0, 60),
+      );
+    }
+
+    console.log("\n[4d] 似た港(F-08)");
+    // 焼津(特定第3種・施設延長あり)で、似た港 10 件・使った特徴・選び方への感度の注意書き(G-26)が出る
+    const yaizu = await page.evaluate(async () => {
+      const rows = await (await fetch("/data/ports.min.json")).json();
+      const row = rows.find((r) => r.n === "焼津");
+      return row ? row.id : null;
+    });
+    if (check("焼津が一覧に在る(対照が成り立つ)", yaizu !== null)) {
+      await page.goto(`${base}/?port=${yaizu}`, { waitUntil: "networkidle" });
+      await page.getByTestId("port-drawer").waitFor({ state: "visible", timeout: 10_000 });
+      await page.getByTestId("drawer-tab-AI").click();
+      const similar = await page
+        .getByTestId("drawer-similar")
+        .evaluate((el) => ({
+          items: el.querySelectorAll("ol li").length,
+          links: [...el.querySelectorAll("ol li a")].map((a) => a.getAttribute("href")),
+          text: el.textContent ?? "",
+        }), undefined, { timeout: 5000 })
+        .catch(() => null);
+      if (check("似た港の一覧が出る", similar !== null)) {
+        check("似た港が 10 件", similar.items === 10, `${similar.items} 件`);
+        check(
+          "似た港に自分自身が入っていない",
+          !similar.links.includes(`/?port=${yaizu}`),
+          similar.links.slice(0, 3).join(" "),
+        );
+        check("使った特徴の一覧が出る", similar.text.includes("使った特徴"), similar.text.slice(-60));
+        check(
+          "選び方への感度の注意書きが出る(G-26)",
+          similar.text.includes("特徴の選び方で似た港は大きく変わる"),
+          similar.text.slice(0, 60),
+        );
+      }
     }
 
     console.log("\n[5] 検品器の陽性対照");
@@ -458,6 +531,8 @@ async function main() {
       const q = (id) => document.querySelector(`[data-testid="${id}"]`);
       return {
         answer: q("ai-answer")?.textContent?.trim() ?? "",
+        caveat: q("ai-caveat")?.textContent?.trim() ?? "",
+        heading: document.querySelector("h1")?.textContent ?? "",
         models: q("ai-models")?.querySelectorAll("tbody tr").length ?? 0,
         expectations: q("ai-expectations")?.querySelectorAll("tbody tr").length ?? 0,
         confusionRows: q("ai-confusion")?.querySelectorAll("tbody tr").length ?? 0,
@@ -466,6 +541,13 @@ async function main() {
       };
     });
     check("AI ページに答えの文がある", aiPage.answer.length > 20, aiPage.answer.slice(0, 40));
+    // G-24: 施設延長は交付税の算定上の数で、実際の長さではない —— とページが言う
+    check(
+      "AI ページに施設延長の但し書き(交付税の算定・実際の延長ではない)が出る",
+      aiPage.caveat.includes("普通交付税算定基準") && aiPage.caveat.includes("実際の施設延長数値とは異なる"),
+      aiPage.caveat.slice(0, 60),
+    );
+    check("AI ページの問いが「規模」と言っていない", !aiPage.heading.includes("規模"), aiPage.heading);
     check("比べたモデルが 6 行ある", aiPage.models === 6, `${aiPage.models} 行`);
     check("予想 E1〜E5 が 5 行ある", aiPage.expectations === 5, `${aiPage.expectations} 行`);
     check(

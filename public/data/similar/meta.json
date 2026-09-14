@@ -1,0 +1,262 @@
+{
+ "question": "施設延長と属性が近い漁港はどこか。種別の似かたで確かめる",
+ "features": [
+  "log_mooring_m",
+  "log_outer_m",
+  "is_island",
+  "is_peninsula",
+  "is_border_island",
+  "port_regulation_circle",
+  "port_regulation_double",
+  "visitor_berth",
+  "subdistrict_count",
+  "coast_conservation_circle",
+  "coast_conservation_double",
+  "designation_year"
+ ],
+ "k": 10,
+ "distance": "標準化した特徴のユークリッド距離(標準化は母標準偏差)",
+ "tie_rule": "距離を 1e-9 の格子に丸めた整数の昇順、同じなら港番号の昇順",
+ "class_agreement": {
+  "shipped": {
+   "1": 0.8274370208105147,
+   "2": 0.3974358974358974,
+   "3": 0.26458333333333334,
+   "special_3": 0.15,
+   "4": 0.1391304347826087,
+   "macro": 0.35571733727247085
+  },
+  "lengths_only": {
+   "1": 0.8399780941949616,
+   "2": 0.39072978303747535,
+   "3": 0.25,
+   "special_3": 0.10833333333333334,
+   "4": 0.07608695652173914,
+   "macro": 0.33302563341750185
+  },
+  "random": {
+   "1": 0.7207740916271722,
+   "2": 0.19984202211690363,
+   "3": 0.03751974723538705,
+   "special_3": 0.004344391785150079,
+   "4": 0.03593996840442338,
+   "macro": 0.19968404423380728
+  }
+ },
+ "gates": {
+  "G-25": {
+   "threshold": 0.1,
+   "margin": 0.15603329303866356,
+   "passed": true
+  },
+  "G-26": {
+   "threshold": 0.5,
+   "overlap_with_lengths_only": 0.07587840505329649,
+   "notice_required": true
+  },
+  "G-28": {
+   "rule": "(a) silhouette - null >= 0.05 かつ (b) seed_ari_min >= 0.80 かつ (c) subsample_ari_min >= 0.80 かつ (d) max_single_flag_ari < 0.80。複数なら (a) の差が最大の k",
+   "by_k": {
+    "3": {
+     "silhouette": 0.20867357915851764,
+     "null_silhouette": 0.14763695766858856,
+     "seed_ari_min": 0.9975367006688349,
+     "subsample_ari_min": 0.9953837701653088,
+     "max_single_flag_ari": 0.6668605107548762,
+     "max_single_flag": "coast_conservation_double",
+     "sizes": [
+      1593,
+      565,
+      375
+     ],
+     "qualifies": true
+    },
+    "4": {
+     "silhouette": 0.22800929904080858,
+     "null_silhouette": 0.14869560855380273,
+     "seed_ari_min": 0.8313917680108798,
+     "subsample_ari_min": 0.5098885820535961,
+     "max_single_flag_ari": 0.6350286686984726,
+     "max_single_flag": "coast_conservation_double",
+     "sizes": [
+      1560,
+      560,
+      358,
+      55
+     ],
+     "qualifies": false
+    },
+    "5": {
+     "silhouette": 0.19475673072350405,
+     "null_silhouette": 0.16195075028884676,
+     "seed_ari_min": 0.49227477238484785,
+     "subsample_ari_min": 0.4930694960645581,
+     "max_single_flag_ari": 0.31299889408707315,
+     "max_single_flag": "coast_conservation_double",
+     "sizes": [
+      843,
+      744,
+      539,
+      352,
+      55
+     ],
+     "qualifies": false
+    },
+    "6": {
+     "silhouette": 0.23217553252442263,
+     "null_silhouette": 0.17073835552945263,
+     "seed_ari_min": 0.511126756670534,
+     "subsample_ari_min": 0.5036713684181171,
+     "max_single_flag_ari": 0.3247597421536278,
+     "max_single_flag": "is_peninsula",
+     "sizes": [
+      963,
+      541,
+      526,
+      349,
+      99,
+      55
+     ],
+     "qualifies": false
+    },
+    "7": {
+     "silhouette": 0.25091974766265773,
+     "null_silhouette": 0.18666657111383292,
+     "seed_ari_min": 0.5572571698013679,
+     "subsample_ari_min": 0.4178584494466901,
+     "max_single_flag_ari": 0.2595636754947679,
+     "max_single_flag": "is_peninsula",
+     "sizes": [
+      854,
+      473,
+      458,
+      344,
+      250,
+      99,
+      55
+     ],
+     "qualifies": false
+    },
+    "8": {
+     "silhouette": 0.24242774937918976,
+     "null_silhouette": 0.18048619041333194,
+     "seed_ari_min": 0.4309907490598803,
+     "subsample_ari_min": 0.38516516216274,
+     "max_single_flag_ari": 0.2206343294615773,
+     "max_single_flag": "coast_conservation_circle",
+     "sizes": [
+      774,
+      491,
+      434,
+      356,
+      171,
+      153,
+      99,
+      55
+     ],
+     "qualifies": false
+    }
+   },
+   "selected_k": 3,
+   "passed": true
+  }
+ },
+ "sensitivity_notice": "特徴の選び方で似た港は大きく変わる。ここでは下の特徴を同じ重みで使った。施設延長だけで選ぶと、上位 10 港のうち平均 7.6% しか重ならない",
+ "identical_feature_rows": 2,
+ "n_ports": 2533,
+ "clusters": {
+  "k": 3,
+  "profiles": [
+   {
+    "cluster": 0,
+    "size": 565,
+    "class_counts": {
+     "1": 367,
+     "2": 142,
+     "3": 37,
+     "special_3": 4,
+     "4": 15
+    },
+    "medians": {
+     "log_mooring_m": 6.1903154058531475,
+     "log_outer_m": 7.419380582918692,
+     "subdistrict_count": 0.0,
+     "designation_year": 1952.0
+    },
+    "flag_shares": {
+     "is_island": 0.03893805309734513,
+     "is_peninsula": 0.45663716814159294,
+     "is_border_island": 0.0,
+     "port_regulation_circle": 0.15398230088495576,
+     "port_regulation_double": 0.008849557522123894,
+     "visitor_berth": 0.035398230088495575,
+     "coast_conservation_circle": 0.0,
+     "coast_conservation_double": 1.0
+    }
+   },
+   {
+    "cluster": 1,
+    "size": 1593,
+    "class_counts": {
+     "1": 1171,
+     "2": 328,
+     "3": 53,
+     "special_3": 8,
+     "4": 33
+    },
+    "medians": {
+     "log_mooring_m": 5.8944028342648505,
+     "log_outer_m": 7.036148493750536,
+     "subdistrict_count": 0.0,
+     "designation_year": 1952.0
+    },
+    "flag_shares": {
+     "is_island": 0.09981167608286252,
+     "is_peninsula": 0.34023854362837413,
+     "is_border_island": 0.0,
+     "port_regulation_circle": 0.1098556183301946,
+     "port_regulation_double": 0.02071563088512241,
+     "visitor_berth": 0.04896421845574388,
+     "coast_conservation_circle": 0.7620841180163214,
+     "coast_conservation_double": 0.0
+    }
+   },
+   {
+    "cluster": 2,
+    "size": 375,
+    "class_counts": {
+     "1": 288,
+     "2": 37,
+     "3": 6,
+     "special_3": 0,
+     "4": 44
+    },
+    "medians": {
+     "log_mooring_m": 5.8664680569332965,
+     "log_outer_m": 6.98100574072173,
+     "subdistrict_count": 0.0,
+     "designation_year": 1955.0
+    },
+    "flag_shares": {
+     "is_island": 0.776,
+     "is_peninsula": 0.010666666666666666,
+     "is_border_island": 0.9866666666666667,
+     "port_regulation_circle": 0.06666666666666667,
+     "port_regulation_double": 0.04533333333333334,
+     "visitor_berth": 0.013333333333333334,
+     "coast_conservation_circle": 0.5813333333333334,
+     "coast_conservation_double": 0.2
+    }
+   }
+  ],
+  "best_two_flag": {
+   "flags": [
+    "is_border_island",
+    "coast_conservation_double"
+   ],
+   "ari": 0.9799791427576386,
+   "post_hoc": true,
+   "note": "ゲート G-28 の規則 (d) は単一の印だけを見ていた。群を言語化した後に測った値で、判定には使っていない"
+  }
+ }
+}

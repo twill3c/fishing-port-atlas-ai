@@ -36,7 +36,7 @@ STATUS_VOCAB = (
 
 
 def _load_ai() -> tuple[dict | None, dict]:
-    """AI(種別と規模)の報告と、港ごとの分割外予測。未生成なら (None, {})。"""
+    """AI(種別と施設延長)の報告と、港ごとの分割外予測。未生成なら (None, {})。"""
     report_path = CANON / "ai_class_report.json"
     oof_path = CANON / "ai_class_oof.json"
     if not report_path.exists() or not oof_path.exists():
@@ -59,7 +59,7 @@ def _ai_section(report: dict | None, oof: dict, port_no: str) -> dict:
     if pred is None:
         return {
             "status": "not_available",
-            "note": "施設延長(国土数値情報 C09)が無い港は学習に入れていない(0 で埋めない)",
+            "note": "施設延長(国土数値情報 C09)が無い港、または 0(欠測の符号)の港は学習に入れていない(0 を値として使わない)",
         }
     shipped = next(m for m in report["models"] if m["name"] == report["shipped_model"])
     majority = next(m for m in report["models"] if m["name"] == "majority")
@@ -106,6 +106,43 @@ def _tsunami_section(tsunami: dict | None, port_no: str) -> dict:
     }
 
 
+def _similar_section(report: dict | None, neighbors: dict, port_by_no: dict, port_no: str) -> dict:
+    """港の詳細に載せる類似漁港の欄(F-08、SPEC G-25 / G-26)。
+
+    G-25 を通らなければ近傍を出さない。出すときは、何を似ているとみなしたか(特徴の一覧)と、
+    選び方への感度の注意書き(G-26)を必ず添える。
+    """
+    if report is None:
+        return {"status": "missing_source", "note": "類似漁港は未構築"}
+    if not report["gates"]["G-25"]["passed"]:
+        return {
+            "status": "suppressed",
+            "note": "近傍の種別の一致が無作為と十分に違わなかったので、類似漁港は出していない(SPEC G-25)",
+        }
+    row = neighbors.get(port_no)
+    if row is None:
+        return {
+            "status": "not_available",
+            "note": "施設延長(国土数値情報 C09)が無い港、または 0(欠測の符号)の港は、似た港を計算していない",
+        }
+    return {
+        "status": "estimated",
+        "neighbors": [
+            {
+                "port_no": e["port_no"],
+                "name_ja": port_by_no[e["port_no"]]["name_ja"],
+                "prefecture": port_by_no[e["port_no"]]["prefecture"],
+                "port_class": port_by_no[e["port_no"]]["port_class"],
+                "distance": round(e["distance"], 4),
+            }
+            for e in row
+        ],
+        "features": report["features"],
+        "sensitivity_notice": report["sensitivity_notice"],
+        "note": "施設延長(交付税の算定に使う数)と属性を標準化した距離で近い 10 港。種別・座標・都道府県は使っていない",
+    }
+
+
 def _mark(value, status_when_missing: str = "not_available") -> dict:
     """値と、その値が無い理由をひと組で返す(SPEC G-08)。"""
     if value in (None, ""):
@@ -127,6 +164,16 @@ def build() -> dict:
     # 津波浸水想定(DS-006、SPEC §7.4)。未構築なら港の欄は「未取得」にする
     tsunami_path = CANON / "tsunami_ports.json"
     tsunami = json.loads(tsunami_path.read_text(encoding="utf-8")) if tsunami_path.exists() else None
+
+    # 類似漁港(F-08、SPEC G-25〜G-28)。未生成なら港の欄は「未取得」にする
+    similar_path = CANON / "similar_report.json"
+    similar_report = json.loads(similar_path.read_text(encoding="utf-8")) if similar_path.exists() else None
+    similar_neighbors = (
+        json.loads((CANON / "similar_neighbors.json").read_text(encoding="utf-8"))
+        if similar_report is not None
+        else {}
+    )
+    port_by_no = {p["port_no"]: p for p in ports}
 
     min_rows = []
     for p in ports:
@@ -183,6 +230,7 @@ def build() -> dict:
             },
             "ai": _ai_section(ai_report, ai_oof, p["port_no"]),
             "tsunami": _tsunami_section(tsunami, p["port_no"]),
+            "similar": _similar_section(similar_report, similar_neighbors, port_by_no, p["port_no"]),
             "sources": [
                 {"source_id": "DS-001", "role": "港名・種別・管理者・所在地", "artifact": p["source_pdf"]},
                 *(
@@ -207,11 +255,37 @@ def build() -> dict:
             json.dumps(tsunami["meta"], ensure_ascii=False, indent=1), encoding="utf-8"
         )
 
-    # --- AI: 公式の種別は、施設の規模で読めるのか(SPEC §7.3)---
+    # --- AI: 公式の種別は、交付税の算定に使う施設延長で読めるのか(SPEC §7.3 / G-23 / G-24)---
     if ai_report is not None:
         (PUBLIC / "ai").mkdir(parents=True, exist_ok=True)
         (PUBLIC / "ai" / "class-report.json").write_text(
             json.dumps(ai_report, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+        )
+
+    # --- 類似漁港とクラスタ(F-08、SPEC G-25〜G-28)---
+    # G-25 を通らなければ近傍は配らない。クラスタは G-28 を通ったときだけ canonical に在る
+    if similar_report is not None and similar_report["gates"]["G-25"]["passed"]:
+        (PUBLIC / "similar").mkdir(parents=True, exist_ok=True)
+        for name in ("neighbors", "features"):
+            shutil.copyfile(CANON / f"similar_{name}.json", PUBLIC / "similar" / f"{name}.json")
+        if similar_report["gates"]["G-28"]["passed"]:
+            shutil.copyfile(CANON / "similar_clusters.json", PUBLIC / "similar" / "clusters.json")
+        similar_meta = {
+            "question": similar_report["question"],
+            "features": similar_report["features"],
+            "k": similar_report["k"],
+            "distance": similar_report["distance"],
+            "tie_rule": similar_report["tie_rule"],
+            "class_agreement": similar_report["class_agreement"],
+            "gates": similar_report["gates"],
+            "sensitivity_notice": similar_report["sensitivity_notice"],
+            "identical_feature_rows": similar_report["identical_feature_rows"],
+            "n_ports": similar_report["n_ports"],
+            # G-28 を通ったときだけ在る。群の言語化(大きさ・種別の内訳・中央値・印の割合)
+            "clusters": similar_report.get("clusters"),
+        }
+        (PUBLIC / "similar" / "meta.json").write_text(
+            json.dumps(similar_meta, ensure_ascii=False, indent=1), encoding="utf-8"
         )
 
     # --- 海域(DS-003)---
@@ -372,6 +446,17 @@ def build() -> dict:
                     }
                 }
                 if tsunami is not None
+                else {}
+            ),
+            **(
+                {
+                    "similar": {
+                        "metaUrl": "/data/similar/meta.json",
+                        "neighborsUrl": "/data/similar/neighbors.json",
+                        "clusters": similar_report["gates"]["G-28"]["passed"],
+                    }
+                }
+                if similar_report is not None and similar_report["gates"]["G-25"]["passed"]
                 else {}
             ),
         },

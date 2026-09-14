@@ -1,4 +1,7 @@
-"""AI: 公式の種別は、施設の規模で読めるのか。SPEC §7.3 / G-10 / G-11 / G-16 / G-17。
+"""AI: 公式の種別は、交付税の算定に使う施設延長で読めるのか。SPEC §7.3 / G-10 / G-11 / G-16 / G-17 / G-23 / G-24。
+
+loop_004 では「施設の規模」と呼んでいたが、C09 のメタデータは施設延長を「普通交付税算定基準に基づく数値で、
+実際の施設延長とは異なる」と書いている(loop_006 で判明)。下の表の「規模」はモデル名の由来として残す。
 
 ## 手順(実測より前に固定した)
 
@@ -27,6 +30,7 @@ from __future__ import annotations
 
 import collections
 import json
+import os
 import statistics
 import sys
 import warnings
@@ -35,6 +39,7 @@ from pathlib import Path
 
 import numpy as np
 import sklearn
+from threadpoolctl import threadpool_limits
 from sklearn.dummy import DummyClassifier
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.exceptions import ConvergenceWarning
@@ -63,7 +68,16 @@ REPEATS = 5
 SEED = 20260914
 G16_THRESHOLD = 0.20  # 事前登録(SPEC §4 G-16)。実測後に動かさない
 
-# SPEC §7.3 の文面そのまま(HC-064)
+QUESTION = "公式の種別は、交付税の算定に使う施設延長で読めるのか"
+
+# C09 のメタデータの一文(G-24)。ここは手で書き、T-051 がメタデータから機械で抜いた一文と照合する
+INFRASTRUCTURE_CAVEAT = (
+    "なお、本データの属性「外郭施設延長」「係留施設延長」は普通交付税算定基準"
+    "（普通交付税に関する省令第５条）に基づく数値であり、実際の施設延長数値とは異なる。"
+)
+
+# SPEC §7.3 の文面そのまま(HC-064)。loop_004 の実測前に登録した文面なので、「規模」の語も含めて変えない。
+# 施設延長が交付税の算定上の数だと分かったのは loop_006(INFRASTRUCTURE_CAVEAT)
 DECLARED = {
     "E1": "規模だけのロジスティック回帰は、多数派ベースラインの macro-F1 を上回る",
     "E2": "第4種の再現率は、規模だけより属性を足したほうが高い",
@@ -114,6 +128,14 @@ def _admin_column(table: list[dict]) -> dict[str, int]:
 
 
 def run() -> dict:
+    # この機では並行する別セッションが CPU を奪い、実効コアは 2 前後まで落ちる。
+    # BLAS に全コアのスレッドを渡すと奪い合いで取り分以下に落ちる(2026-09-15: 18 スレッドで 23 秒に 1.2 秒しか進まなかった)。
+    # 既定は 3 スレッド、環境変数 FPA_THREADS で変える。結果はスレッド数に依存しない(分割・初期化の乱数は固定)
+    with threadpool_limits(limits=int(os.environ.get("FPA_THREADS", "3"))):
+        return _run()
+
+
+def _run() -> dict:
     table = build_feature_table()
     admin = _admin_column(table)
     scratch = [dict(row, is_prefecture_managed=admin[row["port_no"]]) for row in table]
@@ -260,7 +282,9 @@ def run() -> dict:
         }
 
     report = {
-        "question": "公式の種別は、施設の規模で読めるのか",
+        "question": QUESTION,
+        "infrastructure_caveat": INFRASTRUCTURE_CAVEAT,
+        "missing_rule": "C09 の係留・外郭施設延長のどちらかが 0 の港は、0 を欠測の符号として学習表に入れない(G-23)",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "sklearn_version": sklearn.__version__,
         "n_ports": len(table),
