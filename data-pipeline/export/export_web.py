@@ -78,6 +78,34 @@ def _ai_section(report: dict | None, oof: dict, port_no: str) -> dict:
     }
 
 
+TSUNAMI_STATUS = {
+    "link_only": "suppressed",  # 再配布に連絡が要るので載せない
+    "not_provided": "missing_source",  # 国土数値情報として提供されていない
+    "no_data": "not_applicable",  # 津波浸水想定の配布が無い
+}
+
+
+def _tsunami_section(tsunami: dict | None, port_no: str) -> dict:
+    """港の詳細に載せる津波の欄(SPEC §7.4 / G-19〜G-22)。
+
+    代表点が区域の内か外かは出さない。半径 100 / 200 / 500 m の最大浸水深区分だけを並べる。
+    """
+    if tsunami is None:
+        return {"status": "missing_source", "policy": None, "radii": None, "note": "津波浸水想定は未構築"}
+    record = tsunami["ports"][port_no]
+    policy = record["policy"]
+    if policy == "redistribute":
+        status = "observed" if record["radii"] is not None else "not_available"
+    else:
+        status = TSUNAMI_STATUS[policy]
+    return {
+        "status": status,
+        "policy": policy,
+        "radii": record["radii"],
+        "note": record["note"],
+    }
+
+
 def _mark(value, status_when_missing: str = "not_available") -> dict:
     """値と、その値が無い理由をひと組で返す(SPEC G-08)。"""
     if value in (None, ""):
@@ -95,6 +123,10 @@ def build() -> dict:
     (PUBLIC / "ports").mkdir(parents=True, exist_ok=True)
 
     ai_report, ai_oof = _load_ai()
+
+    # 津波浸水想定(DS-006、SPEC §7.4)。未構築なら港の欄は「未取得」にする
+    tsunami_path = CANON / "tsunami_ports.json"
+    tsunami = json.loads(tsunami_path.read_text(encoding="utf-8")) if tsunami_path.exists() else None
 
     min_rows = []
     for p in ports:
@@ -150,6 +182,7 @@ def build() -> dict:
                 ),
             },
             "ai": _ai_section(ai_report, ai_oof, p["port_no"]),
+            "tsunami": _tsunami_section(tsunami, p["port_no"]),
             "sources": [
                 {"source_id": "DS-001", "role": "港名・種別・管理者・所在地", "artifact": p["source_pdf"]},
                 *(
@@ -166,6 +199,13 @@ def build() -> dict:
     (PUBLIC / "ports.min.json").write_text(
         json.dumps(min_rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
     )
+
+    # --- 津波浸水想定のメタ(但し書き・区分の並び・利用条件の表)。港の欄は詳細 JSON に入れた ---
+    if tsunami is not None:
+        (PUBLIC / "hazards").mkdir(parents=True, exist_ok=True)
+        (PUBLIC / "hazards" / "tsunami-meta.json").write_text(
+            json.dumps(tsunami["meta"], ensure_ascii=False, indent=1), encoding="utf-8"
+        )
 
     # --- AI: 公式の種別は、施設の規模で読めるのか(SPEC §7.3)---
     if ai_report is not None:
@@ -269,6 +309,21 @@ def build() -> dict:
             "attribution": "気象庁「日本沿岸域の海面水温」をもとに Fishing Port Atlas AI が加工",
         },
         {
+            "id": "DS-006",
+            "title": "国土数値情報 津波浸水想定データ(A40、2024 年度ページ)",
+            "provider": "国土交通省(原典は各都道府県)",
+            "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A40-2024.html",
+            "retrieved": datetime.now(timezone.utc).date().isoformat(),
+            "coverage": "都道府県ごとに年度が異なる(重なる箇所は新しい年度を優先)",
+            "processed": True,
+            "processing": (
+                "再配布してよい都道府県だけ、漁港の代表点から半径 100 / 200 / 500 m の円に掛かる区域の"
+                "最大浸水深区分を求めた。代表点が区域の内か外かは出していない"
+            ),
+            "license": "CC BY 4.0(一部制限)・都道府県ごとの利用条件",
+            "attribution": "出典: 国土交通省「国土数値情報(津波浸水想定データ)」を加工して作成",
+        },
+        {
             "id": "DS-004",
             "title": "地理院タイル(淡色地図)",
             "provider": "国土地理院",
@@ -307,6 +362,16 @@ def build() -> dict:
                     }
                 }
                 if ai_report is not None
+                else {}
+            ),
+            **(
+                {
+                    "tsunamiMeta": {
+                        "url": "/data/hazards/tsunami-meta.json",
+                        "radiiM": tsunami["meta"]["radii_m"],
+                    }
+                }
+                if tsunami is not None
                 else {}
             ),
         },

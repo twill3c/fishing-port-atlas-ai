@@ -27,6 +27,7 @@
 | DS-001 | 漁港一覧(総括表・都道府県別集計・都道府県別明細 40 県) | 水産庁 | 令和8年4月1日現在 |
 | DS-002 | 国土数値情報 漁港データ C09-06(点 2,931 / 区域線 3,292) | 国土交通省 | 平成18年度 |
 | DS-003 | 日本沿岸域の海面水温情報(沿岸海域 107) | 気象庁 | 1982 年以降(瀬戸内海の 5 海域は 2016 年以降) |
+| DS-006 | 国土数値情報 津波浸水想定データ(A40) | 国土交通省(原典は各都道府県) | 都道府県ごとに年度が異なる。再配布してよい 37 都道府県だけを使う |
 | DS-004 | 地理院タイル(淡色・標準) | 国土地理院 | 背景地図 |
 
 AI の特徴には DS-002 の**外郭施設延長・係留施設延長**(平成18年度)を使う。
@@ -66,6 +67,8 @@ python data-pipeline/download/fetch_jma_sst.py      # 気象庁 沿岸海域 107
 python data-pipeline/normalize/parse_jma_sst.py
 python data-pipeline/integrate/build_ocean.py
 python data-pipeline/ml/train_class.py              # AI(乱数替えの頑健性込みで数分かかる)
+python data-pipeline/download/fetch_a40.py          # 津波浸水想定 37 都道府県・51 ファイル(約 2 GB)
+python data-pipeline/integrate/build_tsunami.py     # 半径 100/200/500 m の最大浸水深区分(県ごとに再開可)
 python data-pipeline/export/export_web.py
 
 # 検査

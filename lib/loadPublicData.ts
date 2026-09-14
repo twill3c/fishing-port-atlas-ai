@@ -52,3 +52,16 @@ export interface Manifest {
 export const loadStats = () => read<Stats>("stats.json");
 export const loadSources = () => read<SourceEntry[]>("sources.json");
 export const loadManifest = () => read<Manifest>("manifest.json");
+
+/** build_tsunami.py の meta と対応(SPEC §7.4) */
+export interface TsunamiMeta {
+  radii_m: number[];
+  rank_order: string[];
+  disclaimer: string;
+  attribution: string;
+  source_page: string;
+  policy: Record<string, { page_class: string; policy: string; reason: string }>;
+  vintages_by_prefecture: Record<string, number[]>;
+}
+
+export const loadTsunamiMeta = () => read<TsunamiMeta>("hazards/tsunami-meta.json");

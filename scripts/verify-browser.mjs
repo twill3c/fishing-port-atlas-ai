@@ -282,6 +282,56 @@ async function main() {
     check("特定第3種で絞ると 13 港になる", specialCount.trim().startsWith("13"), specialCount);
     await page.getByTestId("class-special_3").uncheck();
 
+    console.log("\n[4c] 防災タブ(津波浸水想定)");
+    const tsunamiTargets = await page.evaluate(async () => {
+      const rows = await (await fetch("/data/ports.min.json")).json();
+      const pick = (pref) => rows.find((r) => r.p === pref && r.x !== null)?.id ?? null;
+      return { fukui: pick("福井県"), kyoto: pick("京都府") };
+    });
+    if (
+      check(
+        "福井県(出す県)と京都府(リンクだけの県)の港が在る(対照が成り立つ)",
+        Boolean(tsunamiTargets.fukui && tsunamiTargets.kyoto),
+      )
+    ) {
+      const openTsunamiTab = async (portNo) => {
+        await page.goto(`${base}/?port=${portNo}`, { waitUntil: "networkidle" });
+        await page.getByTestId("port-drawer").waitFor({ state: "visible", timeout: 10_000 });
+        await page.getByTestId("drawer-tab-防災").click();
+        await page.getByTestId("drawer-tsunami").waitFor({ state: "visible", timeout: 5000 });
+        // 但し書きはメタを読んでから出る。固定待ちにせず、読み込み中が消えるまで待つ(HC-245)
+        await page
+          .waitForFunction(
+            () =>
+              !document
+                .querySelector('[data-testid="drawer-tsunami-disclaimer"]')
+                ?.textContent?.includes("読み込み中"),
+            null,
+            { timeout: 10_000 },
+          )
+          .catch(() => {});
+        return page.evaluate(() => {
+          const root = document.querySelector('[data-testid="drawer-tsunami"]');
+          return {
+            rows: root?.querySelectorAll('[data-testid="drawer-tsunami-radii"] tbody tr').length ?? 0,
+            text: root?.textContent ?? "",
+            disclaimer:
+              document.querySelector('[data-testid="drawer-tsunami-disclaimer"]')?.textContent ?? "",
+          };
+        });
+      };
+
+      const fukui = await openTsunamiTab(tsunamiTargets.fukui);
+      check("出す県の港に半径 3 行が出る", fukui.rows === 3, `${fukui.rows} 行`);
+      check("但し書きが出る(避難・公式)", fukui.disclaimer.includes("避難") && fukui.disclaimer.includes("公式"));
+      check("代表点の内外を出していない(「区域外」の語が無い)", !fukui.text.includes("区域外"));
+
+      const kyoto = await openTsunamiTab(tsunamiTargets.kyoto);
+      check("陽性対照: リンクだけの県の港に区分の表が出ない", kyoto.rows === 0, `${kyoto.rows} 行`);
+      check("陽性対照: リンクだけの県の港にも但し書きが出る", kyoto.disclaimer.includes("避難"));
+      check("リンクだけの理由が出る", kyoto.text.includes("載せていない"), kyoto.text.slice(0, 60));
+    }
+
     console.log("\n[4b] 施設延長の無い港の AI タブ(陽性対照)");
     // 座標の無い港は C09 の点の行を持たない = 施設延長も無い = 学習表に入っていない
     const noInfra = await page.evaluate(async () => {

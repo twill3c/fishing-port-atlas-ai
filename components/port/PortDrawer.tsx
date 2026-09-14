@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { TsunamiTab, type TsunamiSection } from "@/components/port/TsunamiTab";
 import {
   GEOMETRY_METHOD_LABEL,
   PORT_CLASS_LABEL,
@@ -58,10 +59,11 @@ interface PortDetail {
   species: { status: string; note: string };
   ocean: { status: string; note: string };
   ai: AiSection;
+  tsunami: TsunamiSection;
   sources: { source_id: string; role: string; artifact?: string }[];
 }
 
-const TABS = ["概要", "属性", "水揚げ", "海洋", "AI", "出典"] as const;
+const TABS = ["概要", "属性", "水揚げ", "海洋", "防災", "AI", "出典"] as const;
 type Tab = (typeof TABS)[number];
 
 const ADMIN_LABEL: Record<string, string> = {
@@ -239,6 +241,8 @@ export function PortDrawer({
           ) : null}
 
           {tab === "海洋" ? <p className="status-note">{detail.ocean.note}</p> : null}
+
+          {tab === "防災" ? <TsunamiTab tsunami={detail.tsunami} /> : null}
 
           {tab === "AI" ? (
             isEstimated(detail.ai) ? (
