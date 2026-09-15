@@ -38,6 +38,24 @@ AI の特徴には DS-002 の**外郭施設延長・係留施設延長**(平成1
 
 出典: 水産庁「漁港一覧」／ 国土交通省「国土数値情報(漁港データ)」／ 地理院タイル
 
+## CI
+
+`.github/workflows/ci.yml` が push と pull request で三つのジョブを回す。
+
+| ジョブ | 中身 |
+|---|---|
+| web | `npm ci` → 型検査 → vitest → `next build` |
+| python | Python 3.14 で `pip install -r requirements.txt` → `pytest -q -rs` |
+| loop-verify | ループログの検証(`harness/looplog.py validate`)と文字種の検査(`harness/text_hygiene.py`) |
+
+生データ(`data/raw`)は Git に入れないので、CI では生データを読む検査が走れない。
+それらは理由つきで skip し、CI(`CI=true`)では skip した検査の集合を
+`tests/ci_expected_skips.txt` と照合する。宣言に無い skip も、宣言したのに走った検査も失敗になる
+(skip は緑と見分けが付かないため)。
+
+CI に入れていないもの: 実ブラウザ検品(`npm run verify:browser`、本番の URL に対して手元で回す)と、
+`next build` の成果物を走査する秘密の名前の検査(T-020、手元のビルドのあとの pytest で確かめる)。
+
 **海しる API と e-Stat API は使っていない。**どちらも認証キーが必要で、
 キー無しでは 404 / 認証失敗を返す(実測 2026-09-08)。漁業統計の欄は 0 で埋めず、
 「未取得」と表示している。詳しくは `/data/` と `SPEC.md` §7。

@@ -107,8 +107,10 @@ def test_t052_positive_control_shuffled_neighbors_fail_the_gate(neighbors, class
 
 def test_t053_sensitivity_to_feature_choice(report, neighbors):
     """T-053 / G-26: 施設延長 2 特徴だけの近傍を numpy で別に計算し、重なりと注意書きの有無を確かめる。"""
+    from _ci_skips import require_c09  # noqa: PLC0415
     from ml.features import FEATURES_SCALE, build_feature_table  # noqa: PLC0415
 
+    require_c09()  # 生データが無ければ理由つきで skip(SPEC G-30)
     table = build_feature_table()
     ports = [row["port_no"] for row in table]
     assert sorted(ports) == sorted(neighbors), "学習表と配信した近傍の港が違う"

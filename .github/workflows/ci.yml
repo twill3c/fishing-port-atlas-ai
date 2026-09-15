@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+# 実ブラウザ検品(scripts/verify-browser.mjs)はここに入れない。本番の URL に対して手元で回す運用で、
+# デプロイは push を受けた Vercel の Git 連携が別経路で行う(SPEC G-29 / loop_007)。
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: npm test
+      - run: npm run build
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # 手元の要件(requirements.txt の版)は Python 3.14 で固めてある
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+      - run: pip install -r requirements.txt
+      # 積まない生データ(data/raw)を読む検査は理由つきで skip する。skip は緑と見分けが付かないので、
+      # CI=true のときは skip の集合を tests/ci_expected_skips.txt と照合し、ずれたら失敗にする(SPEC G-30)
+      - run: python -m pytest -q -rs
+
+  loop-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python harness/looplog.py validate
+      - run: python harness/text_hygiene.py

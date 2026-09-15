@@ -85,8 +85,10 @@ def test_t037_forbidden_features_are_not_used():
 
 def test_t037_ports_without_infrastructure_are_excluded_not_zero_filled(ports):
     """T-037 / G-08: 施設延長が無い港は学習表に入れない(0 で埋めない)。"""
+    from _ci_skips import require_c09  # noqa: PLC0415
     from ml.features import build_feature_table  # noqa: PLC0415
 
+    require_c09()  # 生データが無ければ理由つきで skip(SPEC G-30)
     table = build_feature_table()
     in_table = {row["port_no"] for row in table}
     without = {
@@ -110,8 +112,10 @@ def test_t050_zero_lengths_are_missing_not_values(ports):
     0 は青森 46.2%・岩手 37.2% に固まる。0 のどちらかを持つ港 164 を外すと 2,533 港。
     **陽性対照(外部の事実)**: 八戸は特定第3種(総括表の脚注に列挙)で、係留施設が 0 m ではありえない。
     """
+    from _ci_skips import require_c09  # noqa: PLC0415
     from ml.features import build_feature_table  # noqa: PLC0415
 
+    require_c09()  # 生データが無ければ理由つきで skip(SPEC G-30)
     table = build_feature_table()
     by_no = {p["port_no"]: p for p in ports}
     assert by_no[HACHINOHE]["port_class"] == "special_3", "対照の前提(八戸は特定第3種)が崩れた"
@@ -201,8 +205,10 @@ def test_t040_majority_baseline_matches_closed_form(report):
     他の 4 種別は 0 なので、macro-F1 = 2p/(1+p)/5。層化分割なので各分割の p は全体の p に
     ほぼ等しく、許容幅は分割ごとの端数ぶん(0.005)とする。
     """
+    from _ci_skips import require_c09  # noqa: PLC0415
     from ml.features import build_feature_table  # noqa: PLC0415
 
+    require_c09()  # 生データが無ければ理由つきで skip(SPEC G-30)
     table = build_feature_table()
     p = sum(1 for row in table if row["port_class"] == "1") / len(table)
     # 前提の検算: 第1種が本当に最多であること

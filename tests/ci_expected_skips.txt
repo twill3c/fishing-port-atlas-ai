@@ -1,0 +1,17 @@
+# CI(新しい clone・data/raw なし・out/ なし)で skip してよい検査の一覧(SPEC G-30 / T-056)。
+# CI=true のとき tests/conftest.py が、実際に skip した集合とこの一覧を照合し、ずれたら失敗にする。
+# 1 行 1 件、pytest の nodeid。空行と # で始まる行は読まない。
+
+# 国土数値情報 C09-06 の生データ(data/raw/ksj/C09-06)を読む。取得スクリプトは無く、配布ページから手で展開する
+tests/data/test_ai_class.py::test_t037_ports_without_infrastructure_are_excluded_not_zero_filled
+tests/data/test_ai_class.py::test_t040_majority_baseline_matches_closed_form
+tests/data/test_ai_class.py::test_t050_zero_lengths_are_missing_not_values
+tests/data/test_port_master.py::test_t014_prefecture_code_table_verified_against_c09
+tests/data/test_similar.py::test_t053_sensitivity_to_feature_choice
+
+# 水産庁 漁港一覧の PDF(data/raw/jfa)を読む
+tests/pipeline/test_parse_jfa_ports.py::test_akita_row_count_and_shape
+
+# next build の成果物 out/ を走査する。CI では build は web ジョブ、pytest は python ジョブで別の機械なので out/ が無い。
+# N-02(秘密の名前が配信物に出ない)は手元のビルドのあとの pytest で確かめる
+tests/data/test_web_export.py::test_t020_no_secrets_in_client_bundle

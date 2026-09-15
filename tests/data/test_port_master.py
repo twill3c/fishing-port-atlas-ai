@@ -167,6 +167,9 @@ def test_t014_prefecture_code_table_verified_against_c09():
     """
     import sys
 
+    from _ci_skips import require_c09  # noqa: PLC0415
+
+    require_c09()  # 生データが無ければ理由つきで skip(SPEC G-30)
     sys.path.insert(0, str(ROOT / "data-pipeline"))
     from integrate.build_port_master import load_c09, verify_pref_table  # noqa: PLC0415
 
