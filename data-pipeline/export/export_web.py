@@ -316,6 +316,13 @@ def build() -> dict:
             json.dumps(ocean, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
         )
 
+    # --- 海洋熱波(異常検知、SPEC G-35〜G-38 / §7.6)。平年期間の内と後を分けた報告をそのまま写す ---
+    mhw_path = CANON / "marine_heatwaves.json"
+    mhw_report = json.loads(mhw_path.read_text(encoding="utf-8")) if mhw_path.exists() else None
+    if mhw_report is not None:
+        (PUBLIC / "ocean").mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(mhw_path, PUBLIC / "ocean" / "marine-heatwaves.json")
+
     official = counts["overall"]["by_class"]
     stats = {
         "official": {
@@ -465,6 +472,18 @@ def build() -> dict:
                     }
                 }
                 if tsunami is not None
+                else {}
+            ),
+            **(
+                {
+                    "marineHeatwaves": {
+                        "url": "/data/ocean/marine-heatwaves.json",
+                        "areas": len(mhw_report["areas"]),
+                        "baseline": mhw_report["definition"]["baseline"],
+                        "expectationsHeld": {k: v["held"] for k, v in mhw_report["expectations"].items()},
+                    }
+                }
+                if mhw_report is not None
                 else {}
             ),
             **(

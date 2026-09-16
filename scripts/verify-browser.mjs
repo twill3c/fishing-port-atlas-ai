@@ -608,6 +608,37 @@ async function main() {
       `${rowsBefore} → ${rowsAfter}`,
     );
 
+    // 海洋熱波(SPEC G-35〜G-38 / §7.6)。図の切れは散布図と同じく client rect どうしで測る(HC-159)
+    const mhw = await page.evaluate(() => {
+      const fig = document.querySelector('[data-testid="mhw-annual"] svg');
+      const table = document.querySelector('[data-testid="mhw-expectations"]');
+      const note = document.querySelector('[data-testid="mhw-warming-note"]');
+      if (!fig) return { found: false };
+      const box = fig.getBoundingClientRect();
+      const out = [];
+      for (const el of fig.querySelectorAll("text, rect, line")) {
+        const b = el.getBoundingClientRect();
+        if (b.width === 0 && b.height === 0) continue;
+        if (b.left < box.left - 0.5 || b.top < box.top - 0.5 || b.right > box.right + 0.5 || b.bottom > box.bottom + 0.5) {
+          out.push(`${el.tagName}:${(el.textContent || "").slice(0, 12)}`);
+        }
+      }
+      return {
+        found: true,
+        bars: fig.querySelectorAll("rect.mhw-bar").length,
+        years: Number(fig.getAttribute("data-years")),
+        overflow: out,
+        expectationRows: table ? table.querySelectorAll("tbody tr").length : 0,
+        note: note ? note.textContent : "",
+      };
+    });
+    if (check("海洋熱波の年ごとの図がある", mhw.found === true)) {
+      check("棒の数が年の数と一致する", mhw.bars > 40 && mhw.bars === mhw.years, `${mhw.bars} 本 / ${mhw.years} 年`);
+      check("海洋熱波の図の要素が viewBox に収まっている", mhw.overflow.length === 0, mhw.overflow.slice(0, 4).join(", "));
+      check("予想 E6〜E8 の表が 3 行", mhw.expectationRows === 3, `${mhw.expectationRows} 行`);
+      check("平年を固定すると温暖化が事例を増やすと書く(G-38)", mhw.note.includes("温暖化"), mhw.note.slice(0, 60));
+    }
+
     console.log("\n[5d] 出典ページ: この地図に載らない港");
     await page.goto(`${base}/data/`, { waitUntil: "networkidle" });
     const notListed = await page

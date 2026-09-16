@@ -9,6 +9,10 @@ tests/data/test_ai_class.py::test_t050_zero_lengths_are_missing_not_values
 tests/data/test_port_master.py::test_t014_prefecture_code_table_verified_against_c09
 tests/data/test_similar.py::test_t053_sensitivity_to_feature_choice
 
+# 気象庁 沿岸海域の海面水温の生データ(data/raw/jma_sst)を読む(海洋熱波の平年の照合と閾値の独立計算)
+tests/data/test_marine_heatwaves.py::test_t062_climatology_matches_jma_normals
+tests/data/test_marine_heatwaves.py::test_t063_thresholds_recomputed_independently
+
 # 水産庁 漁港一覧の PDF(data/raw/jfa)を読む
 tests/pipeline/test_parse_jfa_ports.py::test_akita_row_count_and_shape
 

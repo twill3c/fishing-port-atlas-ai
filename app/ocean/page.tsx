@@ -27,6 +27,41 @@ function loadAreas(): OceanArea[] {
   return JSON.parse(readFileSync(path, "utf-8")) as OceanArea[];
 }
 
+/** build_marine_heatwaves.py の報告と対応(SPEC G-35〜G-38 / §7.6) */
+interface MhwEvent {
+  start: string;
+  duration_days: number;
+  max_intensity: number;
+  provisional: boolean;
+}
+
+interface MhwReport {
+  definition: { baseline: [number, number]; window_days: number; percentile: number; min_days: number; max_gap_days: number };
+  gates: {
+    "G-36": { median: number; max: number; passed: boolean };
+    "G-37": { min: number; max: number; passed: boolean };
+  };
+  expectations: Record<string, { declared: string; observed: string; held: boolean }>;
+  areas: Record<
+    string,
+    {
+      area_name: string;
+      last_observation: string;
+      mhw_day_share: { baseline: number; after: number | null };
+      events: MhwEvent[];
+    }
+  >;
+}
+
+function loadMhw(): MhwReport | null {
+  try {
+    const path = join(process.cwd(), "public", "data", "ocean", "marine-heatwaves.json");
+    return JSON.parse(readFileSync(path, "utf-8")) as MhwReport;
+  } catch {
+    return null;
+  }
+}
+
 /** ピアソン相関。散布図に添える数を、図と同じデータから出す(HC-045)。 */
 function pearson(xs: number[], ys: number[]): number {
   const n = xs.length;
@@ -47,6 +82,7 @@ function pearson(xs: number[], ys: number[]): number {
 
 export default function OceanPage() {
   const areas = loadAreas();
+  const mhw = loadMhw();
   const long = areas.filter((a) => a.trend.n_years >= LONG_SERIES_MIN_YEARS);
   const short = areas.filter((a) => a.trend.n_years < LONG_SERIES_MIN_YEARS);
 
@@ -159,6 +195,8 @@ export default function OceanPage() {
         </table>
       </div>
 
+      {mhw ? <MarineHeatwaves report={mhw} /> : null}
+
       <h2>読むときの但し書き</h2>
       <ul>
         <li>
@@ -265,5 +303,162 @@ function Scatter({ points }: { points: { x: number; y: number }[] }) {
         点は 1982 年から取れる {points.length} 海域。横軸が右へ行くほど暖かい海。
       </figcaption>
     </figure>
+  );
+}
+
+const DAY_MS = 86_400_000;
+
+/**
+ * 海洋熱波(SPEC G-35〜G-38 / §7.6)。
+ *
+ * 年ごとの割合は、全海域の「海洋熱波の日 ÷ 観測した日」を事例の開始日と日数から数え直す。
+ * 平年期間の内と後を混ぜた順位は作らない(G-38)。
+ */
+function MarineHeatwaves({ report }: { report: MhwReport }) {
+  const areas = Object.values(report.areas);
+  const [base0, base1] = report.definition.baseline;
+  const lastObs = areas.map((a) => a.last_observation).sort().at(-1)!;
+  const firstYear = 1982;
+  const lastYear = Number(lastObs.slice(0, 4));
+
+  const eventDays = new Map<number, number>();
+  for (const area of areas) {
+    for (const ev of area.events) {
+      const start = Date.parse(`${ev.start}T00:00:00Z`);
+      for (let i = 0; i < ev.duration_days; i += 1) {
+        const year = new Date(start + i * DAY_MS).getUTCFullYear();
+        eventDays.set(year, (eventDays.get(year) ?? 0) + 1);
+      }
+    }
+  }
+  const observedDaysInYear = (year: number) => {
+    const start = Date.UTC(year, 0, 1);
+    const end = year === lastYear ? Date.parse(`${lastObs}T00:00:00Z`) : Date.UTC(year, 11, 31);
+    return Math.round((end - start) / DAY_MS) + 1;
+  };
+  const years = Array.from({ length: lastYear - firstYear + 1 }, (_, i) => firstYear + i).map((year) => ({
+    year,
+    share: (eventDays.get(year) ?? 0) / (areas.length * observedDaysInYear(year)),
+    partial: year === lastYear,
+  }));
+
+  const baselineShare = median(areas.map((a) => a.mhw_day_share.baseline));
+  const afterShare = median(areas.map((a) => a.mhw_day_share.after ?? 0));
+  const pct = (v: number) => `${(v * 100).toFixed(1)}%`;
+  const exp = report.expectations;
+
+  const W = 640;
+  const H = 240;
+  const M = { top: 16, right: 12, bottom: 36, left: 44 };
+  const maxShare = Math.max(0.1, ...years.map((y) => y.share));
+  const yMax = Math.ceil(maxShare * 10) / 10;
+  const band = (W - M.left - M.right) / years.length;
+  const sx = (i: number) => M.left + i * band;
+  const sy = (v: number) => H - M.bottom - (v / yMax) * (H - M.top - M.bottom);
+  const yTicks = Array.from({ length: Math.round(yMax * 10) + 1 }, (_, i) => i / 10);
+  const baseStart = years.findIndex((y) => y.year === base0);
+  const baseEnd = years.findIndex((y) => y.year === base1);
+
+  return (
+    <section>
+      <h2>海洋熱波 —— その時期としては異常に暖かい日が続いた期間</h2>
+      <p>
+        気象庁などの報道発表(2024 年 7 月 19 日)が用いた定義に合わせ、
+        <strong>
+          平年期間 {base0}〜{base1} 年の同じ時期の {report.definition.percentile} パーセンタイル
+          (前後 {Math.floor(report.definition.window_days / 2)} 日を含む)を {report.definition.min_days} 日以上続けて超えた期間
+        </strong>
+        を海洋熱波とした({report.definition.max_gap_days} 日以下の途切れはつなぐ)。
+        {areas.length} 海域(瀬戸内海の 5 海域は平年期間が無いので除く)を日ごとに調べている。
+      </p>
+      <p className="hint">
+        自前の平年と気象庁の平年値の差は中央値 {report.gates["G-36"].median.toFixed(3)} ℃・最大{" "}
+        {report.gates["G-36"].max.toFixed(3)} ℃。平年期間内に閾値を超えた日の割合は{" "}
+        {pct(report.gates["G-37"].min)}〜{pct(report.gates["G-37"].max)}(定義上およそ 10%)。
+      </p>
+
+      <figure className="scatter" data-testid="mhw-annual">
+        <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" data-years={years.length}
+          aria-label="年ごとの、全海域を合わせた海洋熱波の日の割合">
+          {baseStart >= 0 && baseEnd >= 0 ? (
+            <rect x={sx(baseStart)} y={M.top} width={(baseEnd - baseStart + 1) * band}
+              height={H - M.top - M.bottom} fill="currentColor" fillOpacity="0.06" />
+          ) : null}
+          {yTicks.map((t) => (
+            <g key={t}>
+              <line x1={M.left} x2={W - M.right} y1={sy(t)} y2={sy(t)} stroke="currentColor" strokeOpacity="0.14" />
+              <text x={M.left - 6} y={sy(t) + 4} textAnchor="end" fontSize="11" fill="currentColor" fillOpacity="0.62">
+                {Math.round(t * 100)}%
+              </text>
+            </g>
+          ))}
+          {years.map((y, i) => (
+            <rect key={y.year} className="mhw-bar" x={sx(i) + band * 0.15} y={sy(y.share)}
+              width={band * 0.7} height={Math.max(0, sy(0) - sy(y.share))}
+              fill="var(--accent)" fillOpacity={y.partial ? 0.45 : 0.85} rx="1">
+              <title>{`${y.year} 年${y.partial ? `(${lastObs} まで)` : ""}: ${pct(y.share)}`}</title>
+            </rect>
+          ))}
+          {years
+            .filter((y) => y.year % 10 === 0 || y.year === firstYear)
+            .map((y) => (
+              <text key={y.year} x={sx(y.year - firstYear) + band / 2} y={H - M.bottom + 16} textAnchor="middle"
+                fontSize="11" fill="currentColor" fillOpacity="0.62">
+                {y.year}
+              </text>
+            ))}
+          {baseStart >= 0 ? (
+            <text x={sx(baseStart) + 4} y={M.top + 12} fontSize="11" fill="currentColor" fillOpacity="0.62">
+              平年期間 {base0}〜{base1}
+            </text>
+          ) : null}
+        </svg>
+        <figcaption>
+          全 {areas.length} 海域を合わせた、年ごとの海洋熱波の日の割合。{lastYear} 年は {lastObs} までで、薄く描いた。
+        </figcaption>
+      </figure>
+
+      <p data-testid="mhw-warming-note">
+        <strong>平年を {base0}〜{base1} 年に固定しているので、温暖化の傾きがそのまま平年期間後の事例を増やす。</strong>
+        海域ごとの海洋熱波の日の割合は、中央値で平年期間内 {pct(baselineShare)}、{base1 + 1} 年以降 {pct(afterShare)}。
+        これは「その年に珍しいことが増えた」だけでなく「平年そのものより暖かくなった」を含む数であり、
+        両者を分けて読むこと。平年期間の内と後を混ぜた「異常度の順位」は作っていない。
+      </p>
+
+      <h3>測る前に書いた予想</h3>
+      <p>
+        気象庁は 2023 年夏に北日本近海(三陸沖から北海道太平洋沖の沖合)で海洋熱波が発生したと発表している。
+        沿岸の海域でも拾えるかを、測る前に予想として書いた。
+      </p>
+      <div className="table-scroll">
+        <table data-testid="mhw-expectations">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>予想</th>
+              <th>観測</th>
+              <th>結果</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(exp).map(([id, e]) => (
+              <tr key={id}>
+                <td>{id}</td>
+                <td>{e.declared}</td>
+                <td>{e.observed}</td>
+                <td>
+                  <span className="badge">{e.held ? "成立" : "不成立"}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="hint">
+        定義の出典: 気象庁・東京大学・北海道大学・海洋研究開発機構 報道発表「2023年北日本の歴代1位の暑夏への海洋熱波の影響がより明らかに」(2024-07-19)。
+        三陸沖の高温: 気象庁 報道発表「三陸沖の海洋内部の水温が記録的に高くなっています」(2023-08-09)。
+        港と海域は結び付けていないので、港の詳細には出していない。
+      </p>
+    </section>
   );
 }

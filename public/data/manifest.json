@@ -1,5 +1,5 @@
 {
- "build": "2026-09-16T21:39:18+00:00",
+ "build": "2026-09-16T22:09:41+00:00",
  "schemaVersion": "1.0",
  "statusVocabulary": [
   "observed",
@@ -38,6 +38,19 @@
     200,
     500
    ]
+  },
+  "marineHeatwaves": {
+   "url": "/data/ocean/marine-heatwaves.json",
+   "areas": 102,
+   "baseline": [
+    1991,
+    2020
+   ],
+   "expectationsHeld": {
+    "E6": true,
+    "E7": true,
+    "E8": true
+   }
   },
   "tsunamiAreas": {
    "urlTemplate": "/data/hazards/tsunami/{port_no}.json",
