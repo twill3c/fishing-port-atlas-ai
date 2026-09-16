@@ -421,6 +421,31 @@ button.chip:hover {
   gap: 0.35rem;
 }
 
+/* 津波浸水想定の区域の面の凡例(G-34)。種別の凡例(左下)と重ならないよう右下に置く */
+.map-legend--area {
+  left: auto;
+  right: 0.6rem;
+  bottom: 1.6rem;
+  max-width: 17rem;
+}
+
+.swatch--square {
+  border-radius: 2px;
+}
+
+.map-legend__note {
+  margin: 0.3rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 640px) {
+  .map-legend--area {
+    max-width: 12rem;
+  }
+}
+
 .map-tooltip {
   position: absolute;
   z-index: 3;

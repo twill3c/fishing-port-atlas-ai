@@ -8,6 +8,8 @@ data/canonical/*.parquet
 data/quarantine/
 # 県ごとの途中結果(build_tsunami.py のキャッシュ)。再生成できるので積まない
 data/interim/
+# 地図に重ねる津波浸水想定の面(港ごと・約 80 MB)。配信物 public/data/hazards/tsunami/ のほうを積む
+data/canonical/tsunami_areas/
 
 # ただしオラクルと中間表は追跡する。これらを外すと、生データを取り直さないかぎり
 # 二文書突合のテストが**丸ごと skip になり、緑のまま何も検査しなくなる**。

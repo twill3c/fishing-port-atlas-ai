@@ -7,6 +7,8 @@ export interface TsunamiSection {
   status: string;
   policy: "redistribute" | "link_only" | "not_provided" | "no_data" | null;
   radii: { radius_m: number; max_rank: string | null; vintage: number | null }[] | null;
+  /** 地図に重ねる面のファイルの場所。面を配っている港だけにある(G-33) */
+  area: string | null;
   note: string;
 }
 
@@ -32,7 +34,15 @@ const POLICY_LABEL: Record<string, string> = {
  * - 但し書きは配信メタから読み、どの状態でも必ず出す。メタが読めないときも、
  *   公式の防災情報を見るよう求める一文だけは出す(但し書きの無い表示をつくらない)
  */
-export function TsunamiTab({ tsunami }: { tsunami: TsunamiSection }) {
+export function TsunamiTab({
+  tsunami,
+  areaVisible,
+  onToggleArea,
+}: {
+  tsunami: TsunamiSection;
+  areaVisible: boolean;
+  onToggleArea: () => void;
+}) {
   const [meta, setMeta] = useState<TsunamiMeta | null>(null);
   const [metaError, setMetaError] = useState(false);
 
@@ -84,6 +94,20 @@ export function TsunamiTab({ tsunami }: { tsunami: TsunamiSection }) {
             </tbody>
           </table>
         </div>
+      ) : null}
+
+      {tsunami.area ? (
+        <p>
+          <button
+            type="button"
+            className="chip"
+            data-testid="tsunami-area-toggle"
+            aria-pressed={areaVisible}
+            onClick={onToggleArea}
+          >
+            {areaVisible ? "区域の面を地図から外す" : "区域の面を地図に重ねる"}
+          </button>
+        </p>
       ) : null}
 
       <p className="layer-row__note">{tsunami.note}</p>

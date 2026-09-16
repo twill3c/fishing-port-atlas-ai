@@ -238,11 +238,12 @@ def shape_bboxes(shp: Path) -> np.ndarray:
     return raw.view("<f8").reshape(-1, 4)
 
 
-def build_prefecture(prefecture: str, zips: list[dict], ports: list[dict]) -> dict:
-    with_coords = [p for p in ports if p["lat"] is not None]
-    if not with_coords:
-        return {"prefecture": prefecture, "labels": {}, "vintages": [], "stats": {}, "ports": {}}
+def collect_polygons(prefecture: str, zips: list[dict], with_coords: list[dict]):
+    """港の 500 m 圏の外接矩形に掛かる面を、年度の新しい順に読み、古い年度の面は新しい面で切り取って返す。
 
+    戻り値: (kept: [(経緯度の面, 表示ラベル, 年度)], labels: Counter, canonical_cache: {生ラベル: 表示ラベル}, stats)。
+    半径の区分(build_prefecture)と、地図に重ねる面の書き出しが**同じ面**を使うための切り出し(loop_009)。
+    """
     reach = max(RADII_M) * 1.05
     port_boxes = np.array([
         (p["lon"] - reach / m_per_deg_lon(p["lat"]), p["lat"] - reach / M_PER_DEG_LAT,
@@ -295,7 +296,15 @@ def build_prefecture(prefecture: str, zips: list[dict], ports: list[dict]) -> di
             kept.append((geom, label, entry["year"]))
         reader.close()
         newer_geoms.extend(this_vintage)
+    return kept, labels, canonical_cache, stats
 
+
+def build_prefecture(prefecture: str, zips: list[dict], ports: list[dict]) -> dict:
+    with_coords = [p for p in ports if p["lat"] is not None]
+    if not with_coords:
+        return {"prefecture": prefecture, "labels": {}, "vintages": [], "stats": {}, "ports": {}}
+
+    kept, labels, canonical_cache, stats = collect_polygons(prefecture, zips, with_coords)
     order = rank_order(labels)
     nested = strictly_nested_pairs(labels)
     if nested:

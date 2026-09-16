@@ -85,23 +85,26 @@ TSUNAMI_STATUS = {
 }
 
 
-def _tsunami_section(tsunami: dict | None, port_no: str) -> dict:
-    """港の詳細に載せる津波の欄(SPEC §7.4 / G-19〜G-22)。
+def _tsunami_section(tsunami: dict | None, port_no: str, areas_report: dict | None = None) -> dict:
+    """港の詳細に載せる津波の欄(SPEC §7.4 / G-19〜G-22、面は G-31〜G-34)。
 
     代表点が区域の内か外かは出さない。半径 100 / 200 / 500 m の最大浸水深区分だけを並べる。
+    `area` は地図に重ねる面のファイルの場所で、面を配っている港だけに入れる(無い港は None)。
     """
     if tsunami is None:
-        return {"status": "missing_source", "policy": None, "radii": None, "note": "津波浸水想定は未構築"}
+        return {"status": "missing_source", "policy": None, "radii": None, "area": None, "note": "津波浸水想定は未構築"}
     record = tsunami["ports"][port_no]
     policy = record["policy"]
     if policy == "redistribute":
         status = "observed" if record["radii"] is not None else "not_available"
     else:
         status = TSUNAMI_STATUS[policy]
+    has_area = areas_report is not None and port_no in areas_report["ports"]
     return {
         "status": status,
         "policy": policy,
         "radii": record["radii"],
+        "area": f"/data/hazards/tsunami/{port_no}.json" if has_area else None,
         "note": record["note"],
     }
 
@@ -164,6 +167,9 @@ def build() -> dict:
     # 津波浸水想定(DS-006、SPEC §7.4)。未構築なら港の欄は「未取得」にする
     tsunami_path = CANON / "tsunami_ports.json"
     tsunami = json.loads(tsunami_path.read_text(encoding="utf-8")) if tsunami_path.exists() else None
+    # 地図に重ねる区域の面の報告(G-31〜G-33)。港ごとの面のファイルがある港の一覧を兼ねる
+    areas_path = CANON / "tsunami_areas_report.json"
+    areas_report = json.loads(areas_path.read_text(encoding="utf-8")) if areas_path.exists() else None
 
     # 類似漁港(F-08、SPEC G-25〜G-28)。未生成なら港の欄は「未取得」にする
     similar_path = CANON / "similar_report.json"
@@ -229,7 +235,7 @@ def build() -> dict:
                 ),
             },
             "ai": _ai_section(ai_report, ai_oof, p["port_no"]),
-            "tsunami": _tsunami_section(tsunami, p["port_no"]),
+            "tsunami": _tsunami_section(tsunami, p["port_no"], areas_report),
             "similar": _similar_section(similar_report, similar_neighbors, port_by_no, p["port_no"]),
             "sources": [
                 {"source_id": "DS-001", "role": "港名・種別・管理者・所在地", "artifact": p["source_pdf"]},
@@ -254,6 +260,19 @@ def build() -> dict:
         (PUBLIC / "hazards" / "tsunami-meta.json").write_text(
             json.dumps(tsunami["meta"], ensure_ascii=False, indent=1), encoding="utf-8"
         )
+
+    # --- 地図に重ねる区域の面(SPEC G-31〜G-33)。港ごとのファイルを写す ---
+    # 報告があるのに面の置き場が無い(新しい clone など)ときは、黙って空の配信物を作らずに止める
+    if areas_report is not None:
+        areas_dir = CANON / "tsunami_areas"
+        if not areas_dir.exists():
+            raise RuntimeError(
+                "tsunami_areas_report.json があるのに data/canonical/tsunami_areas/ が無い"
+                "(python data-pipeline/integrate/build_tsunami_areas.py を先に)"
+            )
+        (PUBLIC / "hazards" / "tsunami").mkdir(parents=True, exist_ok=True)
+        for port_no in areas_report["ports"]:
+            shutil.copyfile(areas_dir / f"{port_no}.json", PUBLIC / "hazards" / "tsunami" / f"{port_no}.json")
 
     # --- AI: 公式の種別は、交付税の算定に使う施設延長で読めるのか(SPEC §7.3 / G-23 / G-24)---
     if ai_report is not None:
@@ -446,6 +465,19 @@ def build() -> dict:
                     }
                 }
                 if tsunami is not None
+                else {}
+            ),
+            **(
+                {
+                    "tsunamiAreas": {
+                        "urlTemplate": "/data/hazards/tsunami/{port_no}.json",
+                        "ports": len(areas_report["ports"]),
+                        "radiusM": areas_report["radius_m"],
+                        "simplifyM": areas_report["simplify_m"],
+                        "maxAreaChange": areas_report["max_area_change"],
+                    }
+                }
+                if areas_report is not None
                 else {}
             ),
             **(

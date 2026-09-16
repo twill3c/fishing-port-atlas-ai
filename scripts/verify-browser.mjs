@@ -368,6 +368,61 @@ async function main() {
       check("陽性対照: リンクだけの県の港に区分の表が出ない", kyoto.rows === 0, `${kyoto.rows} 行`);
       check("陽性対照: リンクだけの県の港にも但し書きが出る", kyoto.disclaimer.includes("避難"));
       check("リンクだけの理由が出る", kyoto.text.includes("載せていない"), kyoto.text.slice(0, 60));
+
+      // T-061 / G-34: 区域の面を地図に重ねる。数えるのはソースの件数ではなく描画結果(HC-138)
+      const renderedAreaCount = () =>
+        page.evaluate(() => {
+          const m = window.__atlasMap;
+          return m && m.getLayer("tsunami-area-fill")
+            ? m.queryRenderedFeatures({ layers: ["tsunami-area-fill"] }).length
+            : 0;
+        });
+      await openTsunamiTab(tsunamiTargets.fukui);
+      const toggle = page.getByTestId("tsunami-area-toggle");
+      if (check("出す県の港に面を重ねる操作が出る", (await toggle.count()) === 1)) {
+        await toggle.click();
+        const drawn = await page
+          .waitForFunction(
+            () => {
+              const m = window.__atlasMap;
+              if (!m || !m.getLayer("tsunami-area-fill")) return false;
+              return m.queryRenderedFeatures({ layers: ["tsunami-area-fill"] }).length || false;
+            },
+            null,
+            { timeout: 20_000 },
+          )
+          .then((handle) => handle.jsonValue())
+          .catch(() => 0);
+        check("面の塗りが地図に描かれる", drawn > 0, `${drawn} 件`);
+        const legendItems = await page.locator('[data-testid="tsunami-area-legend"] li').count();
+        check("凡例が 5 段", legendItems === 5, `${legendItems} 段`);
+        const legend = await page.getByTestId("tsunami-area-legend").innerText({ timeout: 5000 }).catch(() => "");
+        check(
+          "凡例に但し書きと出典が出る",
+          legend.includes("避難") && legend.includes("国土数値情報"),
+          legend.slice(0, 60),
+        );
+
+        // 陽性対照: 面を重ねたまま(読み込み直さずに)リンクだけの県の港へ切り替えると、面が消え、操作も出ない
+        const kyotoName = await page.evaluate(
+          async (no) => (await (await fetch("/data/ports.min.json")).json()).find((r) => r.id === no)?.n ?? "",
+          tsunamiTargets.kyoto,
+        );
+        await page.getByTestId("search-input").fill(kyotoName);
+        await page.getByTestId("result-list").getByRole("button", { name: new RegExp(`^${kyotoName}漁港`) }).first().click();
+        await page.waitForFunction(
+          (name) => document.querySelector('[data-testid="port-drawer"]')?.textContent?.includes(name),
+          kyotoName,
+          { timeout: 10_000 },
+        );
+        await page.getByTestId("drawer-tab-防災").click();
+        await page.waitForTimeout(1500);
+        const kyotoToggle = await page.getByTestId("tsunami-area-toggle").count();
+        check("陽性対照: リンクだけの県の港に面を重ねる操作が出ない", kyotoToggle === 0, `${kyotoToggle} 件`);
+        const kyotoDrawn = await renderedAreaCount();
+        check("陽性対照: 面を重ねたまま切り替えても、リンクだけの県の港では面が描かれない", kyotoDrawn === 0, `${kyotoDrawn} 件`);
+        await page.getByTestId("search-input").fill("");
+      }
     }
 
     console.log("\n[4b] 施設延長の無い港の AI タブ(陽性対照)");

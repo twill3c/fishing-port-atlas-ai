@@ -1,5 +1,5 @@
 {
- "build": "2026-09-14T22:00:27+00:00",
+ "build": "2026-09-16T21:39:18+00:00",
  "schemaVersion": "1.0",
  "statusVocabulary": [
   "observed",
@@ -38,6 +38,13 @@
     200,
     500
    ]
+  },
+  "tsunamiAreas": {
+   "urlTemplate": "/data/hazards/tsunami/{port_no}.json",
+   "ports": 2310,
+   "radiusM": 500,
+   "simplifyM": 1.0,
+   "maxAreaChange": 0.009196254743080716
   },
   "similar": {
    "metaUrl": "/data/similar/meta.json",

@@ -16,6 +16,8 @@ import {
 } from "@/lib/ports";
 
 import type { BaseMapId } from "@/components/map/FishingPortMap";
+import { TsunamiAreaLegend } from "@/components/map/TsunamiAreaLegend";
+import type { AreaCollection } from "@/lib/tsunamiArea";
 
 const FishingPortMap = dynamic(
   () => import("@/components/map/FishingPortMap").then((m) => m.FishingPortMap),
@@ -32,6 +34,30 @@ export function AtlasApp() {
   const [selected, setSelected] = useState<string | null>(null);
   const [baseMap, setBaseMap] = useState<BaseMapId>("pale");
   const [showPoints, setShowPoints] = useState(true);
+  const [showArea, setShowArea] = useState(false);
+  const [area, setArea] = useState<AreaCollection | null>(null);
+  const [areaSource, setAreaSource] = useState<{ portNo: string; url: string | null } | null>(null);
+
+  // 地図に重ねる津波浸水想定の区域の面(SPEC G-31〜G-34)。港を切り替えたらまず消す。
+  // 取りに行くのは、Drawer が読んだ詳細に面のファイルの場所があり、それが**いま選んでいる港のもの**のときだけ。
+  // 場所の無い港(リンクだけの県・区域が 500 m に掛からない港)へは取りに行かない(404 をコンソールに出さない)。
+  // 港番号を照合するのは、切り替えた直後に前の港の面を新しい港の座標に描かないため
+  useEffect(() => {
+    setArea(null);
+    if (!showArea || !selected || !areaSource || areaSource.portNo !== selected || !areaSource.url) return;
+    let cancelled = false;
+    fetch(areaSource.url)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json: AreaCollection | null) => {
+        if (!cancelled) setArea(json);
+      })
+      .catch(() => {
+        if (!cancelled) setArea(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [showArea, selected, areaSource]);
 
   useEffect(() => {
     fetch("/data/ports.min.json")
@@ -77,6 +103,10 @@ export function AtlasApp() {
   );
   const totals = useMemo(() => (ports ? countByClass(ports) : null), [ports]);
   const withoutCoords = filtered.filter((p) => p.x === null).length;
+  const selectedPort = useMemo(
+    () => (ports && selected ? (ports.find((p) => p.id === selected) ?? null) : null),
+    [ports, selected],
+  );
 
   function toggleClass(cls: PortClass) {
     setClasses((prev) => {
@@ -245,7 +275,13 @@ export function AtlasApp() {
             onSelect={setSelected}
             baseMap={baseMap}
             showPoints={showPoints}
+            tsunamiArea={
+              area && selectedPort && selectedPort.x !== null && selectedPort.y !== null
+                ? { collection: area, lon: selectedPort.x, lat: selectedPort.y }
+                : null
+            }
           />
+          {showArea && area ? <TsunamiAreaLegend /> : null}
           <div className="map-legend">
             <strong>漁港の種別</strong>
             <ul>
@@ -264,7 +300,13 @@ export function AtlasApp() {
         </div>
 
         {selected ? (
-          <PortDrawer portNo={selected} onClose={() => setSelected(null)} />
+          <PortDrawer
+            portNo={selected}
+            onClose={() => setSelected(null)}
+            areaVisible={showArea}
+            onToggleArea={() => setShowArea((v) => !v)}
+            onAreaSource={(portNo, url) => setAreaSource({ portNo, url })}
+          />
         ) : null}
       </div>
     </div>

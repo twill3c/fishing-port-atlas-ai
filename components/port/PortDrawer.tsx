@@ -139,9 +139,20 @@ function MarkedValue({ mark }: { mark: Marked }) {
 export function PortDrawer({
   portNo,
   onClose,
+  areaVisible,
+  onToggleArea,
+  onAreaSource,
 }: {
   portNo: string;
   onClose: () => void;
+  /** 津波浸水想定の区域の面を地図に重ねているか(G-34) */
+  areaVisible: boolean;
+  onToggleArea: () => void;
+  /**
+   * 詳細を読んだら、その港の面のファイルの場所(無ければ null)を港番号つきで親へ知らせる。
+   * 親は面を配っている港だけ取りに行く(面の無い港で 404 を出さない)
+   */
+  onAreaSource: (portNo: string, url: string | null) => void;
 }) {
   const [detail, setDetail] = useState<PortDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -158,7 +169,9 @@ export function PortDrawer({
         return res.json();
       })
       .then((json: PortDetail) => {
-        if (!cancelled) setDetail(json);
+        if (cancelled) return;
+        setDetail(json);
+        onAreaSource(portNo, json.tsunami?.area ?? null);
       })
       .catch((err: Error) => {
         if (!cancelled) setError(err.message);
@@ -266,7 +279,9 @@ export function PortDrawer({
 
           {tab === "海洋" ? <p className="status-note">{detail.ocean.note}</p> : null}
 
-          {tab === "防災" ? <TsunamiTab tsunami={detail.tsunami} /> : null}
+          {tab === "防災" ? (
+            <TsunamiTab tsunami={detail.tsunami} areaVisible={areaVisible} onToggleArea={onToggleArea} />
+          ) : null}
 
           {tab === "AI" ? (
             <>

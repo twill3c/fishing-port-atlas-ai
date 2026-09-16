@@ -9,6 +9,14 @@ import {
   toGeoJSON,
   type PortMin,
 } from "@/lib/ports";
+import { DEPTH_BINS, bounds, ring, withBins, type AreaCollection } from "@/lib/tsunamiArea";
+
+const AREA_SOURCE_ID = "tsunami-area";
+const AREA_FILL_ID = "tsunami-area-fill";
+const AREA_LINE_ID = "tsunami-area-line";
+const RINGS_SOURCE_ID = "tsunami-rings";
+const RINGS_LAYER_ID = "tsunami-rings";
+const EMPTY = { type: "FeatureCollection" as const, features: [] };
 
 const SOURCE_ID = "ports";
 const LAYER_ID = "port-points";
@@ -25,6 +33,8 @@ interface Props {
   onSelect: (portNo: string) => void;
   baseMap: BaseMapId;
   showPoints: boolean;
+  /** 選んだ港の津波浸水想定の区域の面と、その港の座標(半径の輪と寄せる範囲に使う)。重ねないときは null */
+  tsunamiArea: { collection: AreaCollection; lon: number; lat: number } | null;
 }
 
 interface HoverInfo {
@@ -42,6 +52,7 @@ export function FishingPortMap({
   onSelect,
   baseMap,
   showPoints,
+  tsunamiArea,
 }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -84,6 +95,36 @@ export function FishingPortMap({
       instance.addSource(SOURCE_ID, {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },
+      });
+
+      // 津波浸水想定の区域の面(G-34)。点より下に描く。塗りは区間の下限による 5 段(lib/tsunamiArea.ts)
+      instance.addSource(AREA_SOURCE_ID, { type: "geojson", data: EMPTY });
+      instance.addSource(RINGS_SOURCE_ID, { type: "geojson", data: EMPTY });
+      instance.addLayer({
+        id: AREA_FILL_ID,
+        type: "fill",
+        source: AREA_SOURCE_ID,
+        paint: {
+          "fill-color": [
+            "match",
+            ["get", "bin"],
+            ...DEPTH_BINS.flatMap((bin, i) => [i, bin.color]),
+            DEPTH_BINS[0].color,
+          ] as unknown as maplibregl.ExpressionSpecification,
+          "fill-opacity": 0.6,
+        },
+      });
+      instance.addLayer({
+        id: AREA_LINE_ID,
+        type: "line",
+        source: AREA_SOURCE_ID,
+        paint: { "line-color": "#ffffff", "line-width": 0.6, "line-opacity": 0.8 },
+      });
+      instance.addLayer({
+        id: RINGS_LAYER_ID,
+        type: "line",
+        source: RINGS_SOURCE_ID,
+        paint: { "line-color": "#52514e", "line-width": 1.2, "line-dasharray": [2, 2] },
       });
 
       // 選択中の港を外側の輪で示す。色だけに頼らず大きさでも分かるようにする。
@@ -210,6 +251,35 @@ export function FishingPortMap({
     if (ready.current) apply();
     else instance.once("atlas:ready", apply);
   }, [selectedPortNo]);
+
+  // 区域の面と半径の輪。面が届いたらその港の 500 m 圏に寄る(小さな面は全国表示では描画されない)
+  useEffect(() => {
+    const instance = map.current;
+    if (!instance) return;
+    const apply = () => {
+      const area = instance.getSource(AREA_SOURCE_ID) as maplibregl.GeoJSONSource | undefined;
+      const rings = instance.getSource(RINGS_SOURCE_ID) as maplibregl.GeoJSONSource | undefined;
+      if (!area || !rings) return;
+      if (!tsunamiArea) {
+        area.setData(EMPTY);
+        rings.setData(EMPTY);
+        return;
+      }
+      const { collection, lon, lat } = tsunamiArea;
+      area.setData(withBins(collection) as unknown as Parameters<maplibregl.GeoJSONSource["setData"]>[0]);
+      rings.setData({
+        type: "FeatureCollection",
+        features: [100, 200, 500].map((radius) => ({
+          type: "Feature",
+          properties: { radius_m: radius },
+          geometry: { type: "LineString", coordinates: ring(lon, lat, radius) },
+        })),
+      });
+      instance.fitBounds(bounds(lon, lat, 600), { padding: 40, duration: 0 });
+    };
+    if (ready.current) apply();
+    else instance.once("atlas:ready", apply);
+  }, [tsunamiArea]);
 
   useEffect(() => {
     const instance = map.current;
