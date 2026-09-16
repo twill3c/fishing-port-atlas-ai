@@ -227,6 +227,14 @@ export function AtlasApp() {
             {filtered.length === 0 && ports ? (
               <p className="hint">条件に合う漁港が無い</p>
             ) : null}
+            {filtered.length === 0 && ports && query.trim() ? (
+              <p className="status-note" data-testid="no-result-guide">
+                この地図に載っているのは、水産庁の漁港一覧にある<strong>指定漁港</strong>だけである。
+                魚市場があって水揚げが多くても、港湾法の<strong>港湾</strong>として指定された港
+                (たとえば小名浜港)は載っていない。
+                <a href="/data/#not-listed">載らない港について</a>
+              </p>
+            ) : null}
           </section>
         </div>
 

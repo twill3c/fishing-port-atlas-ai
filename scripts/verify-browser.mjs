@@ -277,6 +277,34 @@ async function main() {
     );
     const searchCount = await page.getByTestId("result-count").innerText();
     check("検索で件数が絞られる", /^\s*[1-9]\d?\s*\//.test(searchCount), searchCount);
+    // 陽性対照: ヒットがあるときは「載っていない」の案内を出さない
+    const hintOnHit = await page.getByTestId("no-result-guide").count();
+    check("陽性対照: ヒットがある検索では載っていない港の案内が出ない", hintOnHit === 0, `${hintOnHit} 件`);
+
+    // 指定漁港の一覧に無い港(例: 小名浜)を検索すると、0 件と、載っていない理由の案内が出る
+    await page.getByTestId("search-input").fill("小名浜");
+    await page.waitForFunction(
+      () => document.querySelector('[data-testid="result-count"]')?.textContent.trim().startsWith("0 "),
+      null,
+      { timeout: 10_000 },
+    ).catch(() => null);
+    const zeroCount = await page.getByTestId("result-count").innerText();
+    check("一覧に無い港名(小名浜)の検索は 0 件", zeroCount.trim().startsWith("0 "), zeroCount);
+    const guide = await page
+      .getByTestId("no-result-guide")
+      .evaluate((el) => ({
+        text: el.textContent ?? "",
+        href: el.querySelector("a")?.getAttribute("href") ?? "",
+      }), undefined, { timeout: 5000 })
+      .catch(() => null);
+    if (check("0 件のとき載っていない港の案内が出る", guide !== null)) {
+      check(
+        "案内が指定漁港と港湾に触れる",
+        guide.text.includes("指定漁港") && guide.text.includes("港湾"),
+        guide.text.slice(0, 60),
+      );
+      check("案内から出典ページの説明へ辿れる", guide.href === "/data/#not-listed", guide.href);
+    }
 
     await page.getByTestId("search-input").fill("");
     await page.getByTestId("class-special_3").check();
@@ -524,6 +552,19 @@ async function main() {
       rowsAfter === rowsBefore + 5,
       `${rowsBefore} → ${rowsAfter}`,
     );
+
+    console.log("\n[5d] 出典ページ: この地図に載らない港");
+    await page.goto(`${base}/data/`, { waitUntil: "networkidle" });
+    const notListed = await page
+      .locator("#not-listed")
+      .evaluate((el) => (el.closest("section") ?? el.parentElement)?.textContent ?? el.textContent ?? "", undefined, {
+        timeout: 5000,
+      })
+      .catch(() => null);
+    if (check("出典ページに「載らない港」の節がある", notListed !== null)) {
+      check("節が小名浜港を例に挙げる", notListed.includes("小名浜"), notListed.slice(0, 60));
+      check("節が港湾の区分の出典(重要港湾)を書く", notListed.includes("重要港湾"), notListed.slice(0, 60));
+    }
 
     console.log("\n[5c] AI のページ");
     await page.goto(`${base}/ai/`, { waitUntil: "networkidle" });
